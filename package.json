@@ -1,0 +1,21 @@
+{
+  "name": "downloopy",
+  "version": "3.0.0",
+  "description": "Downloopy is a software that downloads online files in a loop to save my time.",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon test.js",
+    "start": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "Mohamed Elzohary",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "bluebird": "^3.7.2",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "js-file-download": "^0.4.11",
+    "request": "^2.88.2"
+  }
+}

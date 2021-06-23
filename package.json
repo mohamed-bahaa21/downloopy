@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "nodemon test.js",
-    "start": "nodemon app.js"
+    "download": "nodemon download.app.js",
+    "pdfing": "nodemon pdfing.app.js"
   },
   "keywords": [],
   "author": "Mohamed Elzohary",
@@ -16,6 +17,7 @@
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "js-file-download": "^0.4.11",
+    "pdfkit": "^0.12.1",
     "request": "^2.88.2"
   }
 }

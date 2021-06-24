@@ -1,10 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 
-const request = Promise.promisifyAll(require("request"), {
-  multiArgs: true
-});
-
 const app = express();
 
 app.use(bodyParser.urlencoded({

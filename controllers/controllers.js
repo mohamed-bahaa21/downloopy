@@ -1,10 +1,9 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const Promise = require("bluebird");
-const request = Promise.promisifyAll(require("request"), {
-    multiArgs: true
-});
-const fs = Promise.promisifyAll(require("fs"));
+const request = require("request")
+var progress = require('progress-stream');
+var fs = require('fs');
 
 // const htmlparser2 = require("htmlparser2");
 
@@ -61,55 +60,48 @@ exports.downloadOne = (req, response, next) => {
     const uri = `https://archive.alsharekh.org/MagazinePages/Magazine_JPG/EL_Mawred/mogalad_12/Issue_4/${img_num}.JPG`;
 
     request.head(uri, function (err, res, body) {
-        console.log("content-type:", res.headers["content-type"]);
-        console.log("content-length:", res.headers["content-length"]);
+        // console.log("content-type:", res.headers["content-type"]);
+        // console.log("content-length:", res.headers["content-length"]);
 
-        var f = fs.createWriteStream(`imgs/image-${img_num}.jpg`);
+        // downloaded image file
+        var img_filename = `imgs/image-${img_num}.jpg`
+        var img_file = fs.createWriteStream(img_filename)
 
-        f.on("finish", function () {
-            // do stuff
-            console.log(`STREAM::WRITE::DONE__IMG::${img_num}`);
+        // watch stream stat sync 
+        var stat = fs.statSync(res.body);
+        // watch progress stream 
+        var str = progress({
+            length: stat.size,
+            time: 100 /* ms */
         });
-
+        // stream on progress
+        str.on('progress', function (progress) {
+            console.log(progress);
+        });
+        // stream request uri -> pipe -> stat -> write stream -> finish
+        // fs.createReadStream(img_file)
         request(uri)
-            .pipe(f)
+            .pipe(img_file)
+            .pipe(str)
             .on("finish", () => {
                 console.log(`PIPE::DONE__IMG::${img_num}`);
                 response.send('<h1>Download Finished</h1>')
             });
+
+        // var filename = fs.createWriteStream(`imgs/image-${img_num}.jpg`);
+        // request(uri)
+        //     .pipe(filename)
+        //     .on("finish", () => {
+        //         console.log(`PIPE::DONE__IMG::${img_num}`);
+        //         response.send('<h1>Download Finished</h1>')
+        //     });
     });
+
+    // filename.on("finish", function () {
+    //     // do stuff
+    //     console.log(`STREAM::WRITE::DONE__IMG::${img_num}`);
+    // });
 }
-
-// watch stream
-var progress = require('progress-stream');
-var fs = require('fs');
-
-var stat = fs.statSync(filename);
-var str = progress({
-  length: stat.size,
-  time: 100 /* ms */
-});
-
-str.on('progress', function (progress) {
-  console.log(progress);
-
-  /*
-  {
-    percentage: 9.05,
-    transferred: 949624,
-    length: 10485760,
-    remaining: 9536136,
-    eta: 42,
-    runtime: 3,
-    delta: 295396,
-    speed: 949624
-  }
-  */
-});
-
-fs.createReadStream(filename)
-  .pipe(str)
-  .pipe(fs.createWriteStream(output));
 
 // landing
 exports.getLanding = (req, res, next) => {

@@ -30,39 +30,40 @@ exports.downloadAll = (req, response, next) => {
     })
 
     // TODO:: if !== finish_num -> index++
-    const start_num = process.env.START_NUM;
-    const finish_num = process.env.FINISH_NUM;
+    const start_num = Number(process.env.START_NUM);
+    const finish_num = Number(process.env.FINISH_NUM);
+    // console.log(typeof(Number(process.env.FINISH_NUM)));
 
-    const total_imgs_num = finish_num - start_num + 1;
+    const total_imgs_num = finish_num - start_num;
 
     const uri_start = process.env.URI_START;
     const uri_end = process.env.URI_END;
     // console.log(uri_start);
 
     // FOR LOOP STARTS
-    for (let index = start_num; index <= total_imgs_num; index++) {
+    for (let index = 0; index <= total_imgs_num; index++) {
         const element = start_num + index;
         console.log(element);
         
         const uri = `${uri_start}${element}${uri_end}`;
 
-        // request.head(uri, function (err, res, body) {
-        //     // console.log("content-type:", res.headers["content-type"]);
-        //     // console.log("content-length:", res.headers["content-length"]);
+        request.head(uri, function (err, res, body) {
+            // console.log("content-type:", res.headers["content-type"]);
+            // console.log("content-length:", res.headers["content-length"]);
 
-        //     var f = fs.createWriteStream(`${total_dir}/IMG-${element}.jpg`);
+            var f = fs.createWriteStream(`${total_dir}/IMG-${element}.jpg`);
 
-        //     f.on("finish", function () {
-        //         // do stuff
-        //         console.log(`STREAM::WRITE::DONE__IMG::${element}`);
-        //     });
+            f.on("finish", function () {
+                // do stuff
+                console.log(`STREAM::WRITE::DONE__IMG::${element}`);
+            });
 
-        //     request(uri)
-        //         .pipe(f)
-        //         .on("finish", () => {
-        //             console.log(`PIPE::DONE__IMG::${element}`);
-        //         });
-        // });
+            request(uri)
+                .pipe(f)
+                .on("finish", () => {
+                    console.log(`PIPE::DONE__IMG::${element}`);
+                });
+        });
     }
     // FOR LOOP ENDS
 

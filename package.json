@@ -21,5 +21,9 @@
     "pdfkit": "^0.12.1",
     "progress-stream": "^2.0.0",
     "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "eslint": "^7.30.0",
+    "jshint": "^2.13.0"
   }
 }

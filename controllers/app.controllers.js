@@ -18,48 +18,54 @@ PDFDocument = require('pdfkit');
 // download all files
 exports.downloadAll = (req, response, next) => {
 
-    const folder_name = "Introduction to Data Oriented Design"
-    const win_folder_dir = `data/imgs/output/${folder_name}`
-    // With a callback:
-    fs.ensureDir(win_folder_dir, err => {
+    const folder_name = process.env.FOLDER_NAME
+    const folder_dir = process.env.FOLDER_DIR
+    const total_dir = folder_dir+folder_name
+
+    // ensureDir With a callback:
+    fs.ensureDir(total_dir, err => {
         console.log(err) // => null
         // dir has now been created, including the directory it is to be placed in
         console.log("Folder Created.");
     })
+
     // TODO:: if !== finish_num -> index++
-    const start_num = 1;
-    const finish_num = 77;
+    const start_num = process.env.START_NUM;
+    const finish_num = process.env.FINISH_NUM;
+
     const total_imgs_num = finish_num - start_num + 1;
 
-    const uri_start = "https://image.slidesharecdn.com/introductiontodata-orienteddesignflat-101105120121-phpapp01/95/introduction-to-data-oriented-design-";
-    const uri_end = "-728.jpg?cb=1288958560";
+    const uri_start = process.env.URI_START;
+    const uri_end = process.env.URI_END;
+    // console.log(uri_start);
 
     // FOR LOOP STARTS
-    for (let index = 0; index < total_imgs_num; index++) {
+    for (let index = start_num; index <= total_imgs_num; index++) {
         const element = start_num + index;
-
+        console.log(element);
+        
         const uri = `${uri_start}${element}${uri_end}`;
 
-        request.head(uri, function (err, res, body) {
-            // console.log("content-type:", res.headers["content-type"]);
-            // console.log("content-length:", res.headers["content-length"]);
+        // request.head(uri, function (err, res, body) {
+        //     // console.log("content-type:", res.headers["content-type"]);
+        //     // console.log("content-length:", res.headers["content-length"]);
 
-            var f = fs.createWriteStream(`data/imgs/output/${folder_name}/IMG-${element}.jpg`);
+        //     var f = fs.createWriteStream(`${total_dir}/IMG-${element}.jpg`);
 
-            f.on("finish", function () {
-                // do stuff
-                console.log(`STREAM::WRITE::DONE__IMG::${element}`);
-            });
+        //     f.on("finish", function () {
+        //         // do stuff
+        //         console.log(`STREAM::WRITE::DONE__IMG::${element}`);
+        //     });
 
-            request(uri)
-                .pipe(f)
-                .on("finish", () => {
-                    console.log(`PIPE::DONE__IMG::${element}`);
-                });
-        });
+        //     request(uri)
+        //         .pipe(f)
+        //         .on("finish", () => {
+        //             console.log(`PIPE::DONE__IMG::${element}`);
+        //         });
+        // });
     }
-
     // FOR LOOP ENDS
+
     response.send('<h1>Download Finished</h1>')
 };
 

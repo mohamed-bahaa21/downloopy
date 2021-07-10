@@ -16,17 +16,18 @@ PDFDocument = require('pdfkit');
 
 // download all files
 exports.downloadAll = (req, response, next) => {
-    const imgs_nums = 59;
 
+    const folder_name = "Introduction to Data Oriented Design"
     // TODO:: if !== finish_num -> index++
-    const start_num = 319;
-    const finish_num = 378;
+    const start_num = 1;
+    const finish_num = 77;
+    const total_imgs_num = finish_num - start_num + 1;
 
-    const uri_start = '';
-    const uri_end = '';
+    const uri_start = "https://image.slidesharecdn.com/introductiontodata-orienteddesignflat-101105120121-phpapp01/95/introduction-to-data-oriented-design-";
+    const uri_end = "-728.jpg?cb=1288958560";
 
     // FOR LOOP STARTS
-    for (let index = 0; index < imgs_nums; index++) {
+    for (let index = 0; index < total_imgs_num; index++) {
         const element = start_num + index;
 
         const uri = `${uri_start}${element}${uri_end}`;
@@ -35,7 +36,7 @@ exports.downloadAll = (req, response, next) => {
             console.log("content-type:", res.headers["content-type"]);
             console.log("content-length:", res.headers["content-length"]);
 
-            var f = fs.createWriteStream(`imgs/image-${element}.jpg`);
+            var f = fs.createWriteStream(`data/imgs/output/${folder_name}/IMG-${element}.jpg`);
 
             f.on("finish", function () {
                 // do stuff

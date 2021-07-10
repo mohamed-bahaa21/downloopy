@@ -5,6 +5,6 @@ const route = express.Router()
 // const controllers = require(path.resolve(__basename, 'controllers', 'controllers'))
 const controllers = require('../controllers/app.controllers')
 
-route.get('/', controllers.downloadOne)
+route.get('/', controllers.downloadAll)
 
 module.exports = route;

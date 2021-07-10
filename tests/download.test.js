@@ -27,5 +27,10 @@
         name: "Introduction to Data Oriented Design",
         website: "slideshare",
         link: "https://www.slideshare.net/DICEStudio/introduction-to-data-oriented-design"
+    },
+    {
+        name: "Data oriented design and c++",
+        website: "slideshare",
+        link: "https://www.slideshare.net/cellperformance/data-oriented-design-and-c"
     }
 ]

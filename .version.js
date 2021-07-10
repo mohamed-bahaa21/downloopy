@@ -6,4 +6,5 @@
     "V3.0": "Watch download progress",
     "V4.0": "Add images to a PDF file",
     "V4.1": "Insure existence of images_output_folder"
+    "V5.0": "Use env vars for the download process"
 }

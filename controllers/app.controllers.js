@@ -1,34 +1,35 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const Promise = require("bluebird");
-const request = require("request")
+// const request = require("request")
+const request = Promise.promisifyAll(require("request"), {
+    multiArgs: true
+});
+// const { response } = require("express");
 var progress = require('progress-stream');
-var fs = require('fs');
+// var fs = require('fs');
+const fs = Promise.promisifyAll(require("fs"));
+PDFDocument = require('pdfkit');
+
 
 // const htmlparser2 = require("htmlparser2");
 
 // download all files
 exports.downloadAll = (req, response, next) => {
-    // NUMBERS CONFIG
-    // SHOULD HAVE CHOICES FOR NUMBER FORMAT (1, 01, 001)
-
-    // let imgs_nums_arr = [
-    //   '1', '2', '3', '4', '5', '6', '7', '8', '9', '10',
-    //   '11', '12', '13', '14', '15', '16', '17', '18', '19', '20',
-    //   '21', '22', '23', '24', '25', '26', '27', '28', '29', '30'
-    // ]
-
     const imgs_nums = 59;
 
     // TODO:: if !== finish_num -> index++
     const start_num = 319;
     const finish_num = 378;
 
+    const uri_start = '';
+    const uri_end = '';
+
     // FOR LOOP STARTS
     for (let index = 0; index < imgs_nums; index++) {
         const element = start_num + index;
 
-        const uri = `https://archive.alsharekh.org/MagazinePages/Magazine_JPG/EL_Mawred/mogalad_12/Issue_4/${element}.JPG`;
+        const uri = `${uri_start}${element}${uri_end}`;
 
         request.head(uri, function (err, res, body) {
             console.log("content-type:", res.headers["content-type"]);
@@ -103,27 +104,40 @@ exports.downloadOne = (req, response, next) => {
     // });
 }
 
+// Add images to a PDF File
+exports.pdfing = (response) => {
+    doc = new PDFDocument
+
+    //Pipe its output somewhere, like to a file or HTTP response 
+    //See below for browser usage 
+    doc.pipe(fs.createWriteStream('toPDF/result/output.pdf'))
+
+    //Add an image, constrain it to a given size, and center it vertically and horizontally 
+    pages_num = 60
+    for (let index = 0; index < pages_num; index++) {
+        doc.image(`./toPDF/image-${index}.jpg`, {
+            fit: [500, 750],
+            align: 'center',
+            valign: 'center',
+        });
+
+        doc.addPage()
+            .image(`./toPDF/image-${index}.jpg`, {
+                size: 'A4',
+                fit: [500, 750],
+                align: 'center',
+                valign: 'center',
+            });
+    }
+
+    doc.end()
+    response.send('<h1>PDFing Finished</h1>')
+}
+
+
 // landing
 exports.getLanding = (req, res, next) => {
-    Horizon.find().then((result) => {
-        Blog.find().limit(3).then(blogs => {
-            // console.log(blogs;      
-            // console.log(result[4]);
-
-            res.render("index", {
-                msgs: req.flash('success'),
-                blogs: blogs,
-                horizon: result[0],
-                ld1: result[1],
-                li1: result[2],
-                ld2: result[6],
-                li2: result[3],
-                wv: result[4],
-                ss: result[5],
-                ld3: result[7],
-                pi: result[8],
-                ti: result[9]
-            })
-        });
-    });
+    res.render("index", {
+        msgs: req.flash('success'),
+    })
 };

@@ -17,5 +17,15 @@
         name: "كتاب التدبيرات السلطانية في سياسة الصناعة الحربية",
         website: "Alsharekh Archive",
         link: "https://archive.alsharekh.org/MagazinePages/Magazine_JPG/EL_Mawred/mogalad_12/Issue_4/${element}.JPG"
+    },
+    {
+        name: "A Step Towards Data Orientation",
+        website: "slideshare",
+        link: "https://www.slideshare.net/DICEStudio/a-step-towards-data-orientation"
+    },
+    {
+        name: "Introduction to Data Oriented Design",
+        website: "slideshare",
+        link: "https://www.slideshare.net/DICEStudio/introduction-to-data-oriented-design"
     }
 ]

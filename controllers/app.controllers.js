@@ -8,7 +8,8 @@ const request = Promise.promisifyAll(require("request"), {
 // const { response } = require("express");
 var progress = require('progress-stream');
 // var fs = require('fs');
-const fs = Promise.promisifyAll(require("fs"));
+// const fs = require('fs-extra')
+const fs = Promise.promisifyAll(require("fs-extra"));
 PDFDocument = require('pdfkit');
 
 
@@ -18,6 +19,13 @@ PDFDocument = require('pdfkit');
 exports.downloadAll = (req, response, next) => {
 
     const folder_name = "Introduction to Data Oriented Design"
+    const win_folder_dir = `data/imgs/output/${folder_name}`
+    // With a callback:
+    fs.ensureDir(win_folder_dir, err => {
+        console.log(err) // => null
+        // dir has now been created, including the directory it is to be placed in
+        console.log("Folder Created.");
+    })
     // TODO:: if !== finish_num -> index++
     const start_num = 1;
     const finish_num = 77;
@@ -33,8 +41,8 @@ exports.downloadAll = (req, response, next) => {
         const uri = `${uri_start}${element}${uri_end}`;
 
         request.head(uri, function (err, res, body) {
-            console.log("content-type:", res.headers["content-type"]);
-            console.log("content-length:", res.headers["content-length"]);
+            // console.log("content-type:", res.headers["content-type"]);
+            // console.log("content-length:", res.headers["content-length"]);
 
             var f = fs.createWriteStream(`data/imgs/output/${folder_name}/IMG-${element}.jpg`);
 

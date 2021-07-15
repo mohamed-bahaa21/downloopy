@@ -34,7 +34,7 @@ exports.autoDown = (req, res, next) => {
 // TODO
 // Generates an image from a DOM node using HTML5 canvas
 // loop -> get -> generate -> download -> next
-exports.domToImage = (req, res, next) => {
+exports.domToImg = (req, res, next) => {
     var node = document.getElementsByClassName('node-class-name');
     domtoimage.toPng(node)
         .then(function (dataUrl) {

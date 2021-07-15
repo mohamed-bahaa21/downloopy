@@ -11,16 +11,52 @@ var progress = require('progress-stream');
 // const fs = require('fs-extra')
 const fs = Promise.promisifyAll(require("fs-extra"));
 PDFDocument = require('pdfkit');
-
-
 // const htmlparser2 = require("htmlparser2");
+
+var domtoimage = require('dom-to-image');
+
+// landing
+exports.getLanding = (req, res, next) => {
+    res.render("index", {
+        msgs: req.flash('success'),
+    })
+};
+
+// TODO
+// Automate Download
+// get download btn -> click -> download
+exports.autoDown = (req, res, next) => {
+    res.render("index", {
+        msgs: req.flash('success'),
+    })
+};
+
+// TODO
+// Generates an image from a DOM node using HTML5 canvas
+// loop -> get -> generate -> download -> next
+exports.domToImage = (req, res, next) => {
+    var node = document.getElementsByClassName('node-class-name');
+    domtoimage.toPng(node)
+        .then(function (dataUrl) {
+            var img = new Image();
+            img.src = dataUrl;
+            document.body.appendChild(img);
+        })
+        .catch(function (error) {
+            console.error('oops, something went wrong!', error);
+        });
+
+    res.render("index", {
+        msgs: req.flash('success'),
+    })
+};
 
 // download all files
 exports.downloadAll = (req, response, next) => {
 
     const folder_name = process.env.FOLDER_NAME
     const folder_dir = process.env.FOLDER_DIR
-    const total_dir = folder_dir+folder_name
+    const total_dir = folder_dir + folder_name
 
     // ensureDir With a callback:
     fs.ensureDir(total_dir, err => {
@@ -44,7 +80,7 @@ exports.downloadAll = (req, response, next) => {
     for (let index = 0; index <= total_imgs_num; index++) {
         const element = start_num + index;
         console.log(element);
-        
+
         const uri = `${uri_start}${element}${uri_end}`;
 
         request.head(uri, function (err, res, body) {
@@ -149,11 +185,3 @@ exports.pdfing = (response) => {
     doc.end()
     response.send('<h1>PDFing Finished</h1>')
 }
-
-
-// landing
-exports.getLanding = (req, res, next) => {
-    res.render("index", {
-        msgs: req.flash('success'),
-    })
-};

@@ -32,5 +32,15 @@
         name: "Data oriented design and c++",
         website: "slideshare",
         link: "https://www.slideshare.net/cellperformance/data-oriented-design-and-c"
+    },
+    {
+        name: "تغريدة السيرة النبوية شعرا ونثرا م1",
+        website: "http://dar.bibalex.org/",
+        link: "http://dar.bibalex.org/webpages/mainpage.jsf?PID=DAF-Job:150816&q="
+    },
+    {
+        name: "تغريدة السيرة النبوية شعرا ونثرا م2",
+        website: "http://dar.bibalex.org/",
+        link: "http://dar.bibalex.org/webpages/mainpage.jsf?PID=DAF-Job:151391"
     }
 ]

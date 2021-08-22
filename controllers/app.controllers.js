@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 const bodyParser = require("body-parser");
 const Promise = require("bluebird");
 // const request = require("request")
@@ -117,7 +118,7 @@ exports.downloadOne = (req, response, next) => {
         // console.log("content-length:", res.headers["content-length"]);
 
         // downloaded image file
-        var img_filename = `imgs/image-${img_num}.jpg`
+        var img_filename = `imgs/IMG-${img_num}.jpg`
         var img_file = fs.createWriteStream(img_filename)
 
         // watch stream stat sync 
@@ -141,7 +142,7 @@ exports.downloadOne = (req, response, next) => {
                 response.send('<h1>Download Finished</h1>')
             });
 
-        // var filename = fs.createWriteStream(`imgs/image-${img_num}.jpg`);
+        // var filename = fs.createWriteStream(`imgs/IMG-${img_num}.jpg`);
         // request(uri)
         //     .pipe(filename)
         //     .on("finish", () => {
@@ -157,31 +158,27 @@ exports.downloadOne = (req, response, next) => {
 }
 
 // Add images to a PDF File
-exports.pdfing = (response) => {
-    doc = new PDFDocument
+exports.pdfing = (req, res, next) => {
+
+    var doc = new PDFDocument({ autoFirstPage: false });
 
     //Pipe its output somewhere, like to a file or HTTP response 
     //See below for browser usage 
-    doc.pipe(fs.createWriteStream('toPDF/result/output.pdf'))
+    doc.pipe(fs.createWriteStream('data/pdf/تغريدة السيرة النبوية شعرا ونثرا م2.pdf'))
 
     //Add an image, constrain it to a given size, and center it vertically and horizontally 
-    pages_num = 60
-    for (let index = 0; index < pages_num; index++) {
-        doc.image(`./toPDF/image-${index}.jpg`, {
-            fit: [500, 750],
-            align: 'center',
-            valign: 'center',
-        });
+    pages_num = 808 + 1;
+    for (let index = 1; index < pages_num; index++) {
+        // NEW
+        var img = doc.openImage(`data/imgs/output/تغريدة السيرة النبوية شعرا ونثرا م2/IMG-${index}.jpg`);
+        doc.addPage({ size: [img.width, img.height] });
+        doc.image(img, 0, 0);
 
-        doc.addPage()
-            .image(`./toPDF/image-${index}.jpg`, {
-                size: 'A4',
-                fit: [500, 750],
-                align: 'center',
-                valign: 'center',
-            });
+        // OLD
+        // doc.image(`data/imgs/output/تغريدة السيرة النبوية شعرا ونثرا م2/IMG-${index}.jpg`, 0, 0, { width: 600 });
+        // doc.addPage().image(`data/imgs/output/تغريدة السيرة النبوية شعرا ونثرا م2/IMG-${index}.jpg`, 0, 0, 'A4');
     }
 
-    doc.end()
-    response.send('<h1>PDFing Finished</h1>')
+    doc.end();
+    res.send('<h1>PDFing Finished</h1>');
 }

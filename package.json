@@ -7,7 +7,8 @@
     "test": "nodemon test.js",
     "start": "nodemon app.js",
     "download": "nodemon download.app.js",
-    "pdfing": "nodemon pdfing.app.js"
+    "pdfing": "nodemon pdfing.app.js",
+    "writefile": "node writefile.js"
   },
   "keywords": [
     "downloopy",

@@ -17,7 +17,7 @@ PDFDocument = require('pdfkit');
 var domtoimage = require('dom-to-image');
 
 // landing
-exports.getLanding = (req, res, next) => {
+getLanding = (req, res, next) => {
     res.render("index", {
         // msgs: req.flash('success'),
     })
@@ -25,7 +25,7 @@ exports.getLanding = (req, res, next) => {
 
 // =======================================================
 // download one file
-exports.downloadOneEnv = (req, response, next) => {
+downloadOneEnv = (req, response, next) => {
 
     const img_num = 378;
     const uri = `https://archive.alsharekh.org/MagazinePages/Magazine_JPG/EL_Mawred/mogalad_12/Issue_4/${img_num}.JPG`;
@@ -76,7 +76,7 @@ exports.downloadOneEnv = (req, response, next) => {
 
 // =======================================================
 // download all files
-exports.downloadAllEnv = (req, response, next) => {
+downloadAllEnv = (req, response, next) => {
 
     const folder_name = process.env.FOLDER_NAME
     const folder_dir = process.env.FOLDER_DIR
@@ -132,25 +132,22 @@ exports.downloadAllEnv = (req, response, next) => {
 
 // =======================================================
 // download all files
-exports.downloadAllPost = (req, res, next) => {
+downloadAllPost = (req, res, next) => {
 
+    const FOLDER_DIR = "data/imgs/output/";
     const {
         FOLDER_NAME,
-        FOLDER_DIR,
-        START_NUM,
-        FINISH_NUM,
         URI_START,
         URI_END
     } = req.body;
 
-    
+    const START_NUM = 1;
+    const FINISH_NUM = Number(req.body.FINISH_NUM);
+    // TODO:: if !== FINISH_NUM -> index++
+    // console.log(typeof(Number(process.env.FINISH_NUM)));
+
     const total_dir = FOLDER_DIR + FOLDER_NAME
     const total_imgs_num = FINISH_NUM - START_NUM;
-
-    // TODO:: if !== FINISH_NUM -> index++
-    // const START_NUM = Number(process.env.START_NUM);
-    // const FINISH_NUM = Number(process.env.FINISH_NUM);
-    // console.log(typeof(Number(process.env.FINISH_NUM)));
 
     // ensureDir With a callback:
     fs.ensureDir(total_dir, err => {
@@ -197,7 +194,7 @@ exports.downloadAllPost = (req, res, next) => {
 // TODO
 // Automate Download
 // get download btn -> click -> download
-exports.autoDown = (req, res, next) => {
+autoDown = (req, res, next) => {
     res.render("index", {
         msgs: req.flash('success'),
     })
@@ -206,7 +203,7 @@ exports.autoDown = (req, res, next) => {
 // TODO
 // Generates an image from a DOM node using HTML5 canvas
 // loop -> get -> generate -> download -> next
-exports.domToImg = (req, res, next) => {
+domToImg = (req, res, next) => {
     var node = document.getElementsByClassName('node-class-name');
     domtoimage.toPng(node)
         .then(function (dataUrl) {
@@ -225,7 +222,7 @@ exports.domToImg = (req, res, next) => {
 
 
 // Add images to a PDF File
-exports.pdfing = (req, res, next) => {
+pdfing = (req, res, next) => {
 
     var doc = new PDFDocument({ autoFirstPage: false });
 
@@ -249,3 +246,5 @@ exports.pdfing = (req, res, next) => {
     doc.end();
     res.send('<h1>PDFing Finished</h1>');
 }
+
+module.exports =  { getLanding, downloadOneEnv, downloadAllEnv, downloadAllPost, autoDown, domToImg, pdfing };

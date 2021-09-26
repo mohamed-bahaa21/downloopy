@@ -1,4 +1,5 @@
-[{
+[
+    {
         name: "من صبر ظفر",
         website: "QNL",
         link: "http://imageservice.qnl.qa/adore-djatoka/resolver?rft_id=http%3A%2F%2Fediscovery.qnl.qa%2Far%2Fislandora%2Fobject%2FQNL%253A00033926-${page_num}%2Fdatastream%2FJP2%2Fview&url_ver=Z39.88-2004&svc_id=info%3Alanl-repo%2Fsvc%2FgetRegion&svc_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajpeg2000&svc.format=image%2Fjpeg&svc.level=4&svc.rotate=0"

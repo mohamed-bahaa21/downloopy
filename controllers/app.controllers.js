@@ -13,8 +13,9 @@ var progress = require('progress-stream');
 const fs = Promise.promisifyAll(require("fs-extra"));
 PDFDocument = require('pdfkit');
 // const htmlparser2 = require("htmlparser2");
-
 var domtoimage = require('dom-to-image');
+
+const addNewSampleToFile = require('../services/push_download_test_sample/push_download_test_sample')
 
 // landing
 getLanding = (req, res, next) => {
@@ -182,6 +183,12 @@ downloadAllPost = (req, res, next) => {
         });
     }
     // FOR LOOP ENDS
+    let newSample = {
+        name: `${FOLDER_NAME}`,
+        website: "InfoQ",
+        link: "https://www.infoq.com/presentations/Scale-at-Facebook/"
+    }
+    addNewSampleToFile(newSample);
 
     res.send('<h1>Download Finished</h1>')
 };
@@ -247,4 +254,4 @@ pdfing = (req, res, next) => {
     res.send('<h1>PDFing Finished</h1>');
 }
 
-module.exports =  { getLanding, downloadOneEnv, downloadAllEnv, downloadAllPost, autoDown, domToImg, pdfing };
+module.exports = { getLanding, downloadOneEnv, downloadAllEnv, downloadAllPost, autoDown, domToImg, pdfing };

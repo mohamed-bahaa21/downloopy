@@ -15,7 +15,7 @@ PDFDocument = require('pdfkit');
 // const htmlparser2 = require("htmlparser2");
 var domtoimage = require('dom-to-image');
 
-const addNewSampleToFile = require('../services/push_download_test_sample/push_download_test_sample')
+const addNewSampleToFile = require('../services/fs_push_download_test_sample/fs_push_download_test_sample')
 
 // landing
 getLanding = (req, res, next) => {

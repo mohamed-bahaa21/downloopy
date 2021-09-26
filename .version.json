@@ -7,6 +7,6 @@
     "v4.0": "Add images to a PDF file",
     "v4.1": "Insure existence of images_output_folder",
     "v5.0": "Use env vars for the download process",
-    "v5.1": "push_download_test_sample feature",
+    "v5.1": "fs_push_download_test_sample service",
     "v5.2": "basic html form page"
 }

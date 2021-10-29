@@ -1,6 +1,12 @@
 [{
-    name: "كتاب التدبيرات السلطانية في سياسة الصناعة الحربية",
-    website: "Alsharekh Archive",
-    pages: 60,
-    link: "https://archive.alsharekh.org/MagazinePages/Magazine_JPG/EL_Mawred/mogalad_12/Issue_4/${element}.JPG"
+    "name": "كتاب التدبيرات السلطانية في سياسة الصناعة الحربية",
+    "website": "Alsharekh Archive",
+    "pages": 60,
+    "link": "https://archive.alsharekh.org/MagazinePages/Magazine_JPG/EL_Mawred/mogalad_12/Issue_4/${element}.JPG"
+}, {
+    "name": "فقه السياسة الدعوية",
+    "website-1": "reg.mishkahuniversity.com",
+    "website-2": "drive.google",
+    "pages": 453,
+    "link": "https://drive.google.com/file/d/1E_I-thJG9G_pSnyOw6X0IwGRan5SzyHi/view"
 }]

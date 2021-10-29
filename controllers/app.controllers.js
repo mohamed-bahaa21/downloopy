@@ -143,7 +143,7 @@ downloadAllPost = (req, res, next) => {
         URI_END
     } = req.body;
 
-    const START_NUM = 1;
+    const START_NUM = Number(req.body.START_NUM);
     const FINISH_NUM = Number(req.body.FINISH_NUM);
     // TODO:: if !== FINISH_NUM -> index++
     // console.log(typeof(Number(process.env.FINISH_NUM)));
@@ -200,13 +200,13 @@ downloadAllPost = (req, res, next) => {
         });
     }
 
-    // add the test sample to download.samples file
-    let newSample = {
-        name: `${FOLDER_NAME}`,
-        website: `${website}`,
-        link: `${URI_START}{page_number}${URI_END}`
-    }
-    addNewSampleToFile(newSample);
+    // // add the test sample to download.samples file
+    // let newSample = {
+    //     name: `${FOLDER_NAME}`,
+    //     website: `${website}`,
+    //     link: `${URI_START}{page_number}${URI_END}`
+    // }
+    // addNewSampleToFile(newSample);
     res.send('<h1>Download Finished</h1>')
 };
 
@@ -246,19 +246,23 @@ domToImg = (req, res, next) => {
 
 
 // Add images to a PDF File
-pdfing = (req, res, next) => {
+const pdfing = (req, res, next) => {
+
+    const FOLDER_DIR = "data/imgs/output/";
+    const FILE_NAME = "output.pdf";
+    const pages_num = 452;
+
+    const IMGS_DIR = "data/imgs/output/test/";
 
     var doc = new PDFDocument({ autoFirstPage: false });
 
     //Pipe its output somewhere, like to a file or HTTP response 
     //See below for browser usage 
-    doc.pipe(fs.createWriteStream('data/pdf/تغريدة السيرة النبوية شعرا ونثرا م2.pdf'))
-
+    doc.pipe(fs.createWriteStream(`${FOLDER_DIR}${FILE_NAME}`))
     //Add an image, constrain it to a given size, and center it vertically and horizontally 
-    pages_num = 808 + 1;
-    for (let index = 1; index < pages_num; index++) {
+    for (let index = 1; index <= pages_num; index++) {
         // NEW
-        var img = doc.openImage(`data/imgs/output/تغريدة السيرة النبوية شعرا ونثرا م2/IMG-${index}.jpg`);
+        var img = doc.openImage(`${IMGS_DIR}IMG-${index}.jpg`);
         doc.addPage({ size: [img.width, img.height] });
         doc.image(img, 0, 0);
 

@@ -6,6 +6,7 @@ const route = express.Router()
 const controllers = require('../controllers/app.controllers')
 
 route.get('/', controllers.getLanding)
-route.post('/', controllers.downloadAllPost)
+// route.post('/', controllers.downloadAllPost)
+route.post('/', controllers.pdfing)
 
 module.exports = route;

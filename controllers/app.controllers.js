@@ -137,6 +137,7 @@ downloadAllPost = (req, res, next) => {
 
     const FOLDER_DIR = "data/imgs/output/";
     const {
+        website,
         FOLDER_NAME,
         URI_START,
         URI_END
@@ -175,13 +176,6 @@ downloadAllPost = (req, res, next) => {
                     console.log({
                         msg: `STREAM::WRITE::PIPE::DONE__IMG::${element}`
                     });
-                    // add the test sample to download.samples file
-                    // let newSample = {
-                    //     name: `${FOLDER_NAME}`,
-                    //     website: "InfoQ",
-                    //     link: "https://www.infoq.com/presentations/Scale-at-Facebook/"
-                    // }
-                    // addNewSampleToFile(newSample);
                 });
                 f.on('close', () => {
                     console.log({
@@ -206,6 +200,13 @@ downloadAllPost = (req, res, next) => {
         });
     }
 
+    // add the test sample to download.samples file
+    let newSample = {
+        name: `${FOLDER_NAME}`,
+        website: `${website}`,
+        link: `${URI_START}{page_number}${URI_END}`
+    }
+    addNewSampleToFile(newSample);
     res.send('<h1>Download Finished</h1>')
 };
 

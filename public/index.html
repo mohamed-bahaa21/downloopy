@@ -11,10 +11,12 @@
             padding: 0;
             font-family: sans-serif;
         }
+
         form {
             width: fit-content;
             margin: 0 auto;
         }
+
         .form-item {
             margin: 1rem auto;
         }
@@ -24,9 +26,10 @@
             padding: 0.15rem 0;
         }
 
-        input {
+        input, select, option {
             width: 25rem;
             padding: 0.5rem 0.75rem;
+            font-size: 1rem;
         }
 
         input[type=submit] {
@@ -39,6 +42,7 @@
             margin: 0 auto !important;
             text-align: center;
         }
+
         input[type=submit]:hover {
             box-shadow: 0.15rem 0.15rem 0 0 #666;
         }
@@ -48,6 +52,20 @@
 <body>
 
     <form action="/" method="post">
+
+        <div class="form-item">
+            <label for="website">Choose a website:</label>
+            <select name="website" id="website">
+                <option value="QNL">QNL</option>
+                <option value="Slideshare">Slideshare</option>
+                <option value="archive.alsharekh">archive.alsharekh</option>
+                <option value="dar.bibalex">dar.bibalex</option>
+                <option value="yunong.io">yunong.io</option>
+                <option value="InfoQ" disabled>InfoQ</option>
+            </select>
+            <br><br>
+        </div>
+
         <div class="form-item">
             <label for="FOLDER_NAME">Folder Name</label>
             <input type="string" name="FOLDER_NAME" id="FOLDER_NAME"><br>

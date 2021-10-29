@@ -2,10 +2,10 @@ const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
 const Promise = require("bluebird");
-// const request = require("request")
-const request = Promise.promisifyAll(require("request"), {
-    multiArgs: true
-});
+// const request = Promise.promisifyAll(require("request"), {
+//     multiArgs: true
+// });
+const request = require("request")
 // const { response } = require("express");
 var progress = require('progress-stream');
 // var fs = require('fs');
@@ -163,32 +163,48 @@ downloadAllPost = (req, res, next) => {
         console.log(element);
 
         const uri = `${URI_START}${element}${URI_END}`;
-
         request.head(uri, function (err, res, body) {
             // console.log("content-type:", res.headers["content-type"]);
             // console.log("content-length:", res.headers["content-length"]);
+            // check file size before downloading, if !maxSize download else write a blank file.
+            let maxSize = false;
+            if (!maxSize) {
+                var f = fs.createWriteStream(`${total_dir}/IMG-${element}.jpg`);
 
-            var f = fs.createWriteStream(`${total_dir}/IMG-${element}.jpg`);
-
-            f.on("finish", function () {
-                // do stuff
-                console.log(`STREAM::WRITE::DONE__IMG::${element}`);
-            });
-
-            request(uri)
-                .pipe(f)
-                .on("finish", () => {
-                    console.log(`PIPE::DONE__IMG::${element}`);
+                f.on("finish", () => {
+                    console.log({
+                        msg: `STREAM::WRITE::PIPE::DONE__IMG::${element}`
+                    });
+                    // add the test sample to download.samples file
+                    // let newSample = {
+                    //     name: `${FOLDER_NAME}`,
+                    //     website: "InfoQ",
+                    //     link: "https://www.infoq.com/presentations/Scale-at-Facebook/"
+                    // }
+                    // addNewSampleToFile(newSample);
                 });
+                f.on('close', () => {
+                    console.log({
+                        msg: `PIPE::CLOSED`
+                    });
+                })
+
+                request
+                    .get(uri)
+                    .on('response', (response) => {
+                        console.log({
+                            statusCode: response.statusCode, //200
+                            header: response.headers['content-type'], //img/jpg
+                            msg: `STREAM::WRITE::PIPE::STARTED__IMG::${element}`
+                        })
+                    })
+                    .pipe(f)
+
+            } else {
+                var f = fs.createWriteStream(`${total_dir}/IMG-${element}.jpg`);
+            }
         });
     }
-    // FOR LOOP ENDS
-    let newSample = {
-        name: `${FOLDER_NAME}`,
-        website: "InfoQ",
-        link: "https://www.infoq.com/presentations/Scale-at-Facebook/"
-    }
-    addNewSampleToFile(newSample);
 
     res.send('<h1>Download Finished</h1>')
 };

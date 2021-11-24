@@ -6,3 +6,4 @@
 * process (download, pdf, compress)
 * promises w/ for-loop
 * synchronized number of promises (50 promise after 50 promise)
+* minify imgs OR pdf size

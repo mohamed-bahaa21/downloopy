@@ -1,6 +1,6 @@
 {
     "v1.0": "Download one image by a given link",
-    "v2.0": "Download many images by For_loop ",
+    "v2.0": "Download many images by stream & for_loop ",
     "v2.2": "Seperate the 1st & 2nd part of the link",
     "v2.3": "Updated file_struct (root(config, main_app), app, data(imgs, pdf), routes, controllers, tests, code_counter)",
     "v3.0": "Watch download progress",

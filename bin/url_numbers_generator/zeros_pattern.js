@@ -23,20 +23,21 @@ made:
 var basis = '00'
 var level = 0;
 var num = 0;
-var stop_num = 99;
+var stop_num = 33;
 let final_nums_arr = [];
 let result = [];
 
-console.log(checkValue(num, basis, level));
+// console.log(checkValue(num, basis, level));
+// checkValue(num, basis, level, stop_num);
 
-function checkValue(num, basis, level) {
+module.exports = function checkValue(num, basis, level, stop_num) {
     console.log({
         num: num,
         tmp_num: final_nums_arr[level],
         basis: basis,
         level: level
     })
-    if (level >= basis.length) { console.log(result); console.log("finished..."); return; }
+    if (level >= basis.length) { console.log(result); console.log("level reached basis.length FINISHED..."); return; }
 
     get_Final_Numbers(basis);
     let temp_basis = basis.substring(level + 1);
@@ -47,8 +48,9 @@ function checkValue(num, basis, level) {
         if (i == stop_num) { return result; }
     }
 
-    checkValue(tmp_num + 1, basis, level + 1)
+    checkValue(tmp_num + 1, basis, level + 1, stop_num)
 
+    console.log(result);
     return result;
 }
 

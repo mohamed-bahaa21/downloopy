@@ -28,6 +28,49 @@ getLanding = (req, res, next) => {
 
 
 
+// FOR LOOP STARTS => normal pattern numbers
+// for (let index = 0; index <= total_imgs_num; index++) {
+//     const element = START_NUM + index;
+//     console.log(element);
+
+//     const uri = `${URI_START}${element}${URI_END}`;
+
+//     request.head(uri, function (err, res, body) {
+//         // console.log("content-type:", res.headers["content-type"]);
+//         // console.log("content-length:", res.headers["content-length"]);
+//         // check file size before downloading, if !maxSize download else write a blank file.
+//         let maxSize = false;
+//         if (!maxSize) {
+//             var f = fs.createWriteStream(`${total_dir}/IMG-${element}.${FILE_TYPE}`);
+
+//             f.on("finish", () => {
+//                 console.log({
+//                     msg: `STREAM::WRITE::PIPE::DONE__IMG::${element}`
+//                 });
+//             });
+//             f.on('close', () => {
+//                 console.log({
+//                     msg: `PIPE::CLOSED`
+//                 });
+//             })
+
+//             request
+//                 .get(uri)
+//                 .on('response', (response) => {
+//                     console.log({
+//                         statusCode: response.statusCode, //200
+//                         header: response.headers['content-type'], //img/${FILE_TYPE}
+//                         msg: `STREAM::WRITE::PIPE::STARTED__IMG::${element}`
+//                     })
+//                 })
+//                 .pipe(f)
+
+//         } else {
+//             var f = fs.createWriteStream(`${total_dir}/IMG-${element}.${FILE_TYPE}`);
+//         }
+//     });
+
+// }
 
 // =======================================================
 // download all files
@@ -37,14 +80,19 @@ downloadAllPost = (req, res, next) => {
     const {
         website,
         FOLDER_NAME,
+        FILE_NAME,
         URI_START,
-        URI_END
+        URI_END,
+        FILE_TYPE
     } = req.body;
 
     const START_NUM = Number(req.body.START_NUM);
     const FINISH_NUM = Number(req.body.FINISH_NUM);
     // TODO:: if !== FINISH_NUM -> index++
     // console.log(typeof(Number(process.env.FINISH_NUM)));
+
+    const checkValue = require('../bin/url_numbers_generator/zeros_pattern');
+    var _pages_num = checkValue(START_NUM, '00', 0, FINISH_NUM);
 
     const total_dir = FOLDER_DIR + FOLDER_NAME
     const total_imgs_num = FINISH_NUM - START_NUM;
@@ -56,9 +104,10 @@ downloadAllPost = (req, res, next) => {
         console.log("Folder Created.");
     })
 
-    // FOR LOOP STARTS
-    for (let index = 0; index <= total_imgs_num; index++) {
-        const element = START_NUM + index;
+
+    // FOR LOOP STARTS => zero pattern numbers
+    for (let index = 0; index <= _pages_num.length; index++) {
+        const element = _pages_num[index];
         console.log(element);
 
         const uri = `${URI_START}${element}${URI_END}`;
@@ -69,11 +118,11 @@ downloadAllPost = (req, res, next) => {
             // check file size before downloading, if !maxSize download else write a blank file.
             let maxSize = false;
             if (!maxSize) {
-                var f = fs.createWriteStream(`${total_dir}/IMG-${element}.jpg`);
+                var f = fs.createWriteStream(`${total_dir}/${FILE_NAME}-${element}.${FILE_TYPE}`);
 
                 f.on("finish", () => {
                     console.log({
-                        msg: `STREAM::WRITE::PIPE::DONE__IMG::${element}`
+                        msg: `STREAM::WRITE::PIPE::DONE__${FILE_NAME}::${element}`
                     });
                 });
                 f.on('close', () => {
@@ -87,14 +136,14 @@ downloadAllPost = (req, res, next) => {
                     .on('response', (response) => {
                         console.log({
                             statusCode: response.statusCode, //200
-                            header: response.headers['content-type'], //img/jpg
-                            msg: `STREAM::WRITE::PIPE::STARTED__IMG::${element}`
+                            header: response.headers['content-type'], //img/${FILE_TYPE}
+                            msg: `STREAM::WRITE::PIPE::STARTED__${FILE_NAME}::${element}`
                         })
                     })
                     .pipe(f)
 
             } else {
-                var f = fs.createWriteStream(`${total_dir}/IMG-${element}.jpg`);
+                var f = fs.createWriteStream(`${total_dir}/${FILE_NAME}-${element}.${FILE_TYPE}`);
             }
         });
 
@@ -133,13 +182,13 @@ const pdfing = (req, res, next) => {
     //Add an image, constrain it to a given size, and center it vertically and horizontally 
     for (let index = start_page; index <= pages_num; index++) {
         // NEW
-        var img = doc.openImage(`${IMGS_DIR}IMG-${index}.jpg`);
+        var img = doc.openImage(`${IMGS_DIR}IMG-${index}.${FILE_TYPE}`);
         doc.addPage({ size: [img.width, img.height] });
         doc.image(img, 0, 0);
 
         // OLD
-        // doc.image(`data/imgs/output/تغريدة السيرة النبوية شعرا ونثرا م2/IMG-${index}.jpg`, 0, 0, { width: 600 });
-        // doc.addPage().image(`data/imgs/output/تغريدة السيرة النبوية شعرا ونثرا م2/IMG-${index}.jpg`, 0, 0, 'A4');
+        // doc.image(`data/imgs/output/تغريدة السيرة النبوية شعرا ونثرا م2/IMG-${index}.${FILE_TYPE}`, 0, 0, { width: 600 });
+        // doc.addPage().image(`data/imgs/output/تغريدة السيرة النبوية شعرا ونثرا م2/IMG-${index}.${FILE_TYPE}`, 0, 0, 'A4');
     }
 
     doc.end();

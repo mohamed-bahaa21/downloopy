@@ -1,0 +1,51 @@
+body {
+    margin: 5rem;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+form {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.form-item {
+    margin: 1rem auto;
+}
+
+label {
+    display: block;
+    padding: 0.15rem 0;
+}
+
+input,
+select,
+option {
+    width: 25rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+}
+
+input[type="radio"]:checked ~ label {
+    background: white;
+    border-bottom: 1px solid white;
+}
+input[type="radio"]:checked ~ label ~ .tab-content {
+    display: block;
+}
+
+
+input[type="submit"] {
+    display: block;
+    border: 1px solid;
+    width: auto;
+    cursor: pointer;
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    margin: 0 auto !important;
+    text-align: center;
+}
+
+input[type="submit"]:hover {
+    box-shadow: 0.15rem 0.15rem 0 0 #666;
+}

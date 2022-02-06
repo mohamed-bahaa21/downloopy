@@ -5,7 +5,7 @@ const Promise = require("bluebird");
 // const request = Promise.promisifyAll(require("request"), {
 //     multiArgs: true
 // });
-const request = require("request")
+var needle = require('needle');
 // const { response } = require("express");
 var progress = require('progress-stream');
 // var fs = require('fs');
@@ -24,66 +24,20 @@ getLanding = (req, res, next) => {
     })
 };
 
-
-
-
-
-// FOR LOOP STARTS => normal pattern numbers
-// for (let index = 0; index <= total_imgs_num; index++) {
-//     const element = START_NUM + index;
-//     console.log(element);
-
-//     const uri = `${URI_START}${element}${URI_END}`;
-
-//     request.head(uri, function (err, res, body) {
-//         // console.log("content-type:", res.headers["content-type"]);
-//         // console.log("content-length:", res.headers["content-length"]);
-//         // check file size before downloading, if !maxSize download else write a blank file.
-//         let maxSize = false;
-//         if (!maxSize) {
-//             var f = fs.createWriteStream(`${total_dir}/IMG-${element}.${FILE_TYPE}`);
-
-//             f.on("finish", () => {
-//                 console.log({
-//                     msg: `STREAM::WRITE::PIPE::DONE__IMG::${element}`
-//                 });
-//             });
-//             f.on('close', () => {
-//                 console.log({
-//                     msg: `PIPE::CLOSED`
-//                 });
-//             })
-
-//             request
-//                 .get(uri)
-//                 .on('response', (response) => {
-//                     console.log({
-//                         statusCode: response.statusCode, //200
-//                         header: response.headers['content-type'], //img/${FILE_TYPE}
-//                         msg: `STREAM::WRITE::PIPE::STARTED__IMG::${element}`
-//                     })
-//                 })
-//                 .pipe(f)
-
-//         } else {
-//             var f = fs.createWriteStream(`${total_dir}/IMG-${element}.${FILE_TYPE}`);
-//         }
-//     });
-
-// }
-
 // =======================================================
 // download all files
 downloadAllPost = (req, res, next) => {
 
     const FOLDER_DIR = "data/imgs/output/";
     const {
+        DTYPE,
         website,
         FOLDER_NAME,
         FILE_NAME,
         URI_START,
         URI_END,
-        FILE_TYPE
+        FILE_TYPE,
+        PAGES
     } = req.body;
 
     const START_NUM = Number(req.body.START_NUM);
@@ -91,8 +45,8 @@ downloadAllPost = (req, res, next) => {
     // TODO:: if !== FINISH_NUM -> index++
     // console.log(typeof(Number(process.env.FINISH_NUM)));
 
-    const checkValue = require('../bin/url_numbers_generator/zeros_pattern');
-    var _pages_num = checkValue(START_NUM, '00', 0, FINISH_NUM);
+    // const checkValue = require('../bin/url_numbers_generator/zeros_pattern');
+    // var _pages_num = checkValue(START_NUM, '00', 0, FINISH_NUM);
 
     const total_dir = FOLDER_DIR + FOLDER_NAME
     const total_imgs_num = FINISH_NUM - START_NUM;
@@ -104,49 +58,11 @@ downloadAllPost = (req, res, next) => {
         console.log("Folder Created.");
     })
 
-
-    // FOR LOOP STARTS => zero pattern numbers
-    for (let index = 0; index <= _pages_num.length; index++) {
-        const element = _pages_num[index];
-        console.log(element);
-
-        const uri = `${URI_START}${element}${URI_END}`;
-
-        request.head(uri, function (err, res, body) {
-            // console.log("content-type:", res.headers["content-type"]);
-            // console.log("content-length:", res.headers["content-length"]);
-            // check file size before downloading, if !maxSize download else write a blank file.
-            let maxSize = false;
-            if (!maxSize) {
-                var f = fs.createWriteStream(`${total_dir}/${FILE_NAME}-${element}.${FILE_TYPE}`);
-
-                f.on("finish", () => {
-                    console.log({
-                        msg: `STREAM::WRITE::PIPE::DONE__${FILE_NAME}::${element}`
-                    });
-                });
-                f.on('close', () => {
-                    console.log({
-                        msg: `PIPE::CLOSED`
-                    });
-                })
-
-                request
-                    .get(uri)
-                    .on('response', (response) => {
-                        console.log({
-                            statusCode: response.statusCode, //200
-                            header: response.headers['content-type'], //img/${FILE_TYPE}
-                            msg: `STREAM::WRITE::PIPE::STARTED__${FILE_NAME}::${element}`
-                        })
-                    })
-                    .pipe(f)
-
-            } else {
-                var f = fs.createWriteStream(`${total_dir}/${FILE_NAME}-${element}.${FILE_TYPE}`);
-            }
-        });
-
+    if (DTYPE == "ALL") {
+        DownloadAllNormalPattern(total_imgs_num, START_NUM, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE);
+    }
+    if (DTYPE == "SELECT") {
+        DownloadSelectNormalPattern(PAGES, START_NUM, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE);
     }
 
     // // add the test sample to download.samples file
@@ -159,6 +75,93 @@ downloadAllPost = (req, res, next) => {
     res.send('<h1>Download Finished</h1>')
 };
 
+// FOR LOOP STARTS => normal pattern numbers
+function DownloadAllNormalPattern(total_imgs_num, START_NUM, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE) {
+    for (let index = 0; index <= total_imgs_num; index++) {
+        const element = START_NUM + index;
+        console.log(element);
+
+        const uri = `${URI_START}${element}${URI_END}`;
+
+        var f = fs.createWriteStream(`${total_dir}/${FILE_NAME}-${element}.${FILE_TYPE}`);
+
+        f.on("finish", () => {
+            console.log({
+                msg: `STREAM::WRITE::PIPE::DONE__${FILE_NAME}::${element}`
+            });
+        });
+
+        f.on('close', () => {
+            console.log({
+                msg: `PIPE::CLOSED`
+            });
+        })
+
+        var stream = needle
+            .get(uri, function (error, response) {
+                if (!error && response.statusCode == 200) {
+                    console.log(`Got Page ${element}`)
+                } else {
+                    console.log(`Error Page ${element}`)
+                }
+            })
+            .pipe(f)
+
+        stream.on('finish', function () {
+            console.log('Pipe finished!');
+        });
+    }
+}
+
+function DownloadSelectNormalPattern(PAGES, START_NUM, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE) {
+    // var str = "5,15,150";
+    var numPagesArr = [];
+    // .replace(/ /g, "")
+    PAGES.split(' ').map(i => {
+        numPagesArr.push(Number(i));
+    })
+    console.log(numPagesArr);
+
+    var uri;
+    var f;
+
+
+    for (let index = 0; index <= numPagesArr.length; index++) {
+        const element = numPagesArr[index];
+        console.log(element);
+
+        uri = `${URI_START}${element}${URI_END}`;
+
+        f = fs.createWriteStream(`${total_dir}/${FILE_NAME}-${element}.${FILE_TYPE}`);
+
+        f.on("finish", () => {
+            console.log({
+                msg: `STREAM::WRITE::PIPE::DONE__${FILE_NAME}::${element}`
+            });
+        });
+
+        f.on('close', () => {
+            console.log({
+                msg: `PIPE::CLOSED::${element}`
+            });
+        })
+
+        var stream = needle
+            .get(uri, function (error, response) {
+                if (!error && response.statusCode == 200) {
+                    console.log(`Got Page ${element}`)
+
+                } else {
+                    console.log(`Error Page ${element}`)
+                }
+            })
+            .pipe(f)
+
+        stream.on('finish', function () {
+            console.log(`PIPE::FINISHED::${element}`);
+        });
+    }
+}
 
 
 
@@ -166,13 +169,27 @@ downloadAllPost = (req, res, next) => {
 // Add images to a PDF File
 const pdfing = (req, res, next) => {
 
-    const folder_name = 'مناهج البحث العلمي'
-    const FOLDER_DIR = `data/imgs/output/${folder_name}/`;
-    const FILE_NAME = "output.pdf";
-    const start_page = 0;
-    const pages_num = 203;
+    const {
+        FILE_TYPE,
+        FOLDER_NAME,
+        FILE_NAME,
+        IMAGE_NAME,
+        START_PAGE,
+        END_PAGE
+    } = req.body;
 
-    const IMGS_DIR = `data/imgs/output/${folder_name}/`;
+
+    const FOLDER_DIR = `data/imgs/output/${FOLDER_NAME}/`;
+    const IMGS_DIR = `data/imgs/output/${FOLDER_NAME}/`;
+
+    const total_dir = FOLDER_DIR + FOLDER_NAME
+
+    // ensureDir With a callback:
+    fs.ensureDir(total_dir, err => {
+        console.log(err) // => null
+        // dir has now been created, including the directory it is to be placed in
+        console.log("Folder Created.");
+    })
 
     var doc = new PDFDocument({ autoFirstPage: false });
 
@@ -180,9 +197,9 @@ const pdfing = (req, res, next) => {
     //See below for browser usage 
     doc.pipe(fs.createWriteStream(`${FOLDER_DIR}${FILE_NAME}`))
     //Add an image, constrain it to a given size, and center it vertically and horizontally 
-    for (let index = start_page; index <= pages_num; index++) {
+    for (let index = START_PAGE; index <= END_PAGE; index++) {
         // NEW
-        var img = doc.openImage(`${IMGS_DIR}IMG-${index}.${FILE_TYPE}`);
+        var img = doc.openImage(`${IMGS_DIR}${IMAGE_NAME}${index}.${FILE_TYPE}`);
         doc.addPage({ size: [img.width, img.height] });
         doc.image(img, 0, 0);
 

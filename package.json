@@ -33,6 +33,7 @@
     "express": "^4.17.1",
     "fs-extra": "^10.0.0",
     "js-file-download": "^0.4.11",
+    "needle": "^3.0.0",
     "pdfkit": "^0.12.1",
     "progress-stream": "^2.0.0",
     "request": "^2.88.2",

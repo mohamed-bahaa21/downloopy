@@ -113,55 +113,7 @@ function DownloadAllNormalPattern(total_imgs_num, START_NUM, URI_START, URI_END,
     }
 }
 
-function DownloadSelectNormalPattern(PAGES, START_NUM, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE) {
-    // var str = "5,15,150";
-    var numPagesArr = [];
-    // .replace(/ /g, "")
-    PAGES.split(' ').map(i => {
-        numPagesArr.push(Number(i));
-    })
-    console.log(numPagesArr);
 
-    var uri;
-    var f;
-
-
-    for (let index = 0; index <= numPagesArr.length; index++) {
-        const element = numPagesArr[index];
-        console.log(element);
-
-        uri = `${URI_START}${element}${URI_END}`;
-
-        f = fs.createWriteStream(`${total_dir}/${FILE_NAME}-${element}.${FILE_TYPE}`);
-
-        f.on("finish", () => {
-            console.log({
-                msg: `STREAM::WRITE::PIPE::DONE__${FILE_NAME}::${element}`
-            });
-        });
-
-        f.on('close', () => {
-            console.log({
-                msg: `PIPE::CLOSED::${element}`
-            });
-        })
-
-        var stream = needle
-            .get(uri, function (error, response) {
-                if (!error && response.statusCode == 200) {
-                    console.log(`Got Page ${element}`)
-
-                } else {
-                    console.log(`Error Page ${element}`)
-                }
-            })
-            .pipe(f)
-
-        stream.on('finish', function () {
-            console.log(`PIPE::FINISHED::${element}`);
-        });
-    }
-}
 
 
 

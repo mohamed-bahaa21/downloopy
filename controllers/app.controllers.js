@@ -31,6 +31,7 @@ var lost_pages = [];
 // =======================================================
 // download all files
 downloadAllPost = (req, res, next) => {
+    require('../services/file-console-log')
 
     const FOLDER_DIR = "data/imgs/";
     const {
@@ -89,9 +90,6 @@ downloadAllPost = (req, res, next) => {
 function DownloadAllNormalPattern(total_imgs_num, START_NUM, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE) {
     console.log("----------- Started Download All Normal Pattern ---------------");
 
-    downloaded_pages.length = 0
-    lost_pages.length = 0
-
     let all_download_task = false;
 
     for (let index = 0; index <= total_imgs_num; index++) {
@@ -111,8 +109,26 @@ function DownloadAllNormalPattern(total_imgs_num, START_NUM, URI_START, URI_END,
 
         f.on('close', () => {
             console.log({
-                msg: `STREAM::WRITE::PIPE::CLOSED::${element}`
+                msg: `STREAM::WRITE::PIPE::CLOSED::${element}`,
+                stats: `downloaded_pages: ${downloaded_pages.length} | lost_pages: ${lost_pages.length}`
             });
+
+            if ((lost_pages.length + downloaded_pages.length) == total_imgs_num) {
+                all_download_task = true;
+                console.log(`downloaded_pages: ${downloaded_pages.length} | lost_pages: ${lost_pages.length}`);
+            }
+
+            if (all_download_task && lost_pages.length == 0) {
+                global_download_task = true;
+                return "Download Succeeded";
+
+            } else if (all_download_task && lost_pages.length > 0) {
+                let selective_download = DownloadSelectNormalPattern(lost_pages, START_NUM, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE);
+
+                if (global_download_task) {
+                    return selective_download;
+                }
+            }
         })
 
         let stream = needle
@@ -132,27 +148,8 @@ function DownloadAllNormalPattern(total_imgs_num, START_NUM, URI_START, URI_END,
 
         stream.on('finish', function () {
             console.log({
-                msg: `STREAM::NEEDLE::FINISHED::${element}`,
-                stats: `downloaded_pages: ${downloaded_pages.length} | lost_pages: ${lost_pages.length}`
+                msg: `STREAM::NEEDLE::FINISHED::${element}`
             });
-
-
-            if ((lost_pages.length + downloaded_pages.length) == total_imgs_num) {
-                all_download_task = true;
-                console.log(`downloaded_pages: ${downloaded_pages.length} | lost_pages: ${lost_pages.length}`);
-            }
-
-            if (all_download_task && lost_pages.length == 0) {
-                global_download_task = true;
-                return "Download Succeeded";
-
-            } else if (all_download_task && lost_pages.length > 0) {
-                let selective_download = DownloadSelectNormalPattern(lost_pages, START_NUM, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE);
-
-                if (global_download_task) {
-                    return selective_download;
-                }
-            }
         });
     }
     // else {
@@ -164,12 +161,10 @@ function DownloadAllNormalPattern(total_imgs_num, START_NUM, URI_START, URI_END,
 
 function DownloadSelectNormalPattern(PAGES, START_NUM, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE) {
     console.log("----------- Started Download Select Normal Pattern ---------------");
-    if(PAGES.length == 0) return "Somehow, No other page to download...";
-    
+    if (PAGES.length == 0) return "Somehow, No other page to download...";
+
     // var str = "5,15,150";
     // .replace(/ /g, "")
-    downloaded_pages.length = 0
-    lost_pages.length = 0
 
     let selective_download_task = false;
 
@@ -181,7 +176,8 @@ function DownloadSelectNormalPattern(PAGES, START_NUM, URI_START, URI_END, total
     } else {
         numPagesArr = PAGES;
     }
-    console.log(numPagesArr);
+
+    console.log("Selected Pages: ", numPagesArr);
 
     let uri;
     let f;
@@ -203,28 +199,7 @@ function DownloadSelectNormalPattern(PAGES, START_NUM, URI_START, URI_END, total
 
         f.on('close', () => {
             console.log({
-                msg: `STREAM::WRITE::PIPE::CLOSED::${element}`
-            });
-        })
-
-        let stream = needle
-            .get(uri, function (error, response) {
-                if (!error && response.statusCode == 200) {
-                    downloaded_pages.push(element);
-                } else {
-                    lost_pages.push(element);
-                    f.end(() => {
-                        console.log({
-                            msg: `STREAM::WRITE::PIPE::ERROR::${element}`
-                        });
-                    });
-                }
-            })
-            .pipe(f)
-
-        stream.on('finish', function () {
-            console.log({
-                msg: `STREAM::NEEDLE::FINISHED::${element}`,
+                msg: `STREAM::WRITE::PIPE::CLOSED::${element}`,
                 stats: `downloaded_pages: ${downloaded_pages.length} | lost_pages: ${lost_pages.length}`
             });
 
@@ -244,6 +219,27 @@ function DownloadSelectNormalPattern(PAGES, START_NUM, URI_START, URI_END, total
                 global_download_task = true;
                 return "Download Failed...";
             }
+        })
+
+        let stream = needle
+            .get(uri, function (error, response) {
+                if (!error && response.statusCode == 200) {
+                    downloaded_pages.push(element);
+                } else {
+                    lost_pages.push(element);
+                    f.end(() => {
+                        console.log({
+                            msg: `STREAM::WRITE::PIPE::ERROR::${element}`
+                        });
+                    });
+                }
+            })
+            .pipe(f)
+
+        stream.on('finish', function () {
+            console.log({
+                msg: `STREAM::NEEDLE::FINISHED::${element}`
+            });
         });
     }
 

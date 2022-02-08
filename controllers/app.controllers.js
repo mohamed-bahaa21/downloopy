@@ -25,16 +25,14 @@ getLanding = (req, res, next) => {
 };
 
 var global_download_task = false;
-
-var global_download_task_S = false;
-var global_download_task_F = false;
+var all_download_task = false;
 
 var downloaded_pages = [];
 
 // =======================================================
 // download all files
 downloadAllPost = (req, res, next) => {
-    require('../services/file-console-log')
+    // require('../services/file-console-log')
 
     const FOLDER_DIR = "data/imgs/";
     const {
@@ -73,7 +71,7 @@ downloadAllPost = (req, res, next) => {
         DownloadAllNormalPattern(res, total_imgs_num - 1, START_NUM, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE)
     }
     if (DTYPE == "SELECT") {
-        download_task = DownloadSelectNormalPattern(PAGES, total_imgs_num - 1, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE);
+        DownloadSelectNormalPattern(res, PAGES, PAGES.length, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE);
     }
 
     // // add the test sample to download.samples file
@@ -91,13 +89,11 @@ function DownloadAllNormalPattern(res, total_imgs_num, START_NUM, URI_START, URI
 
     downloaded_pages.length = 0;
     let lost_pages = [];
-
-    let all_download_task = false;
     // console.log(`total_imgs_num: ${total_imgs_num}`)
 
     let promises = []
 
-    for (let index = 0; index <= total_imgs_num - 1; index++) {
+    for (let index = 0; index <= total_imgs_num; index++) {
         const element = START_NUM + index;
         if (element == undefined) continue;
         let uri = `${URI_START}${element}${URI_END}`;
@@ -127,7 +123,7 @@ function DownloadAllNormalPattern(res, total_imgs_num, START_NUM, URI_START, URI
 
             } else if (all_download_task && lost_pages.length > 0) {
                 console.log("HERE")
-                DownloadSelectNormalPattern(res, lost_pages, total_imgs_num - 1, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE);
+                DownloadSelectNormalPattern(res, lost_pages, total_imgs_num, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE);
             }
         })
         // let stream = needle.head(uri, function (error, response) {
@@ -146,7 +142,19 @@ function DownloadAllNormalPattern(res, total_imgs_num, START_NUM, URI_START, URI
         //         });
         //     }
         // });
-        promises.push(needle.get(uri, (error, response) => {
+        // promises.push(needle.get(uri, (error, response) => {
+        //     // console.log(response)
+        //     if (!error && response.statusCode == 200) {
+        //         downloaded_pages.push(element);
+        //     } else {
+        //         lost_pages.push(element);
+        //         console.log({
+        //             msg: `STREAM::WRITE::PIPE::ERROR::${element}`,
+        //             err: error,
+        //         });
+        //     }
+        // }).pipe(f));
+        needle.get(uri, (error, response) => {
             // console.log(response)
             if (!error && response.statusCode == 200) {
                 downloaded_pages.push(element);
@@ -157,38 +165,30 @@ function DownloadAllNormalPattern(res, total_imgs_num, START_NUM, URI_START, URI
                     err: error,
                 });
             }
-        }).pipe(f));
+        }).pipe(f);
     }
-
-    Promise.all(promises);
+    // Promise.all(promises);
 }
 
 function DownloadSelectNormalPattern(res, PAGES, total_imgs_num, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE) {
     console.log("----------- Started Download Select Normal Pattern ---------------");
-    if (PAGES.length == 0) res.send("Somehow, No other page to download...");
+    // if (PAGES.length == 0) res.send("Somehow, No other page to download...");
 
     // var str = "5,15,150";
     // .replace(/ /g, "")
 
     let selective_download_task = false;
 
-    let numPagesArr = [];
+    let numPagesArr = PAGES;
     var lost_pages = [];
-
-    if (typeof PAGES == String) {
-        PAGES.split(' ').map(i => {
-            numPagesArr.push(Number(i));
-        })
-    } else {
-        numPagesArr = PAGES;
-    }
-
     lost_pages.length = 0;
     let promises = []
 
     console.log({
-        selected_pages: numPagesArr,
-        lost_pages: lost_pages.length
+        numPagesArr: numPagesArr,
+        numPagesArr: numPagesArr.length,
+        downloaded_pages: downloaded_pages.length,
+        lost_pages: lost_pages.length,
     })
 
     let uri;
@@ -216,6 +216,10 @@ function DownloadSelectNormalPattern(res, PAGES, total_imgs_num, URI_START, URI_
             console.log({
                 msg: `STREAM::WRITE::PIPE::DONE::${element}`
             });
+
+            if ((lost_pages.length + downloaded_pages.length) == total_imgs_num) {
+                selective_download_task = true;
+            }
         });
 
         f.on('close', () => {
@@ -229,22 +233,20 @@ function DownloadSelectNormalPattern(res, PAGES, total_imgs_num, URI_START, URI_
                 global_download_task: global_download_task,
             });
 
-            if ((lost_pages.length + downloaded_pages.length) == total_imgs_num) {
-                selective_download_task = true;
-            }
-
             if (selective_download_task && downloaded_pages.length == total_imgs_num && lost_pages.length != numPagesArr.length && lost_pages.length == 0) {
+                all_download_task = false;
                 res.send("Download Succeeded...");
 
             } else if (selective_download_task && lost_pages.length < numPagesArr.length && lost_pages.length != 0) {
                 DownloadSelectNormalPattern(res, lost_pages, total_imgs_num, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE);
 
             } else if (selective_download_task && lost_pages.length == numPagesArr.length) {
+                all_download_task = false;
                 res.send("Download Failed...");
             }
         })
 
-        promises.push(needle.get(uri, function (error, response) {
+        needle.get(uri, function (error, response) {
             // console.log(response)
             if (!error && response.statusCode == 200) {
                 downloaded_pages.push(element);
@@ -255,11 +257,21 @@ function DownloadSelectNormalPattern(res, PAGES, total_imgs_num, URI_START, URI_
                     err: error,
                 });
             }
-        }).pipe(f));
+        }).pipe(f);
+        // promises.push(needle.get(uri, function (error, response) {
+        //     // console.log(response)
+        //     if (!error && response.statusCode == 200) {
+        //         downloaded_pages.push(element);
+        //     } else {
+        //         lost_pages.push(element);
+        //         console.log({
+        //             msg: `STREAM::WRITE::PIPE::ERROR::${element}`,
+        //             err: error,
+        //         });
+        //     }
+        // }).pipe(f));
     }
-
-    Promise.all(promises);
-
+    // Promise.all(promises);
 }
 
 
@@ -276,7 +288,6 @@ const pdfing = (req, res, next) => {
         START_PAGE,
         END_PAGE
     } = req.body;
-
 
     const FOLDER_DIR = `data/imgs/${FOLDER_NAME}/`;
     const IMGS_DIR = `data/imgs/${FOLDER_NAME}/`;
@@ -297,9 +308,9 @@ const pdfing = (req, res, next) => {
     //See below for browser usage 
     doc.pipe(fs.createWriteStream(`${FOLDER_DIR}${FILE_NAME}`))
     //Add an image, constrain it to a given size, and center it vertically and horizontally 
-    for (let index = START_PAGE; index <= END_PAGE; index++) {
+    for (let index = START_PAGE; index <= END_PAGE - 1; index++) {
         // NEW
-        var img = doc.openImage(`${IMGS_DIR}${IMAGE_NAME}${index}.${FILE_TYPE}`);
+        var img = doc.openImage(`${IMGS_DIR}${IMAGE_NAME}${index}.jpg`);
         doc.addPage({ size: [img.width, img.height] });
         doc.image(img, 0, 0);
 

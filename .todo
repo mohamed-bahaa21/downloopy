@@ -1,8 +1,6 @@
 * update file read/write streaming
-* add InfoQ website
 * add choose_website service
 * add crawler OR manual services
-* add drive.google
 * process (download, pdf, compress)
 * promises w/ for-loop
 * synchronized number of promises (50 promise after 50 promise)

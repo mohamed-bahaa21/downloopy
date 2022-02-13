@@ -40,6 +40,7 @@ module.exports = function checkValue(num, basis, level, stop_num) {
     if (level >= basis.length) { console.log(result); console.log("level reached basis.length FINISHED..."); return; }
 
     get_Final_Numbers(basis);
+    
     let temp_basis = basis.substring(level + 1);
     let tmp_num = parseInt(final_nums_arr[level]);
 
@@ -55,7 +56,6 @@ module.exports = function checkValue(num, basis, level, stop_num) {
 }
 
 // ==============================================
-
 function get_Final_Numbers(basis) {
     var str = basis;
     let newString = '';
@@ -68,6 +68,7 @@ function get_Final_Numbers(basis) {
     // console.log(final_nums_arr);
 }
 
+// ==============================================
 function setCharAt(str, index, chr) {
     if (index > str.length - 1) return str;
     return str.substring(0, index) + chr + str.substring(index + 1);

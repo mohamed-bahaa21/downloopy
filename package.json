@@ -1,6 +1,6 @@
 {
   "name": "downloopy",
-  "version": "5.0.0",
+  "version": "6.0.0",
   "description": "Downloopy is a software that downloads online files in a loop to save my time.",
   "main": "app.js",
   "scripts": {

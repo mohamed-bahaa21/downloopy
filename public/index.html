@@ -12,17 +12,17 @@
 <body>
 
     <div class="tabs">
-        <!-- From TO -->
+        <!-- Downloopy -->
         <div class="tab">
-            <input type="radio" id="tab-1-1" name="tab-group-1" checked>
-            <label for="tab-1-1">Downloopy</label>
+            <input type="radio" id="tab-1" name="tab-group-1" checked>
+            <label for="tab-1">Downloopy</label>
             <div class="tab-content">
 
                 <div class="tabs">
                     <!-- From TO -->
                     <div class="tab">
-                        <input type="radio" id="tab-2-1" name="tab-group-2" checked>
-                        <label for="tab-2-1">Credulous</label>
+                        <input type="radio" id="tab-1-1" name="tab-group-1-1">
+                        <label for="tab-1-1">Credulous</label>
                         <div class="tab-content">
                             
                             <span>Numbering: </span>
@@ -30,8 +30,8 @@
                             <div class="tabs">
                                 <!-- Normal -->
                                 <div class="tab">
-                                    <input type="radio" id="tab-3-1" name="tab-group-3" checked>
-                                    <label for="tab-3-1">Normal</label>
+                                    <input type="radio" id="tab-1-1-1" name="tab-group-1-1-1">
+                                    <label for="tab-1-1-1">Normal</label>
                                     <div class="tab-content">
 
                                         <form action="/api/download" method="post">
@@ -98,8 +98,8 @@
 
                                 <!-- Cipher -->
                                 <div class="tab">
-                                    <input type="radio" id="tab-3-2" name="tab-group-3">
-                                    <label for="tab-3-2">Cipher</label>
+                                    <input type="radio" id="tab-1-1-2" name="tab-group-1-1-1">
+                                    <label for="tab-1-1-2">Cipher</label>
                                     <div class="tab-content">
 
                                         <form action="/api/download" method="post">
@@ -170,8 +170,8 @@
 
                     <!-- Selective Download -->
                     <div class="tab">
-                        <input type="radio" id="tab-2-2" name="tab-group-2">
-                        <label for="tab-2-2">Selective</label>
+                        <input type="radio" id="tab-1-2" name="tab-group-1-1">
+                        <label for="tab-1-2">Selective</label>
                         <div class="tab-content">
 
                             <form action="/api/download" method="post">
@@ -233,10 +233,10 @@
             </div>
         </div>
 
-        <!-- Selective Download -->
+        <!-- PDF -->
         <div class="tab">
-            <input type="radio" id="tab-1-2" name="tab-group-1">
-            <label for="tab-1-2">Pdf</label>
+            <input type="radio" id="tab-2" name="tab-group-1">
+            <label for="tab-2">Pdf</label>
             <div class="tab-content">
 
                 <form action="/api/pdf" method="post">
@@ -264,6 +264,28 @@
                     <div class="form-item">
                         <label for="END_PAGE">END PAGE</label>
                         <input type="number" name="END_PAGE" id="END_PAGE"><br>
+                    </div>
+
+                    <input type="text" name="FILE_TYPE" value="jpg" hidden><br>
+
+                    <input type="submit" value="Submit">
+                </form>
+
+            </div>
+        </div>
+
+        <!-- Filter -->
+        <div class="tab">
+            <input type="radio" id="tab-3" name="tab-group-1">
+            <label for="tab-3">Filter</label>
+            <div class="tab-content">
+
+                <form action="/api/filter" method="post">
+                    <div class="form-item">
+                        <label for="FOLDER_NAME">Folder Name</label>
+                        <input type="string" name="FOLDER_NAME" id="FOLDER_NAME"><br>
+                        <!-- <input name="FOLDER_NAME" id="FOLDER_NAME" type="file" id="ctrl" webkitdirectory directory
+                            multiple /> -->
                     </div>
 
                     <input type="text" name="FILE_TYPE" value="jpg" hidden><br>

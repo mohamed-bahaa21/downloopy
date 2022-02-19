@@ -33,6 +33,7 @@
     "express": "^4.17.1",
     "fs-extra": "^10.0.0",
     "js-file-download": "^0.4.11",
+    "move-file": "^3.0.0",
     "needle": "^3.0.0",
     "pdfkit": "^0.12.1",
     "progress-stream": "^2.0.0",
@@ -41,6 +42,6 @@
   },
   "devDependencies": {
     "eslint": "^7.30.0",
-    "jshint": "^2.13.0"
+    "jshint": "^2.13.4"
   }
 }

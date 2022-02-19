@@ -129,7 +129,10 @@ function cipherNumbering() {
     }
 }
 
-function normalNumbering() {
+function normalNumbering(res, NTYPE, total_imgs_num, START_NUM, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE) {
+    downloaded_pages.length = 0;
+    let lost_pages = [];
+    
     // FOR LOOP STARTS => normal pattern numbers
     for (let index = 0; index <= total_imgs_num; index++) {
         const element = START_NUM + index;
@@ -187,7 +190,7 @@ function DownloadAllNormalPattern(res, NTYPE, total_imgs_num, START_NUM, URI_STA
     let lost_pages = [];
 
     if(NTYPE == "NORMAL") {
-        normalNumbering();
+        normalNumbering(res, NTYPE, total_imgs_num, START_NUM, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE);
     }
     if(NTYPE == "CIPHER") {
         cipherNumbering();

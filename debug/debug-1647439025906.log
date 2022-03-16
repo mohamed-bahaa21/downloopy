@@ -1,0 +1,1194 @@
+----------- Started Download All Normal Pattern ---------------
+{ num: 6, tmp_num: undefined, basis: '000', level: 0 }
+{ num: 10, tmp_num: '99', basis: '000', level: 1 }
+{ num: 100, tmp_num: '999', basis: '000', level: 2 }
+[
+  '006', '007', '008', '009', '010', '011', '012', '013',
+  '014', '015', '016', '017', '018', '019', '020', '021',
+  '022', '023', '024', '025', '026', '027', '028', '029',
+  '030', '031', '032', '033', '034', '035', '036', '037',
+  '038', '039', '040', '041', '042', '043', '044', '045',
+  '046', '047', '048', '049', '050', '051', '052', '053',
+  '054', '055', '056', '057', '058', '059', '060', '061',
+  '062', '063', '064', '065', '066', '067', '068', '069',
+  '070', '071', '072', '073', '074', '075', '076', '077',
+  '078', '079', '080', '081', '082', '083', '084', '085',
+  '086', '087', '088', '089', '090', '091', '092', '093',
+  '094', '095', '096', '097', '098', '099', '100', '101',
+  '102', '103', '104', '105',
+  ... 30 more items
+]
+[
+  '006', '007', '008', '009', '010', '011', '012', '013',
+  '014', '015', '016', '017', '018', '019', '020', '021',
+  '022', '023', '024', '025', '026', '027', '028', '029',
+  '030', '031', '032', '033', '034', '035', '036', '037',
+  '038', '039', '040', '041', '042', '043', '044', '045',
+  '046', '047', '048', '049', '050', '051', '052', '053',
+  '054', '055', '056', '057', '058', '059', '060', '061',
+  '062', '063', '064', '065', '066', '067', '068', '069',
+  '070', '071', '072', '073', '074', '075', '076', '077',
+  '078', '079', '080', '081', '082', '083', '084', '085',
+  '086', '087', '088', '089', '090', '091', '092', '093',
+  '094', '095', '096', '097', '098', '099', '100', '101',
+  '102', '103', '104', '105',
+  ... 30 more items
+]
+[
+  '006', '007', '008', '009', '010', '011', '012', '013',
+  '014', '015', '016', '017', '018', '019', '020', '021',
+  '022', '023', '024', '025', '026', '027', '028', '029',
+  '030', '031', '032', '033', '034', '035', '036', '037',
+  '038', '039', '040', '041', '042', '043', '044', '045',
+  '046', '047', '048', '049', '050', '051', '052', '053',
+  '054', '055', '056', '057', '058', '059', '060', '061',
+  '062', '063', '064', '065', '066', '067', '068', '069',
+  '070', '071', '072', '073', '074', '075', '076', '077',
+  '078', '079', '080', '081', '082', '083', '084', '085',
+  '086', '087', '088', '089', '090', '091', '092', '093',
+  '094', '095', '096', '097', '098', '099', '100', '101',
+  '102', '103', '104', '105',
+  ... 29 more items
+]
+Folder created OR Already found
+{ msg: 'STREAM::WRITE::PIPE::ERROR::045', err: null }
+{ msg: 'STREAM::WRITE::PIPE::DONE::045' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::045',
+  downloaded_pages: 0,
+  lost_pages: 1,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::ERROR::025', err: null }
+{ msg: 'STREAM::WRITE::PIPE::DONE::025' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::025',
+  downloaded_pages: 0,
+  lost_pages: 2,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::ERROR::036', err: null }
+{ msg: 'STREAM::WRITE::PIPE::DONE::036' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::036',
+  downloaded_pages: 0,
+  lost_pages: 3,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::ERROR::007', err: null }
+{ msg: 'STREAM::WRITE::PIPE::DONE::007' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::007',
+  downloaded_pages: 0,
+  lost_pages: 4,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::ERROR::028', err: null }
+{ msg: 'STREAM::WRITE::PIPE::DONE::028' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::028',
+  downloaded_pages: 0,
+  lost_pages: 5,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::ERROR::037', err: null }
+{ msg: 'STREAM::WRITE::PIPE::DONE::037' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::037',
+  downloaded_pages: 0,
+  lost_pages: 6,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::ERROR::011', err: null }
+{ msg: 'STREAM::WRITE::PIPE::DONE::011' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::011',
+  downloaded_pages: 0,
+  lost_pages: 7,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::021' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::021',
+  downloaded_pages: 1,
+  lost_pages: 7,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::027' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::027',
+  downloaded_pages: 2,
+  lost_pages: 7,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::ERROR::059', err: null }
+{ msg: 'STREAM::WRITE::PIPE::DONE::059' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::059',
+  downloaded_pages: 2,
+  lost_pages: 8,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::043' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::043',
+  downloaded_pages: 3,
+  lost_pages: 8,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::050' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::050',
+  downloaded_pages: 4,
+  lost_pages: 8,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::039' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::039',
+  downloaded_pages: 5,
+  lost_pages: 8,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::074' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::074',
+  downloaded_pages: 6,
+  lost_pages: 8,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::ERROR::024', err: null }
+{ msg: 'STREAM::WRITE::PIPE::DONE::024' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::024',
+  downloaded_pages: 6,
+  lost_pages: 9,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::ERROR::034', err: null }
+{ msg: 'STREAM::WRITE::PIPE::DONE::034' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::034',
+  downloaded_pages: 6,
+  lost_pages: 10,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::103' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::103',
+  downloaded_pages: 7,
+  lost_pages: 10,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::093' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::093',
+  downloaded_pages: 8,
+  lost_pages: 10,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::042' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::042',
+  downloaded_pages: 9,
+  lost_pages: 10,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::ERROR::029', err: null }
+{ msg: 'STREAM::WRITE::PIPE::DONE::029' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::029',
+  downloaded_pages: 9,
+  lost_pages: 11,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::090' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::090',
+  downloaded_pages: 10,
+  lost_pages: 11,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::068' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::068',
+  downloaded_pages: 11,
+  lost_pages: 11,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::083' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::083',
+  downloaded_pages: 12,
+  lost_pages: 11,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::006' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::006',
+  downloaded_pages: 13,
+  lost_pages: 11,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::ERROR::064', err: null }
+{ msg: 'STREAM::WRITE::PIPE::DONE::064' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::064',
+  downloaded_pages: 13,
+  lost_pages: 12,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::076' }
+{ msg: 'STREAM::WRITE::PIPE::DONE::073' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::076',
+  downloaded_pages: 16,
+  lost_pages: 12,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::112' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::073',
+  downloaded_pages: 16,
+  lost_pages: 12,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::112',
+  downloaded_pages: 16,
+  lost_pages: 12,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::013' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::013',
+  downloaded_pages: 17,
+  lost_pages: 12,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::067' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::067',
+  downloaded_pages: 18,
+  lost_pages: 12,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::114' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::114',
+  downloaded_pages: 19,
+  lost_pages: 12,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::111' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::111',
+  downloaded_pages: 20,
+  lost_pages: 12,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::ERROR::078', err: null }
+{ msg: 'STREAM::WRITE::PIPE::DONE::078' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::078',
+  downloaded_pages: 20,
+  lost_pages: 13,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::109' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::109',
+  downloaded_pages: 21,
+  lost_pages: 13,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::069' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::069',
+  downloaded_pages: 22,
+  lost_pages: 13,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::057' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::057',
+  downloaded_pages: 23,
+  lost_pages: 13,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::128' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::128',
+  downloaded_pages: 24,
+  lost_pages: 13,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::053' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::053',
+  downloaded_pages: 25,
+  lost_pages: 13,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::051' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::051',
+  downloaded_pages: 26,
+  lost_pages: 13,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::066' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::066',
+  downloaded_pages: 27,
+  lost_pages: 13,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::081' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::081',
+  downloaded_pages: 28,
+  lost_pages: 13,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::044' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::044',
+  downloaded_pages: 29,
+  lost_pages: 13,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::096' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::096',
+  downloaded_pages: 30,
+  lost_pages: 13,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::085' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::085',
+  downloaded_pages: 31,
+  lost_pages: 13,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::088' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::088',
+  downloaded_pages: 32,
+  lost_pages: 13,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::061' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::061',
+  downloaded_pages: 33,
+  lost_pages: 13,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::107' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::107',
+  downloaded_pages: 34,
+  lost_pages: 13,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::098' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::098',
+  downloaded_pages: 35,
+  lost_pages: 13,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::102' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::102',
+  downloaded_pages: 36,
+  lost_pages: 13,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::099' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::099',
+  downloaded_pages: 37,
+  lost_pages: 13,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::008' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::008',
+  downloaded_pages: 38,
+  lost_pages: 13,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::120' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::120',
+  downloaded_pages: 39,
+  lost_pages: 13,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::123' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::123',
+  downloaded_pages: 40,
+  lost_pages: 13,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::082' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::082',
+  downloaded_pages: 41,
+  lost_pages: 13,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::ERROR::047', err: null }
+{ msg: 'STREAM::WRITE::PIPE::DONE::047' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::047',
+  downloaded_pages: 42,
+  lost_pages: 14,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::049' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::049',
+  downloaded_pages: 42,
+  lost_pages: 14,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::ERROR::072', err: null }
+{ msg: 'STREAM::WRITE::PIPE::DONE::017' }
+{ msg: 'STREAM::WRITE::PIPE::DONE::072' }
+{ msg: 'STREAM::WRITE::PIPE::DONE::040' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::017',
+  downloaded_pages: 44,
+  lost_pages: 15,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::072',
+  downloaded_pages: 44,
+  lost_pages: 15,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::040',
+  downloaded_pages: 44,
+  lost_pages: 15,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::065' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::065',
+  downloaded_pages: 45,
+  lost_pages: 15,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::077' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::077',
+  downloaded_pages: 46,
+  lost_pages: 15,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::009' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::009',
+  downloaded_pages: 47,
+  lost_pages: 15,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::075' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::075',
+  downloaded_pages: 48,
+  lost_pages: 15,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::ERROR::071', err: null }
+{ msg: 'STREAM::WRITE::PIPE::DONE::071' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::071',
+  downloaded_pages: 48,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::117' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::117',
+  downloaded_pages: 49,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::080' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::080',
+  downloaded_pages: 50,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::058' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::058',
+  downloaded_pages: 51,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::060' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::060',
+  downloaded_pages: 52,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::048' }
+{ msg: 'STREAM::WRITE::PIPE::DONE::079' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::048',
+  downloaded_pages: 54,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::079',
+  downloaded_pages: 54,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::092' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::092',
+  downloaded_pages: 55,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::113' }
+{ msg: 'STREAM::WRITE::PIPE::DONE::126' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::113',
+  downloaded_pages: 57,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::126',
+  downloaded_pages: 57,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::023' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::023',
+  downloaded_pages: 58,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::063' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::063',
+  downloaded_pages: 59,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::127' }
+{ msg: 'STREAM::WRITE::PIPE::DONE::134' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::127',
+  downloaded_pages: 61,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::134',
+  downloaded_pages: 61,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::033' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::033',
+  downloaded_pages: 62,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::016' }
+{ msg: 'STREAM::WRITE::PIPE::DONE::019' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::016',
+  downloaded_pages: 64,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::019',
+  downloaded_pages: 64,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::131' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::131',
+  downloaded_pages: 65,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::132' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::132',
+  downloaded_pages: 66,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::020' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::020',
+  downloaded_pages: 67,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::052' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::052',
+  downloaded_pages: 68,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::124' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::124',
+  downloaded_pages: 69,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::086' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::086',
+  downloaded_pages: 70,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::054' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::054',
+  downloaded_pages: 71,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::122' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::122',
+  downloaded_pages: 72,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::106' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::106',
+  downloaded_pages: 73,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::031' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::031',
+  downloaded_pages: 74,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::094' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::094',
+  downloaded_pages: 75,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::108' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::108',
+  downloaded_pages: 76,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::105' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::105',
+  downloaded_pages: 77,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::097' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::097',
+  downloaded_pages: 78,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::014' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::014',
+  downloaded_pages: 79,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::101' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::101',
+  downloaded_pages: 80,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::119' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::119',
+  downloaded_pages: 81,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::038' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::038',
+  downloaded_pages: 82,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::087' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::087',
+  downloaded_pages: 83,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::018' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::018',
+  downloaded_pages: 84,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::121' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::121',
+  downloaded_pages: 85,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::030' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::030',
+  downloaded_pages: 86,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::130' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::130',
+  downloaded_pages: 87,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::115' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::115',
+  downloaded_pages: 88,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::084' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::084',
+  downloaded_pages: 89,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::095' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::095',
+  downloaded_pages: 90,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::125' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::125',
+  downloaded_pages: 91,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::100' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::100',
+  downloaded_pages: 92,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::129' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::129',
+  downloaded_pages: 93,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::091' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::091',
+  downloaded_pages: 94,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::062' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::062',
+  downloaded_pages: 95,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::022' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::022',
+  downloaded_pages: 96,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::116' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::116',
+  downloaded_pages: 97,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::118' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::118',
+  downloaded_pages: 98,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::110' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::110',
+  downloaded_pages: 99,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::026' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::026',
+  downloaded_pages: 100,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::035' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::035',
+  downloaded_pages: 101,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::010' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::010',
+  downloaded_pages: 102,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::032' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::032',
+  downloaded_pages: 103,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::089' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::089',
+  downloaded_pages: 104,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::133' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::133',
+  downloaded_pages: 105,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::104' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::104',
+  downloaded_pages: 106,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::012' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::012',
+  downloaded_pages: 107,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::015' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::015',
+  downloaded_pages: 108,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::070' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::070',
+  downloaded_pages: 109,
+  lost_pages: 16,
+  total_imgs_num: 129,
+  total: false,
+  all_download_task: false
+}

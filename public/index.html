@@ -60,12 +60,12 @@
 
                                             <div class="form-item">
                                                 <label for="FOLDER_NAME">Folder Name</label>
-                                                <input type="string" name="FOLDER_NAME" id="FOLDER_NAME"><br>
+                                                <input type="text" name="FOLDER_NAME" id="FOLDER_NAME"><br>
                                             </div>
 
                                             <div class="form-item">
                                                 <label for="FOLDER_NAME">File Name</label>
-                                                <input type="string" name="FILE_NAME" id="FILE_NAME"><br>
+                                                <input type="text" name="FILE_NAME" id="FILE_NAME"><br>
                                             </div>
 
                                             <div class="form-item">
@@ -80,12 +80,12 @@
 
                                             <div class="form-item">
                                                 <label for="URI_START">URI_START</label>
-                                                <input type="string" name="URI_START" id="URI_START"><br>
+                                                <input type="text" name="URI_START" id="URI_START"><br>
                                             </div>
 
                                             <div class="form-item">
                                                 <label for="URI_END">URI_END</label>
-                                                <input type="string" name="URI_END" id="URI_END"><br>
+                                                <input type="text" name="URI_END" id="URI_END"><br>
                                             </div>
 
                                             <input type="text" name="NTYPE" value="NORMAL" hidden><br>
@@ -128,12 +128,12 @@
             
                                             <div class="form-item">
                                                 <label for="FOLDER_NAME">Folder Name</label>
-                                                <input type="string" name="FOLDER_NAME" id="FOLDER_NAME"><br>
+                                                <input type="text" name="FOLDER_NAME" id="FOLDER_NAME"><br>
                                             </div>
             
                                             <div class="form-item">
                                                 <label for="FOLDER_NAME">File Name</label>
-                                                <input type="string" name="FILE_NAME" id="FILE_NAME"><br>
+                                                <input type="text" name="FILE_NAME" id="FILE_NAME"><br>
                                             </div>
             
                                             <div class="form-item">
@@ -145,15 +145,20 @@
                                                 <label for="FINISH_NUM">FINISH_NUM</label>
                                                 <input type="number" name="FINISH_NUM" id="FINISH_NUM"><br>
                                             </div>
+
+                                            <div class="form-item">
+                                                <label for="BASIS">BASIS</label>
+                                                <input type="text" name="BASIS" id="BASIS"><br>
+                                            </div>
             
                                             <div class="form-item">
                                                 <label for="URI_START">URI_START</label>
-                                                <input type="string" name="URI_START" id="URI_START"><br>
+                                                <input type="text" name="URI_START" id="URI_START"><br>
                                             </div>
             
                                             <div class="form-item">
                                                 <label for="URI_END">URI_END</label>
-                                                <input type="string" name="URI_END" id="URI_END"><br>
+                                                <input type="text" name="URI_END" id="URI_END"><br>
                                             </div>
 
                                             <input type="text" name="NTYPE" value="CIPHER" hidden><br>
@@ -200,12 +205,12 @@
 
                                 <div class="form-item">
                                     <label for="FOLDER_NAME">Folder Name</label>
-                                    <input type="string" name="FOLDER_NAME" id="FOLDER_NAME"><br>
+                                    <input type="text" name="FOLDER_NAME" id="FOLDER_NAME"><br>
                                 </div>
 
                                 <div class="form-item">
                                     <label for="FOLDER_NAME">File Name</label>
-                                    <input type="string" name="FILE_NAME" id="FILE_NAME"><br>
+                                    <input type="text" name="FILE_NAME" id="FILE_NAME"><br>
                                 </div>
 
                                 <div class="form-item">
@@ -215,12 +220,12 @@
 
                                 <div class="form-item">
                                     <label for="URI_START">URI_START</label>
-                                    <input type="string" name="URI_START" id="URI_START"><br>
+                                    <input type="text" name="URI_START" id="URI_START"><br>
                                 </div>
 
                                 <div class="form-item">
                                     <label for="URI_END">URI_END</label>
-                                    <input type="string" name="URI_END" id="URI_END"><br>
+                                    <input type="text" name="URI_END" id="URI_END"><br>
                                 </div>
 
                                 <input type="text" name="DTYPE" value="SELECT" hidden><br>
@@ -242,19 +247,19 @@
                 <form action="/api/pdf" method="post">
                     <div class="form-item">
                         <label for="FOLDER_NAME">Folder Name</label>
-                        <input type="string" name="FOLDER_NAME" id="FOLDER_NAME"><br>
+                        <input type="text" name="FOLDER_NAME" id="FOLDER_NAME"><br>
                         <!-- <input name="FOLDER_NAME" id="FOLDER_NAME" type="file" id="ctrl" webkitdirectory directory
                             multiple /> -->
                     </div>
 
                     <div class="form-item">
                         <label for="FILE_NAME">File Name</label>
-                        <input type="string" name="FILE_NAME" id="FILE_NAME" value="output.pdf"><br>
+                        <input type="text" name="FILE_NAME" id="FILE_NAME" value="output.pdf"><br>
                     </div>
 
                     <div class="form-item">
                         <label for="IMAGE_NAME">IMAGE NAME</label>
-                        <input type="string" name="IMAGE_NAME" id="IMAGE_NAME" value=""><br>
+                        <input type="text" name="IMAGE_NAME" id="IMAGE_NAME" value=""><br>
                     </div>
 
                     <div class="form-item">
@@ -283,7 +288,7 @@
                 <form action="/api/filter" method="post">
                     <div class="form-item">
                         <label for="FOLDER_NAME">Folder Name</label>
-                        <input type="string" name="FOLDER_NAME" id="FOLDER_NAME"><br>
+                        <input type="text" name="FOLDER_NAME" id="FOLDER_NAME"><br>
                         <!-- <input name="FOLDER_NAME" id="FOLDER_NAME" type="file" id="ctrl" webkitdirectory directory
                             multiple /> -->
                     </div>

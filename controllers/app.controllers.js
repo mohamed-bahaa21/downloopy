@@ -32,7 +32,7 @@ var downloaded_pages = [];
 // =======================================================
 // download all files
 downloadAllPost = (req, res, next) => {
-    // require('../services/file-console-log')
+    require('../services/file-console-log')
 
     const FOLDER_DIR = "data/imgs/";
     const {
@@ -44,11 +44,13 @@ downloadAllPost = (req, res, next) => {
         URI_START,
         URI_END,
         FILE_TYPE,
-        PAGES
+        PAGES,
+        BASIS
     } = req.body;
 
     const START_NUM = Number(req.body.START_NUM);
     const FINISH_NUM = Number(req.body.FINISH_NUM);
+
     // TODO:: if !== FINISH_NUM -> index++
     // console.log(typeof(Number(process.env.FINISH_NUM)));
 
@@ -66,7 +68,7 @@ downloadAllPost = (req, res, next) => {
     var download_task;
 
     if (DTYPE == "ALL") {
-        DownloadAllNormalPattern(res, NTYPE, total_imgs_num - 1, START_NUM, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE)
+        DownloadAllNormalPattern(res, NTYPE, total_imgs_num, START_NUM, BASIS, FINISH_NUM, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE)
     }
     if (DTYPE == "SELECT") {
         DownloadSelectNormalPattern(res, PAGES, PAGES.length, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE);
@@ -80,63 +82,36 @@ downloadAllPost = (req, res, next) => {
     // }
     // addNewSampleToFile(newSample);
 };
+function DownloadAllNormalPattern(res, NTYPE, total_imgs_num, START_NUM, BASIS, FINISH_NUM, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE) {
+    console.log("----------- Started Download All Normal Pattern ---------------");
 
-function cipherNumbering() {
+    downloaded_pages.length = 0;
+    let lost_pages = [];
+
+    if(NTYPE == "NORMAL") {
+        normalNumbering(res, NTYPE, total_imgs_num, START_NUM, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE);
+    }
+    if(NTYPE == "CIPHER") {
+        cipherNumbering(res, NTYPE, total_imgs_num, START_NUM, BASIS, FINISH_NUM, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE);
+    }
+
+}
+
+// https://papers.rgrossman.com/proc-
+function cipherNumbering(res, NTYPE, total_imgs_num, START_NUM, BASIS, FINISH_NUM, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE) {
     const checkValue = require('../bin/url_numbers_generator/zeros_pattern');
-    var _pages_num = checkValue(START_NUM, '00', 0, FINISH_NUM);
+    var _pages_num = checkValue(START_NUM, BASIS, 0, FINISH_NUM);
+    _pages_num.pop(-1);
+    console.log(_pages_num);
+    
+    downloaded_pages.length = 0;
+    let lost_pages = [];
 
     // FOR LOOP STARTS => zero pattern numbers
     for (let index = 0; index <= _pages_num.length; index++) {
         const element = _pages_num[index];
-        console.log(element);
-
-        const uri = `${URI_START}${element}${URI_END}`;
-
-        request.head(uri, function (err, res, body) {
-            // console.log("content-type:", res.headers["content-type"]);
-            // console.log("content-length:", res.headers["content-length"]);
-            // check file size before downloading, if !maxSize download else write a blank file.
-            let maxSize = false;
-            if (!maxSize) {
-                var f = fs.createWriteStream(`${total_dir}/${FILE_NAME}-${element}.${FILE_TYPE}`);
-
-                f.on("finish", () => {
-                    console.log({
-                        msg: `STREAM::WRITE::PIPE::DONE__${FILE_NAME}::${element}`
-                    });
-                });
-                f.on('close', () => {
-                    console.log({
-                        msg: `PIPE::CLOSED`
-                    });
-                })
-
-                request
-                    .get(uri)
-                    .on('response', (response) => {
-                        console.log({
-                            statusCode: response.statusCode, //200
-                            header: response.headers['content-type'], //img/${FILE_TYPE}
-                            msg: `STREAM::WRITE::PIPE::STARTED__${FILE_NAME}::${element}`
-                        })
-                    })
-                    .pipe(f)
-
-            } else {
-                var f = fs.createWriteStream(`${total_dir}/${FILE_NAME}-${element}.${FILE_TYPE}`);
-            }
-        });
-    }
-}
-
-function normalNumbering(res, NTYPE, total_imgs_num, START_NUM, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE) {
-    downloaded_pages.length = 0;
-    let lost_pages = [];
-    
-    // FOR LOOP STARTS => normal pattern numbers
-    for (let index = 0; index <= total_imgs_num; index++) {
-        const element = START_NUM + index;
         if (element == undefined) continue;
+
         let uri = `${URI_START}${element}${URI_END}`;
         let f = fs.createWriteStream(`${total_dir}/${FILE_NAME}-${element}.${FILE_TYPE}`);
 
@@ -178,25 +153,68 @@ function normalNumbering(res, NTYPE, total_imgs_num, START_NUM, URI_START, URI_E
                     msg: `STREAM::WRITE::PIPE::ERROR::${element}`,
                     err: error,
                 });
+                // return;
             }
         }).pipe(f);
     }
 }
 
-function DownloadAllNormalPattern(res, NTYPE, total_imgs_num, START_NUM, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE) {
-    console.log("----------- Started Download All Normal Pattern ---------------");
-
+function normalNumbering(res, NTYPE, total_imgs_num, START_NUM, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE) {
     downloaded_pages.length = 0;
     let lost_pages = [];
+    
+    // FOR LOOP STARTS => normal pattern numbers
+    for (let index = 0; index <= total_imgs_num -1; index++) {
+        const element = START_NUM + index - 1;
+        if (element == undefined) continue;
 
-    if(NTYPE == "NORMAL") {
-        normalNumbering(res, NTYPE, total_imgs_num, START_NUM, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE);
-    }
-    if(NTYPE == "CIPHER") {
-        cipherNumbering();
-    }
+        let uri = `${URI_START}${element}${URI_END}`;
+        let f = fs.createWriteStream(`${total_dir}/${FILE_NAME}-${element}.${FILE_TYPE}`);
 
+        f.on("finish", () => {
+            console.log({
+                msg: `STREAM::WRITE::PIPE::DONE::${element}`
+            });
+            if (lost_pages.length + downloaded_pages.length == total_imgs_num) {
+                all_download_task = true;
+            }
+        });
+
+        f.on('close', () => {
+            console.log({
+                msg: `STREAM::WRITE::PIPE::CLOSED::${element}`,
+                downloaded_pages: downloaded_pages.length,
+                lost_pages: lost_pages.length,
+                total_imgs_num: total_imgs_num,
+                total: ((lost_pages.length + downloaded_pages.length) == total_imgs_num),
+                all_download_task: all_download_task
+            });
+
+            if (all_download_task && lost_pages.length == 0) {
+                res.send("Download Succeeded...")
+
+            } else if (all_download_task && lost_pages.length > 0) {
+                console.log("HERE")
+                DownloadSelectNormalPattern(res, lost_pages, lost_pages.length, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE);
+            }
+        })
+
+        needle.get(uri, (error, response) => {
+            // console.log(response)
+            if (!error && response.statusCode == 200) {
+                downloaded_pages.push(element);
+            } else {
+                lost_pages.push(element);
+                console.log({
+                    msg: `STREAM::WRITE::PIPE::ERROR::${element}`,
+                    err: error,
+                });
+            }
+        }).pipe(f);
+    }
 }
+
+// ===================================================
 
 function DownloadSelectNormalPattern(res, PAGES, total_imgs_num, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE) {
     console.log("----------- Started Download Select Normal Pattern ---------------");
@@ -207,13 +225,12 @@ function DownloadSelectNormalPattern(res, PAGES, total_imgs_num, URI_START, URI_
 
     let selective_download_task = false;
 
-    let numPagesArr = PAGES;
     var lost_pages = [];
     lost_pages.length = 0;
 
     console.log({
-        numPagesArr: numPagesArr,
-        numPagesArr: numPagesArr.length,
+        PAGES: PAGES,
+        total_imgs_num: total_imgs_num,
         downloaded_pages: downloaded_pages.length,
         lost_pages: lost_pages.length,
     })
@@ -221,8 +238,8 @@ function DownloadSelectNormalPattern(res, PAGES, total_imgs_num, URI_START, URI_
     let uri;
     let f;
 
-    for (let index = 0; index <= numPagesArr.length; index++) {
-        const element = numPagesArr[index];
+    for (let index = 0; index <= PAGES.length - 1; index++) {
+        const element = PAGES[index];
         if (element == undefined) continue;
         uri = `${URI_START}${element}${URI_END}`;
         f = fs.createWriteStream(`${total_dir}/${FILE_NAME}-${element}.${FILE_TYPE}`);
@@ -254,20 +271,20 @@ function DownloadSelectNormalPattern(res, PAGES, total_imgs_num, URI_START, URI_
                 msg: `STREAM::WRITE::PIPE::CLOSED::${element}`,
                 downloaded_pages: downloaded_pages.length,
                 lost_pages: lost_pages.length,
-                numPagesArr: numPagesArr.length,
+                PAGES: PAGES.length,
                 total_imgs_num: total_imgs_num,
                 selective_download_task: selective_download_task,
                 global_download_task: global_download_task,
             });
 
-            if (selective_download_task && downloaded_pages.length == total_imgs_num && lost_pages.length != numPagesArr.length && lost_pages.length == 0) {
+            if (selective_download_task && downloaded_pages.length == total_imgs_num && lost_pages.length != PAGES.length && lost_pages.length == 0) {
                 all_download_task = false;
                 res.send("Download Succeeded...");
 
-            } else if (selective_download_task && lost_pages.length < numPagesArr.length && lost_pages.length != 0) {
+            } else if (selective_download_task && lost_pages.length < PAGES.length && lost_pages.length != 0) {
                 DownloadSelectNormalPattern(res, lost_pages, total_imgs_num, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE);
 
-            } else if (selective_download_task && lost_pages.length == numPagesArr.length) {
+            } else if (selective_download_task && lost_pages.length == PAGES.length) {
                 all_download_task = false;
                 res.send("Download Failed...");
             }
@@ -386,3 +403,40 @@ module.exports = { getLanding, downloadAllPost, pdfing };
         //     }
         // }).pipe(f));
         // Promise.all(promises);
+
+
+        // cipher numbering 
+        // request.head(uri, function (err, res, body) {
+        //     // console.log("content-type:", res.headers["content-type"]);
+        //     // console.log("content-length:", res.headers["content-length"]);
+        //     // check file size before downloading, if !maxSize download else write a blank file.
+        //     let maxSize = false;
+        //     if (!maxSize) {
+        //         var f = fs.createWriteStream(`${total_dir}/${FILE_NAME}-${element}.${FILE_TYPE}`);
+
+        //         f.on("finish", () => {
+        //             console.log({
+        //                 msg: `STREAM::WRITE::PIPE::DONE__${FILE_NAME}::${element}`
+        //             });
+        //         });
+        //         f.on('close', () => {
+        //             console.log({
+        //                 msg: `PIPE::CLOSED`
+        //             });
+        //         })
+
+        //         request
+        //             .get(uri)
+        //             .on('response', (response) => {
+        //                 console.log({
+        //                     statusCode: response.statusCode, //200
+        //                     header: response.headers['content-type'], //img/${FILE_TYPE}
+        //                     msg: `STREAM::WRITE::PIPE::STARTED__${FILE_NAME}::${element}`
+        //                 })
+        //             })
+        //             .pipe(f)
+
+        //     } else {
+        //         var f = fs.createWriteStream(`${total_dir}/${FILE_NAME}-${element}.${FILE_TYPE}`);
+        //     }
+        // });

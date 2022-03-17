@@ -18,11 +18,64 @@ var domtoimage = require('dom-to-image');
 const addNewSampleToFile = require('../services/fs_push_download_test_sample/fs_push_download_test_sample')
 
 // landing
-getLanding = (req, res, next) => {
-    res.render("index", {
+getDownload = (req, res, next) => {
+    res.render("download", {
         // msgs: req.flash('success'),
     })
 };
+
+getLanding = (req, res, next) => {
+    res.render("url_parser", {
+        // msgs: req.flash('success'),
+    })
+};
+
+urlParser = (req, res, next) => {
+    let url = new URL(req.body.url);
+    let pathArr = url.pathname.split('/');
+    pathArr.shift();
+
+    // res.send(req.body);
+    res.render('path_parser', {
+        pathArr: pathArr
+    });
+}
+pathParser = (req, res, next) => {
+
+    let tmp_inputArr = req.body.url_path;
+    let inputArr = [];
+
+    tmp_inputArr.map((ele) => {
+        let tmp_ele = ele.split(' - ');
+        inputArr.push({
+            index: tmp_ele[0],
+            text: tmp_ele[1]
+        });
+    })
+
+    // res.send(inputArr);
+    console.log(req.body.pathArr);
+
+    res.render('input_parser', {
+        pathArr: req.body.pathArr,
+        inputArr: inputArr
+    });
+}
+inputParser = (req, res, next) => {
+    let tmp_pathArr = req.body.pathArr;
+    pathArr = tmp_pathArr.split(',');
+
+    let inputArr = [];
+    let tmp_inputArr = req.body.inputs;
+    tmp_inputArr.map(ele => {
+        let tmp_ele = ele.split(',');
+        pathArr[tmp_ele[0]] = `${pathArr[tmp_ele[0]]}=${pathArr[tmp_ele[0]].split(tmp_ele[1]).join('')}`;
+    })
+
+    let new_url = pathArr.join('/');
+
+    res.send(new_url);
+}
 
 var global_download_task = false;
 var all_download_task = false;
@@ -82,16 +135,17 @@ downloadAllPost = (req, res, next) => {
     // }
     // addNewSampleToFile(newSample);
 };
+
 function DownloadAllNormalPattern(res, NTYPE, total_imgs_num, START_NUM, BASIS, FINISH_NUM, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE) {
     console.log("----------- Started Download All Normal Pattern ---------------");
 
     downloaded_pages.length = 0;
     let lost_pages = [];
 
-    if(NTYPE == "NORMAL") {
+    if (NTYPE == "NORMAL") {
         normalNumbering(res, NTYPE, total_imgs_num, START_NUM, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE);
     }
-    if(NTYPE == "CIPHER") {
+    if (NTYPE == "CIPHER") {
         cipherNumbering(res, NTYPE, total_imgs_num, START_NUM, BASIS, FINISH_NUM, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE);
     }
 
@@ -103,7 +157,7 @@ function cipherNumbering(res, NTYPE, total_imgs_num, START_NUM, BASIS, FINISH_NU
     var _pages_num = checkValue(START_NUM, BASIS, 0, FINISH_NUM);
     _pages_num.pop(-1);
     console.log(_pages_num);
-    
+
     downloaded_pages.length = 0;
     let lost_pages = [];
 
@@ -162,9 +216,9 @@ function cipherNumbering(res, NTYPE, total_imgs_num, START_NUM, BASIS, FINISH_NU
 function normalNumbering(res, NTYPE, total_imgs_num, START_NUM, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE) {
     downloaded_pages.length = 0;
     let lost_pages = [];
-    
+
     // FOR LOOP STARTS => normal pattern numbers
-    for (let index = 0; index <= total_imgs_num -1; index++) {
+    for (let index = 0; index <= total_imgs_num - 1; index++) {
         const element = START_NUM + index - 1;
         if (element == undefined) continue;
 
@@ -354,89 +408,91 @@ const pdfing = (req, res, next) => {
     res.send('<h1>PDFing Finished</h1>');
 }
 
-module.exports = { getLanding, downloadAllPost, pdfing };
-
 
 // let promises = [];
-    // let stream = needle.head(uri, function (error, response) {
-        //     if (!error && response.statusCode == 200) {
-        //         downloaded_pages.push(element)
-        //     } else {
-        //         lost_pages.push(element);
-        //         console.log({
-        //             msg: `STREAM::WRITE::PIPE::ERROR::${element}`,
-        //             err: error,
-        //             downloaded_pages: downloaded_pages.length,
-        //             lost_pages: lost_pages.length,
-        //             all_download_task: all_download_task,
-        //             sum: lost_pages.length + downloaded_pages.length,
-        //             total_imgs_num: total_imgs_num
-        //         });
-        //     }
-        // });
-        // promises.push(needle.get(uri, (error, response) => {
-        //     // console.log(response)
-        //     if (!error && response.statusCode == 200) {
-        //         downloaded_pages.push(element);
-        //     } else {
-        //         lost_pages.push(element);
-        //         console.log({
-        //             msg: `STREAM::WRITE::PIPE::ERROR::${element}`,
-        //             err: error,
-        //         });
-        //     }
-        // }).pipe(f));
+// let stream = needle.head(uri, function (error, response) {
+//     if (!error && response.statusCode == 200) {
+//         downloaded_pages.push(element)
+//     } else {
+//         lost_pages.push(element);
+//         console.log({
+//             msg: `STREAM::WRITE::PIPE::ERROR::${element}`,
+//             err: error,
+//             downloaded_pages: downloaded_pages.length,
+//             lost_pages: lost_pages.length,
+//             all_download_task: all_download_task,
+//             sum: lost_pages.length + downloaded_pages.length,
+//             total_imgs_num: total_imgs_num
+//         });
+//     }
+// });
+// promises.push(needle.get(uri, (error, response) => {
+//     // console.log(response)
+//     if (!error && response.statusCode == 200) {
+//         downloaded_pages.push(element);
+//     } else {
+//         lost_pages.push(element);
+//         console.log({
+//             msg: `STREAM::WRITE::PIPE::ERROR::${element}`,
+//             err: error,
+//         });
+//     }
+// }).pipe(f));
 
-        // --------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------
 
-        // let promises = []
-        // promises.push(needle.get(uri, function (error, response) {
-        //     // console.log(response)
-        //     if (!error && response.statusCode == 200) {
-        //         downloaded_pages.push(element);
-        //     } else {
-        //         lost_pages.push(element);
-        //         console.log({
-        //             msg: `STREAM::WRITE::PIPE::ERROR::${element}`,
-        //             err: error,
-        //         });
-        //     }
-        // }).pipe(f));
-        // Promise.all(promises);
+// let promises = []
+// promises.push(needle.get(uri, function (error, response) {
+//     // console.log(response)
+//     if (!error && response.statusCode == 200) {
+//         downloaded_pages.push(element);
+//     } else {
+//         lost_pages.push(element);
+//         console.log({
+//             msg: `STREAM::WRITE::PIPE::ERROR::${element}`,
+//             err: error,
+//         });
+//     }
+// }).pipe(f));
+// Promise.all(promises);
 
 
-        // cipher numbering 
-        // request.head(uri, function (err, res, body) {
-        //     // console.log("content-type:", res.headers["content-type"]);
-        //     // console.log("content-length:", res.headers["content-length"]);
-        //     // check file size before downloading, if !maxSize download else write a blank file.
-        //     let maxSize = false;
-        //     if (!maxSize) {
-        //         var f = fs.createWriteStream(`${total_dir}/${FILE_NAME}-${element}.${FILE_TYPE}`);
+// cipher numbering 
+// request.head(uri, function (err, res, body) {
+//     // console.log("content-type:", res.headers["content-type"]);
+//     // console.log("content-length:", res.headers["content-length"]);
+//     // check file size before downloading, if !maxSize download else write a blank file.
+//     let maxSize = false;
+//     if (!maxSize) {
+//         var f = fs.createWriteStream(`${total_dir}/${FILE_NAME}-${element}.${FILE_TYPE}`);
 
-        //         f.on("finish", () => {
-        //             console.log({
-        //                 msg: `STREAM::WRITE::PIPE::DONE__${FILE_NAME}::${element}`
-        //             });
-        //         });
-        //         f.on('close', () => {
-        //             console.log({
-        //                 msg: `PIPE::CLOSED`
-        //             });
-        //         })
+//         f.on("finish", () => {
+//             console.log({
+//                 msg: `STREAM::WRITE::PIPE::DONE__${FILE_NAME}::${element}`
+//             });
+//         });
+//         f.on('close', () => {
+//             console.log({
+//                 msg: `PIPE::CLOSED`
+//             });
+//         })
 
-        //         request
-        //             .get(uri)
-        //             .on('response', (response) => {
-        //                 console.log({
-        //                     statusCode: response.statusCode, //200
-        //                     header: response.headers['content-type'], //img/${FILE_TYPE}
-        //                     msg: `STREAM::WRITE::PIPE::STARTED__${FILE_NAME}::${element}`
-        //                 })
-        //             })
-        //             .pipe(f)
+//         request
+//             .get(uri)
+//             .on('response', (response) => {
+//                 console.log({
+//                     statusCode: response.statusCode, //200
+//                     header: response.headers['content-type'], //img/${FILE_TYPE}
+//                     msg: `STREAM::WRITE::PIPE::STARTED__${FILE_NAME}::${element}`
+//                 })
+//             })
+//             .pipe(f)
 
-        //     } else {
-        //         var f = fs.createWriteStream(`${total_dir}/${FILE_NAME}-${element}.${FILE_TYPE}`);
-        //     }
-        // });
+//     } else {
+//         var f = fs.createWriteStream(`${total_dir}/${FILE_NAME}-${element}.${FILE_TYPE}`);
+//     }
+// });
+
+
+
+module.exports = { inputParser, urlParser, pathParser, getDownload, getLanding, downloadAllPost, pdfing };

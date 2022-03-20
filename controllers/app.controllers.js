@@ -75,36 +75,31 @@ inputParser = (req, res, next) => {
     // let CIPHER_bool = false;
 
     newPathsArr = [];
-    inputs.map(ele => {
-        let tmp_ele = ele.split(',');
+    for (let i = 1; i <= 15; i++) {
+        inputs.map(ele => {
+            let tmp_ele = ele.split(',');
 
-        // NORMAL_bool = ele.includes("NORMAL");
-        // CIPHER_bool = ele.includes("CIPHER");
+            // NORMAL_bool = ele.includes("NORMAL");
+            // CIPHER_bool = ele.includes("CIPHER");
 
-        let str1 = paths[tmp_ele[0]];
-        let str2 = tmp_ele[1];
-        let newPath_tmp = Parser.parsePath(str1, str2); // page-1 / page-01
+            let str1 = paths[tmp_ele[0]];
+            let str2 = tmp_ele[1];
+            let newPath_tmp = Parser.parsePath(str1, str2); // page-1 / page-01
 
-        let str_type = tmp_ele[2];
-        if (str_type == "NORMAL") {
-            for (let i = 1; i <= 15; i++) {
+            let str_type = tmp_ele[2];
+            if (str_type == "NORMAL") {
                 number = i;
-                let result = `${newPath_tmp.str_before} ${number} ${newPath_tmp.str_after}`
-                paths[tmp_ele[0]] = result;
-                let new_url = paths.join('/');
-                newPathsArr.push(new_url);
             }
-        }
-        if (str_type == "CIPHER") {
-            for (let i = 1; i <= 15; i++) {
+            if (str_type == "CIPHER") {
                 number = _pages_num[i - 1];
-                let result = `${newPath_tmp.str_before} ${number} ${newPath_tmp.str_after}`
-                paths[tmp_ele[0]] = result;
-                let new_url = paths.join('/');
-                newPathsArr.push(new_url);
             }
-        }
-    })
+
+            let result = `${newPath_tmp.str_before} ${number} ${newPath_tmp.str_after}`
+            paths[tmp_ele[0]] = result;
+        })
+        let new_url = paths.join('/');
+        newPathsArr.push(new_url);
+    }
 
     res.send(newPathsArr);
 }

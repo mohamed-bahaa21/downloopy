@@ -65,43 +65,8 @@ pathParser = (req, res, next) => {
 
 inputParser = (req, res, next) => {
     let { pathArr, inputs } = req.body;
-    let paths = pathArr.split(',');
-
-    let number = 0;
-    var _pages_num = checkValue(1, '00', 0, 16);
-    _pages_num.pop(-1);
-
-    // let NORMAL_bool = false;
-    // let CIPHER_bool = false;
-
-    newPathsArr = [];
-    for (let i = 1; i <= 15; i++) {
-        inputs.map(ele => {
-            let tmp_ele = ele.split(',');
-
-            // NORMAL_bool = ele.includes("NORMAL");
-            // CIPHER_bool = ele.includes("CIPHER");
-
-            let str1 = paths[tmp_ele[0]];
-            let str2 = tmp_ele[1];
-            let newPath_tmp = Parser.parsePath(str1, str2); // page-1 / page-01
-
-            let str_type = tmp_ele[2];
-            if (str_type == "NORMAL") {
-                number = i;
-            }
-            if (str_type == "CIPHER") {
-                number = _pages_num[i - 1];
-            }
-
-            let result = `${newPath_tmp.str_before} ${number} ${newPath_tmp.str_after}`
-            paths[tmp_ele[0]] = result;
-        })
-        let new_url = paths.join('/');
-        newPathsArr.push(new_url);
-    }
-
-    res.send(newPathsArr);
+    const urls = Parser.generateNewUrls(pathArr, inputs);
+    res.send(urls);
 }
 
 var global_download_task = false;

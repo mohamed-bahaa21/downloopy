@@ -2,6 +2,8 @@
 // 2) pick number sys for each part
 // 3) prevent similar to change
 
+const checkValue = require('../url_numbers_generator/zeros_pattern');
+
 function main() {
     let str = "string001str";
     let str2 = "001";
@@ -41,6 +43,46 @@ function parsePath(strA, strB) {
     };
 }
 
+function generateNewUrls(pathArr, inputs) {
+    let paths = pathArr.split(',');
+
+    let number = 0;
+    var _pages_num = checkValue(1, '00', 0, 16);
+    _pages_num.pop(-1);
+
+    // let NORMAL_bool = false;
+    // let CIPHER_bool = false;
+
+    newPathsArr = [];
+    for (let i = 1; i <= 15; i++) {
+        inputs.map(ele => {
+            let tmp_ele = ele.split(',');
+
+            // NORMAL_bool = ele.includes("NORMAL");
+            // CIPHER_bool = ele.includes("CIPHER");
+
+            let str1 = paths[tmp_ele[0]];
+            let str2 = tmp_ele[1];
+            let newPath_tmp = this.parsePath(str1, str2); // page-1 / page-01
+
+            let str_type = tmp_ele[2];
+            if (str_type == "NORMAL") {
+                number = i;
+            }
+            if (str_type == "CIPHER") {
+                number = _pages_num[i - 1];
+            }
+
+            let result = `${newPath_tmp.str_before}${number}${newPath_tmp.str_after}`
+            paths[tmp_ele[0]] = result;
+        })
+        let new_url = paths.join('/');
+        newPathsArr.push(new_url);
+    }
+
+    return newPathsArr;
+}
+
 // let str1 = 'hello20world10';
 // let str2 = 'hello20world';
 
@@ -48,4 +90,4 @@ function parsePath(strA, strB) {
 // let res = parsePath(str1, str2);
 // console.log(`${res.str_before} 050 ${res.str_after}`)
 
-module.exports = { parseURL, parsePath };
+module.exports = { parseURL, parsePath, generateNewUrls };

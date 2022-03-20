@@ -10,5 +10,7 @@
     "v5.1": "fs_push_download_test_sample service",
     "v5.2": "basic html form page",
     "v5.3": "html tabs: 1.download 2.pdf",
-    "v6.0": "More automated download system (all, selective, failed)"
+    "v6.0": "Simple automated download system (all, selective, failed)",
+    "v6.1": "Pdf-ing the items",
+    "v6.2": "Add mixed numbering-system links feature"
 }

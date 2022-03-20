@@ -7,12 +7,18 @@
     <title>Document</title>
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/tabs.css">
+    <style>
+        input{
+            display: block;
+            margin: 0.75em;
+        }
+    </style>
 </head>
 
 <body>
 
-
     <form action="/input_parser" method="post">
+        <p>Write <b>,</b> then name the <b>Numbering-System (NORMAL/CIPHER)</b> to count pages.</p>
         <input type="text" name="pathArr" value="<%=pathArr%>" readonly>
         
         <% inputArr.forEach((ele, index)=> { %>

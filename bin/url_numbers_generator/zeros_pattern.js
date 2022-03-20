@@ -31,13 +31,17 @@ let result = [];
 // checkValue(num, basis, level, stop_num);
 
 module.exports = function checkValue(num, basis, level, stop_num) {
-    console.log({
-        num: num,
-        tmp_num: final_nums_arr[level],
-        basis: basis,
-        level: level
-    })
-    if (level >= basis.length) { console.log(result); console.log("level reached basis.length FINISHED..."); return; }
+    // console.log({
+    //     num: num,
+    //     tmp_num: final_nums_arr[level],
+    //     basis: basis,
+    //     level: level
+    // })
+    if (level >= basis.length) { 
+        // console.log(result); 
+        // console.log("level reached basis.length FINISHED..."); 
+        return; 
+    }
 
     get_Final_Numbers(basis);
     
@@ -51,7 +55,7 @@ module.exports = function checkValue(num, basis, level, stop_num) {
 
     checkValue(tmp_num + 1, basis, level + 1, stop_num)
 
-    console.log(result);
+    // console.log(result);
     return result;
 }
 

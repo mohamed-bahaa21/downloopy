@@ -17,6 +17,7 @@ var domtoimage = require('dom-to-image');
 
 const addNewSampleToFile = require('../services/fs_push_download_test_sample/fs_push_download_test_sample')
 
+const checkValue = require('../bin/url_numbers_generator/zeros_pattern');
 const Parser = require('../bin/url_parser/url-parser');
 
 // landing
@@ -63,23 +64,49 @@ pathParser = (req, res, next) => {
 }
 
 inputParser = (req, res, next) => {
-    let tmp_pathArr = req.body.pathArr;
-    pathArr = tmp_pathArr.split(',');
+    let { pathArr, inputs } = req.body;
+    let paths = pathArr.split(',');
 
-    let inputArr = [];
-    let tmp_inputArr = req.body.inputs;
-    tmp_inputArr.map(ele => {
+    let number = 0;
+    var _pages_num = checkValue(1, '00', 0, 16);
+    _pages_num.pop(-1);
+
+    // let NORMAL_bool = false;
+    // let CIPHER_bool = false;
+
+    newPathsArr = [];
+    inputs.map(ele => {
         let tmp_ele = ele.split(',');
 
-        let str1 = pathArr[tmp_ele[0]];
-        let str2 = tmp_ele[1];
-        let newPath_tmp = Parser.parsePath(str1, str2);
-        let newPath = newPath_tmp.str_before + '120' + newPath_tmp.str_after;
+        // NORMAL_bool = ele.includes("NORMAL");
+        // CIPHER_bool = ele.includes("CIPHER");
 
-        pathArr[tmp_ele[0]] = newPath;
+        let str1 = paths[tmp_ele[0]];
+        let str2 = tmp_ele[1];
+        let newPath_tmp = Parser.parsePath(str1, str2); // page-1 / page-01
+
+        let str_type = tmp_ele[2];
+        if (str_type == "NORMAL") {
+            for (let i = 1; i <= 15; i++) {
+                number = i;
+                let result = `${newPath_tmp.str_before} ${number} ${newPath_tmp.str_after}`
+                paths[tmp_ele[0]] = result;
+                let new_url = paths.join('/');
+                newPathsArr.push(new_url);
+            }
+        }
+        if (str_type == "CIPHER") {
+            for (let i = 1; i <= 15; i++) {
+                number = _pages_num[i - 1];
+                let result = `${newPath_tmp.str_before} ${number} ${newPath_tmp.str_after}`
+                paths[tmp_ele[0]] = result;
+                let new_url = paths.join('/');
+                newPathsArr.push(new_url);
+            }
+        }
     })
-    let new_url = pathArr.join('/');
-    res.send(new_url);
+
+    res.send(newPathsArr);
 }
 
 var global_download_task = false;
@@ -158,7 +185,6 @@ function DownloadAllNormalPattern(res, NTYPE, total_imgs_num, START_NUM, BASIS, 
 
 // https://papers.rgrossman.com/proc-
 function cipherNumbering(res, NTYPE, total_imgs_num, START_NUM, BASIS, FINISH_NUM, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE) {
-    const checkValue = require('../bin/url_numbers_generator/zeros_pattern');
     var _pages_num = checkValue(START_NUM, BASIS, 0, FINISH_NUM);
     _pages_num.pop(-1);
     console.log(_pages_num);

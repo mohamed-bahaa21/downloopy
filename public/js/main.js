@@ -34,12 +34,12 @@ $(document).ready(function () {
             li.next().addClass('afterRemove');
             li.addClass('remove');
             var a = $('<a />').addClass('notShown').html('<em>' + li.text() + '</em><i></i>').hide().appendTo(select.children('div'));
-            a.slideDown(400, function () {
+            a.slideDown(0, function () {
                 setTimeout(function () {
                     a.addClass('shown');
                     select.children('div').children('span').addClass('hide');
                     select.find('option:contains(' + li.text() + ')').prop('selected', true);
-                }, 500);
+                }, 0);
             });
             setTimeout(function () {
                 if (li.prev().is(':last-child')) {
@@ -53,11 +53,11 @@ $(document).ready(function () {
                     li.next().removeClass('afterRemove');
                 }, 200);
 
-                li.slideUp(400, function () {
+                li.slideUp(0, function () {
                     li.remove();
                     select.removeClass('clicked');
                 });
-            }, 600);
+            }, 0);
         }
     });
 
@@ -74,9 +74,9 @@ $(document).ready(function () {
                     height: 0,
                     padding: 0,
                     margin: 0
-                }, 300, function () {
+                }, 0, function () {
                     var li = $('<li />').text(self.children('em').text()).addClass('notShown').appendTo(select.find('ul'));
-                    li.slideDown(400, function () {
+                    li.slideDown(0, function () {
                         li.addClass('show');
                         setTimeout(function () {
                             select.find('option:contains(' + self.children('em').text() + ')').prop('selected', false);
@@ -84,12 +84,12 @@ $(document).ready(function () {
                                 select.children('div').children('span').removeClass('hide');
                             }
                             li.removeClass();
-                        }, 400);
+                        }, 0);
                     });
                     self.remove();
                 })
-            }, 300);
-        }, 400);
+            }, 0);
+        }, 0);
     });
 
     $(document).on('click', '.selectMultiple > div .arrow, .selectMultiple > div span', function (e) {

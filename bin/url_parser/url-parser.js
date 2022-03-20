@@ -18,6 +18,7 @@ function parseURL(link) {
 
     return {
         url: url,
+        origin: url.origin,
         pathArr: pathArr,
     }
 }
@@ -43,7 +44,7 @@ function parsePath(strA, strB) {
     };
 }
 
-function generateNewUrls(pathArr, inputs) {
+function generateNewUrls(origin, pathArr, inputs) {
     let paths = pathArr.split(',');
 
     let number = 0;
@@ -76,7 +77,7 @@ function generateNewUrls(pathArr, inputs) {
             let result = `${newPath_tmp.str_before}${number}${newPath_tmp.str_after}`
             paths[tmp_ele[0]] = result;
         })
-        let new_url = paths.join('/');
+        let new_url = `${origin}/${paths.join('/')}`;
         newPathsArr.push(new_url);
     }
 

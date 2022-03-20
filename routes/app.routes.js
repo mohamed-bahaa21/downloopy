@@ -12,9 +12,8 @@ route.post('/url_parser', controllers.urlParser)
 route.post('/path_parser', controllers.pathParser)
 route.post('/input_parser', controllers.inputParser)
 
-route.get('/download', controllers.getDownload)
-route.post('/api/download', controllers.downloadAllPost)
 
+route.post('/api/download', controllers.downloadAllPost)
 route.post('/api/pdf', controllers.pdfing)
 
 route.post('/api/filter', (req, res) => {

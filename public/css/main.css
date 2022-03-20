@@ -18,12 +18,29 @@ label {
     padding: 0.15rem 0;
 }
 
+input {
+    border: 1px solid #ccc;
+    margin: 1em 0;
+}
+
 input,
 select,
 option {
+    position: relative;
+    padding: 8px 12px 2px 12px;
+    font-size: 14px;
+    min-height: 44px;
     width: 25rem;
     padding: 0.5rem 0.75rem;
     font-size: 1rem;
+    background: #fff;
+    border-radius: 0px;
+    box-shadow: 0 4px 16px 0 rgba(22, 42, 90, 0.12);
+    transition: box-shadow 0.3s ease;
+}
+
+option:hover {
+    background: #4d18ff;
 }
 
 input[type="radio"]:checked ~ label {
@@ -50,8 +67,14 @@ input[type="submit"]:hover {
 }
 
 /* ================================ */
+/* ================================ */
+/* ================================ */
+/* ================================ */
+/* ================================ */
+/* ================================ */
+
 .selectMultiple {
-    width: 240px;
+    width: 100%;
     position: relative;
 }
 .selectMultiple select {
@@ -360,19 +383,10 @@ html {
     box-sizing: inherit;
 }
 
-body {
-    min-height: 100vh;
-    font-family: Roboto, Arial;
-    color: #adafb6;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #fff;
+.selectMultiple {
+    margin: 1em 0;
 }
-body .selectMultiple {
-    margin-top: -12%;
-}
-body .dribbble {
+.dribbble {
     position: fixed;
     display: block;
     right: 20px;
@@ -380,10 +394,10 @@ body .dribbble {
     opacity: 0.5;
     transition: all 0.4s ease;
 }
-body .dribbble:hover {
+.dribbble:hover {
     opacity: 1;
 }
-body .dribbble img {
+.dribbble img {
     display: block;
     height: 36px;
 }

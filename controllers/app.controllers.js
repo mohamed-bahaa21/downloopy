@@ -17,6 +17,8 @@ var domtoimage = require('dom-to-image');
 
 const addNewSampleToFile = require('../services/fs_push_download_test_sample/fs_push_download_test_sample')
 
+const Parser = require('../bin/url_parser/url-parser');
+
 // landing
 getDownload = (req, res, next) => {
     res.render("download", {
@@ -31,17 +33,15 @@ getLanding = (req, res, next) => {
 };
 
 urlParser = (req, res, next) => {
-    let url = new URL(req.body.url);
-    let pathArr = url.pathname.split('/');
-    pathArr.shift();
+    const result = Parser.parseURL(req.body.url);
 
     // res.send(req.body);
     res.render('path_parser', {
-        pathArr: pathArr
+        pathArr: result.pathArr
     });
 }
-pathParser = (req, res, next) => {
 
+pathParser = (req, res, next) => {
     let tmp_inputArr = req.body.url_path;
     let inputArr = [];
 
@@ -61,6 +61,7 @@ pathParser = (req, res, next) => {
         inputArr: inputArr
     });
 }
+
 inputParser = (req, res, next) => {
     let tmp_pathArr = req.body.pathArr;
     pathArr = tmp_pathArr.split(',');
@@ -69,11 +70,15 @@ inputParser = (req, res, next) => {
     let tmp_inputArr = req.body.inputs;
     tmp_inputArr.map(ele => {
         let tmp_ele = ele.split(',');
-        pathArr[tmp_ele[0]] = `${pathArr[tmp_ele[0]]}=${pathArr[tmp_ele[0]].split(tmp_ele[1]).join('')}`;
+
+        let str1 = pathArr[tmp_ele[0]];
+        let str2 = tmp_ele[1];
+        let newPath_tmp = Parser.parsePath(str1, str2);
+        let newPath = newPath_tmp.str_before + '120' + newPath_tmp.str_after;
+
+        pathArr[tmp_ele[0]] = newPath;
     })
-
     let new_url = pathArr.join('/');
-
     res.send(new_url);
 }
 
@@ -407,92 +412,6 @@ const pdfing = (req, res, next) => {
     doc.end();
     res.send('<h1>PDFing Finished</h1>');
 }
-
-
-// let promises = [];
-// let stream = needle.head(uri, function (error, response) {
-//     if (!error && response.statusCode == 200) {
-//         downloaded_pages.push(element)
-//     } else {
-//         lost_pages.push(element);
-//         console.log({
-//             msg: `STREAM::WRITE::PIPE::ERROR::${element}`,
-//             err: error,
-//             downloaded_pages: downloaded_pages.length,
-//             lost_pages: lost_pages.length,
-//             all_download_task: all_download_task,
-//             sum: lost_pages.length + downloaded_pages.length,
-//             total_imgs_num: total_imgs_num
-//         });
-//     }
-// });
-// promises.push(needle.get(uri, (error, response) => {
-//     // console.log(response)
-//     if (!error && response.statusCode == 200) {
-//         downloaded_pages.push(element);
-//     } else {
-//         lost_pages.push(element);
-//         console.log({
-//             msg: `STREAM::WRITE::PIPE::ERROR::${element}`,
-//             err: error,
-//         });
-//     }
-// }).pipe(f));
-
-// --------------------------------------------------------------------------------
-
-// let promises = []
-// promises.push(needle.get(uri, function (error, response) {
-//     // console.log(response)
-//     if (!error && response.statusCode == 200) {
-//         downloaded_pages.push(element);
-//     } else {
-//         lost_pages.push(element);
-//         console.log({
-//             msg: `STREAM::WRITE::PIPE::ERROR::${element}`,
-//             err: error,
-//         });
-//     }
-// }).pipe(f));
-// Promise.all(promises);
-
-
-// cipher numbering 
-// request.head(uri, function (err, res, body) {
-//     // console.log("content-type:", res.headers["content-type"]);
-//     // console.log("content-length:", res.headers["content-length"]);
-//     // check file size before downloading, if !maxSize download else write a blank file.
-//     let maxSize = false;
-//     if (!maxSize) {
-//         var f = fs.createWriteStream(`${total_dir}/${FILE_NAME}-${element}.${FILE_TYPE}`);
-
-//         f.on("finish", () => {
-//             console.log({
-//                 msg: `STREAM::WRITE::PIPE::DONE__${FILE_NAME}::${element}`
-//             });
-//         });
-//         f.on('close', () => {
-//             console.log({
-//                 msg: `PIPE::CLOSED`
-//             });
-//         })
-
-//         request
-//             .get(uri)
-//             .on('response', (response) => {
-//                 console.log({
-//                     statusCode: response.statusCode, //200
-//                     header: response.headers['content-type'], //img/${FILE_TYPE}
-//                     msg: `STREAM::WRITE::PIPE::STARTED__${FILE_NAME}::${element}`
-//                 })
-//             })
-//             .pipe(f)
-
-//     } else {
-//         var f = fs.createWriteStream(`${total_dir}/${FILE_NAME}-${element}.${FILE_TYPE}`);
-//     }
-// });
-
 
 
 module.exports = { inputParser, urlParser, pathParser, getDownload, getLanding, downloadAllPost, pdfing };

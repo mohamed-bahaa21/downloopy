@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/tabs.css">
+</head>
+
+<body>
+
+    <div class="tabs">
+        <!-- Downloopy -->
+        <div class="tab">
+            <input type="radio" id="tab-1" name="tab-group-1" checked>
+            <label for="tab-1">Downloopy</label>
+            <div class="tab-content">
+
+                <div class="tabs">
+                    <!-- From TO -->
+                    <div class="tab">
+                        <input type="radio" id="tab-1-1" name="tab-group-1-1">
+                        <label for="tab-1-1">Credulous</label>
+                        <div class="tab-content">
+
+                            <span>Numbering: </span>
+
+                            <div class="tabs">
+                                <!-- Normal -->
+                                <div class="tab">
+                                    <input type="radio" id="tab-1-1-1" name="tab-group-1-1-1">
+                                    <label for="tab-1-1-1">Normal</label>
+                                    <div class="tab-content">
+
+                                        <form action="/api/download" method="post">
+                                            <div class="form-item">
+                                                <label for="website">Choose a website:</label>
+                                                <select name="website" id="website">
+                                                    <option value="Google-Drive">Google-Drive</option>
+                                                    <option value="QNL">QNL</option>
+                                                    <option value="Slideshare">Slideshare</option>
+                                                    <option value="archive.alsharekh">archive.alsharekh</option>
+                                                    <option value="dar.bibalex">dar.bibalex</option>
+                                                    <option value="yunong.io">yunong.io</option>
+                                                    <option value="InfoQ">InfoQ</option>
+                                                </select>
+                                                <br><br>
+                                            </div>
+
+                                            <div class="form-item">
+                                                <label for="website">File Type:</label>
+                                                <select name="FILE_TYPE" id="FILE_TYPE">
+                                                    <option value="jpg">jpg</option>
+                                                    <option value="pdf">pdf</option>
+                                                </select>
+                                                <br><br>
+                                            </div>
+
+                                            <div class="form-item">
+                                                <label for="FOLDER_NAME">Folder Name</label>
+                                                <input type="text" name="FOLDER_NAME" id="FOLDER_NAME"><br>
+                                            </div>
+
+                                            <div class="form-item">
+                                                <label for="FOLDER_NAME">File Name</label>
+                                                <input type="text" name="FILE_NAME" id="FILE_NAME"><br>
+                                            </div>
+
+                                            <div class="form-item">
+                                                <label for="START_NUM">START_NUM</label>
+                                                <input type="number" name="START_NUM" id="START_NUM"><br>
+                                            </div>
+
+                                            <div class="form-item">
+                                                <label for="FINISH_NUM">FINISH_NUM</label>
+                                                <input type="number" name="FINISH_NUM" id="FINISH_NUM"><br>
+                                            </div>
+
+                                            <div class="form-item">
+                                                <label for="URI_START">URI_START</label>
+                                                <input type="text" name="URI_START" id="URI_START"><br>
+                                            </div>
+
+                                            <div class="form-item">
+                                                <label for="URI_END">URI_END</label>
+                                                <input type="text" name="URI_END" id="URI_END"><br>
+                                            </div>
+
+                                            <input type="text" name="NTYPE" value="NORMAL" hidden><br>
+                                            <input type="text" name="DTYPE" value="ALL" hidden><br>
+
+                                            <input type="submit" value="Submit">
+                                        </form>
+                                    </div>
+                                </div>
+
+                                <!-- Cipher -->
+                                <div class="tab">
+                                    <input type="radio" id="tab-1-1-2" name="tab-group-1-1-1">
+                                    <label for="tab-1-1-2">Cipher</label>
+                                    <div class="tab-content">
+
+                                        <form action="/api/download" method="post">
+                                            <div class="form-item">
+                                                <label for="website">Choose a website:</label>
+                                                <select name="website" id="website">
+                                                    <option value="Google-Drive">Google-Drive</option>
+                                                    <option value="QNL">QNL</option>
+                                                    <option value="Slideshare">Slideshare</option>
+                                                    <option value="archive.alsharekh">archive.alsharekh</option>
+                                                    <option value="dar.bibalex">dar.bibalex</option>
+                                                    <option value="yunong.io">yunong.io</option>
+                                                    <option value="InfoQ">InfoQ</option>
+                                                </select>
+                                                <br><br>
+                                            </div>
+
+                                            <div class="form-item">
+                                                <label for="website">File Type:</label>
+                                                <select name="FILE_TYPE" id="FILE_TYPE">
+                                                    <option value="jpg">jpg</option>
+                                                    <option value="pdf">pdf</option>
+                                                </select>
+                                                <br><br>
+                                            </div>
+
+                                            <div class="form-item">
+                                                <label for="FOLDER_NAME">Folder Name</label>
+                                                <input type="text" name="FOLDER_NAME" id="FOLDER_NAME"><br>
+                                            </div>
+
+                                            <div class="form-item">
+                                                <label for="FOLDER_NAME">File Name</label>
+                                                <input type="text" name="FILE_NAME" id="FILE_NAME"><br>
+                                            </div>
+
+                                            <div class="form-item">
+                                                <label for="START_NUM">START_NUM</label>
+                                                <input type="number" name="START_NUM" id="START_NUM"><br>
+                                            </div>
+
+                                            <div class="form-item">
+                                                <label for="FINISH_NUM">FINISH_NUM</label>
+                                                <input type="number" name="FINISH_NUM" id="FINISH_NUM"><br>
+                                            </div>
+
+                                            <div class="form-item">
+                                                <label for="BASIS">BASIS</label>
+                                                <input type="text" name="BASIS" id="BASIS"><br>
+                                            </div>
+
+                                            <div class="form-item">
+                                                <label for="URI_START">URI_START</label>
+                                                <input type="text" name="URI_START" id="URI_START"><br>
+                                            </div>
+
+                                            <div class="form-item">
+                                                <label for="URI_END">URI_END</label>
+                                                <input type="text" name="URI_END" id="URI_END"><br>
+                                            </div>
+
+                                            <input type="text" name="NTYPE" value="CIPHER" hidden><br>
+                                            <input type="text" name="DTYPE" value="ALL" hidden><br>
+
+                                            <input type="submit" value="Submit">
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Selective Download -->
+                    <div class="tab">
+                        <input type="radio" id="tab-1-2" name="tab-group-1-1">
+                        <label for="tab-1-2">Selective</label>
+                        <div class="tab-content">
+
+                            <form action="/api/download" method="post">
+                                <div class="form-item">
+                                    <label for="website">Choose a website:</label>
+                                    <select name="website" id="website">
+                                        <option value="Google-Drive">Google-Drive</option>
+                                        <option value="QNL">QNL</option>
+                                        <option value="Slideshare">Slideshare</option>
+                                        <option value="archive.alsharekh">archive.alsharekh</option>
+                                        <option value="dar.bibalex">dar.bibalex</option>
+                                        <option value="yunong.io">yunong.io</option>
+                                        <option value="InfoQ">InfoQ</option>
+                                    </select>
+                                    <br><br>
+                                </div>
+
+                                <div class="form-item">
+                                    <label for="website">File Type:</label>
+                                    <select name="FILE_TYPE" id="FILE_TYPE">
+                                        <option value="jpg">jpg</option>
+                                        <option value="pdf">pdf</option>
+                                    </select>
+                                    <br><br>
+                                </div>
+
+                                <div class="form-item">
+                                    <label for="FOLDER_NAME">Folder Name</label>
+                                    <input type="text" name="FOLDER_NAME" id="FOLDER_NAME"><br>
+                                </div>
+
+                                <div class="form-item">
+                                    <label for="FOLDER_NAME">File Name</label>
+                                    <input type="text" name="FILE_NAME" id="FILE_NAME"><br>
+                                </div>
+
+                                <div class="form-item">
+                                    <label for="PAGES">PAGES</label>
+                                    <input type="text" name="PAGES" id="PAGES"><br>
+                                </div>
+
+                                <div class="form-item">
+                                    <label for="URI_START">URI_START</label>
+                                    <input type="text" name="URI_START" id="URI_START"><br>
+                                </div>
+
+                                <div class="form-item">
+                                    <label for="URI_END">URI_END</label>
+                                    <input type="text" name="URI_END" id="URI_END"><br>
+                                </div>
+
+                                <input type="text" name="DTYPE" value="SELECT" hidden><br>
+
+                                <input type="submit" value="Submit">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PDF -->
+        <div class="tab">
+            <input type="radio" id="tab-2" name="tab-group-1">
+            <label for="tab-2">Pdf</label>
+            <div class="tab-content">
+
+                <form action="/api/pdf" method="post">
+                    <div class="form-item">
+                        <label for="FOLDER_NAME">Folder Name</label>
+                        <input type="text" name="FOLDER_NAME" id="FOLDER_NAME"><br>
+                        <!-- <input name="FOLDER_NAME" id="FOLDER_NAME" type="file" id="ctrl" webkitdirectory directory
+                            multiple /> -->
+                    </div>
+
+                    <div class="form-item">
+                        <label for="FILE_NAME">File Name</label>
+                        <input type="text" name="FILE_NAME" id="FILE_NAME" value="output.pdf"><br>
+                    </div>
+
+                    <div class="form-item">
+                        <label for="IMAGE_NAME">IMAGE NAME</label>
+                        <input type="text" name="IMAGE_NAME" id="IMAGE_NAME" value=""><br>
+                    </div>
+
+                    <div class="form-item">
+                        <label for="START_PAGE">START PAGE</label>
+                        <input type="number" name="START_PAGE" id="START_PAGE"><br>
+                    </div>
+                    <div class="form-item">
+                        <label for="END_PAGE">END PAGE</label>
+                        <input type="number" name="END_PAGE" id="END_PAGE"><br>
+                    </div>
+
+                    <input type="text" name="FILE_TYPE" value="jpg" hidden><br>
+
+                    <input type="submit" value="Submit">
+                </form>
+
+            </div>
+        </div>
+
+        <!-- Filter -->
+        <div class="tab">
+            <input type="radio" id="tab-3" name="tab-group-1">
+            <label for="tab-3">Filter</label>
+            <div class="tab-content">
+
+                <form action="/api/filter" method="post">
+                    <div class="form-item">
+                        <label for="FOLDER_NAME">Folder Name</label>
+                        <input type="text" name="FOLDER_NAME" id="FOLDER_NAME"><br>
+                        <!-- <input name="FOLDER_NAME" id="FOLDER_NAME" type="file" id="ctrl" webkitdirectory directory
+                            multiple /> -->
+                    </div>
+
+                    <input type="text" name="FILE_TYPE" value="jpg" hidden><br>
+
+                    <input type="submit" value="Submit">
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

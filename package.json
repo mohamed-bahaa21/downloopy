@@ -1,0 +1,50 @@
+{
+  "name": "downloopy",
+  "version": "6.2.0",
+  "description": "Downloopy is a software that downloads online files in a loop to save my time.",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon test.js",
+    "start": "nodemon app.js",
+    "download": "nodemon download.app.js",
+    "pdfing": "nodemon pdfing.app.js",
+    "writefile": "node writefile.js"
+  },
+  "keywords": [
+    "downloopy",
+    "download",
+    "loops",
+    "files",
+    "images",
+    "pdf",
+    "links",
+    "test",
+    "time"
+  ],
+  "author": "Mohamed Elzohary",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "bluebird": "^3.7.2",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.6",
+    "dom-to-image": "^2.6.0",
+    "dotenv": "^10.0.0",
+    "dotenv-parse-variables": "^2.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "fs-extra": "^10.0.0",
+    "js-file-download": "^0.4.11",
+    "move-file": "^3.0.0",
+    "needle": "^3.0.0",
+    "pdfkit": "^0.12.1",
+    "progress-stream": "^2.0.0",
+    "request": "^2.88.2",
+    "sync-rpc": "^1.3.6"
+  },
+  "devDependencies": {
+    "eslint": "^7.30.0",
+    "jshint": "^2.13.4"
+  }
+}

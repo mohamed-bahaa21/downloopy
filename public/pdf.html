@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/tabs.css">
+</head>
+
+<body>
+
+    <form action="/" method="post">
+        <input type="text" name="DTYPE" value="SELECT" hidden><br>
+
+        <div class="form-item">
+            <label for="website">Choose a website:</label>
+            <select name="website" id="website">
+                <option value="Google-Drive">Google-Drive</option>
+                <option value="QNL">QNL</option>
+                <option value="Slideshare">Slideshare</option>
+                <option value="archive.alsharekh">archive.alsharekh</option>
+                <option value="dar.bibalex">dar.bibalex</option>
+                <option value="yunong.io">yunong.io</option>
+                <option value="InfoQ">InfoQ</option>
+            </select>
+            <br><br>
+        </div>
+
+        <div class="form-item">
+            <label for="website">File Type:</label>
+            <select name="FILE_TYPE" id="FILE_TYPE">
+                <option value="jpg">jpg</option>
+                <option value="pdf">pdf</option>
+            </select>
+            <br><br>
+        </div>
+
+        <div class="form-item">
+            <label for="FOLDER_NAME">Folder Name</label>
+            <input type="string" name="FOLDER_NAME" id="FOLDER_NAME"><br>
+        </div>
+
+        <div class="form-item">
+            <label for="FOLDER_NAME">File Name</label>
+            <input type="string" name="FILE_NAME" id="FILE_NAME"><br>
+        </div>
+
+        <div class="form-item">
+            <label for="PAGES">PAGES</label>
+            <input type="text" name="PAGES" id="PAGES"><br>
+        </div>
+
+        <div class="form-item">
+            <label for="URI_START">URI_START</label>
+            <input type="string" name="URI_START" id="URI_START"><br>
+        </div>
+
+        <div class="form-item">
+            <label for="URI_END">URI_END</label>
+            <input type="string" name="URI_END" id="URI_END"><br>
+        </div>
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+
+</html>

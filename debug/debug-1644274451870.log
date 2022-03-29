@@ -1,0 +1,111 @@
+----------- Started Download All Normal Pattern ---------------
+total_imgs_num: 4
+Folder created OR Already found
+{ msg: 'STREAM::WRITE::PIPE::DONE::3' }
+{ msg: 'STREAM::NEEDLE::FINISHED::3' }
+{
+  msg: 'STREAM::WRITE::PIPE::ERROR::3',
+  downloaded_pages: 0,
+  lost_pages: 2
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::1' }
+{ msg: 'STREAM::NEEDLE::FINISHED::1' }
+{
+  msg: 'STREAM::WRITE::PIPE::ERROR::1',
+  downloaded_pages: 0,
+  lost_pages: 2
+}
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::3',
+  total: false,
+  downloaded_pages: 0,
+  lost_pages: 2,
+  all_download_task: false
+}
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::1',
+  total: false,
+  downloaded_pages: 0,
+  lost_pages: 2,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::0' }
+{ msg: 'STREAM::NEEDLE::FINISHED::0' }
+{
+  msg: 'STREAM::WRITE::PIPE::ERROR::0',
+  downloaded_pages: 0,
+  lost_pages: 3
+}
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::0',
+  total: false,
+  downloaded_pages: 0,
+  lost_pages: 3,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::2' }
+{ msg: 'STREAM::NEEDLE::FINISHED::2' }
+{
+  msg: 'STREAM::WRITE::PIPE::ERROR::2',
+  downloaded_pages: 0,
+  lost_pages: 4
+}
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::2',
+  total: true,
+  downloaded_pages: 0,
+  lost_pages: 4,
+  all_download_task: false
+}
+{
+  all_download_task: true,
+  global_download_task: false,
+  lost_pages: true
+}
+----------- Started Download Select Normal Pattern ---------------
+Selected Pages: 3,1,0,2
+Lost Pages: 0
+{ msg: 'STREAM::WRITE::PIPE::DONE::2' }
+{ msg: 'STREAM::NEEDLE::FINISHED::2' }
+{ msg: 'STREAM::WRITE::PIPE::ERROR::1' }
+{ msg: 'STREAM::WRITE::PIPE::ERROR::3' }
+{ msg: 'STREAM::WRITE::PIPE::ERROR::0' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::2',
+  downloaded_pages: 0,
+  lost_pages: 3,
+  numPagesArr: 4,
+  selective_download_task: false,
+  global_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::1' }
+{ msg: 'STREAM::NEEDLE::FINISHED::1' }
+{ msg: 'STREAM::WRITE::PIPE::DONE::3' }
+{ msg: 'STREAM::NEEDLE::FINISHED::3' }
+{ msg: 'STREAM::WRITE::PIPE::DONE::0' }
+{ msg: 'STREAM::NEEDLE::FINISHED::0' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::1',
+  downloaded_pages: 0,
+  lost_pages: 3,
+  numPagesArr: 4,
+  selective_download_task: false,
+  global_download_task: false
+}
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::3',
+  downloaded_pages: 0,
+  lost_pages: 3,
+  numPagesArr: 4,
+  selective_download_task: false,
+  global_download_task: false
+}
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::0',
+  downloaded_pages: 0,
+  lost_pages: 3,
+  numPagesArr: 4,
+  selective_download_task: false,
+  global_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::ERROR::2' }

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/tabs.css">
+    <style>
+        input{
+            display: block;
+            margin: 0.75em;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form action="/input_parser" method="post">
+        <p>Write <b>,</b> then name the <b>Numbering-System (NORMAL/CIPHER)</b> to count pages.</p>
+        <input type="text" name="pathArr" value="<%=pathArr%>" readonly>
+        
+        <% inputArr.forEach((ele, index)=> { %>
+            <input type="text" id="<%= ele.index %>" name="inputs" value="<%=ele.index%>,<%=ele.text%>"/>
+        <% }); %>
+
+        <input type="submit" value="Submit">
+    </form>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+{
+    "v1.0": "Download one image by a given link",
+    "v2.0": "Download many images by stream & for_loop ",
+    "v2.2": "Seperate the 1st & 2nd part of the link",
+    "v2.3": "Updated file_struct (root(config, main_app), app, data(imgs, pdf), routes, controllers, tests, code_counter)",
+    "v3.0": "Watch download progress",
+    "v4.0": "Add images to a PDF file",
+    "v4.1": "Insure existence of images_output_folder",
+    "v5.0": "Use env vars for the download process",
+    "v5.1": "fs_push_download_test_sample service",
+    "v5.2": "basic html form page",
+    "v5.3": "html tabs: 1.download 2.pdf",
+    "v6.0": "Simple automated download system (all, selective, failed)",
+    "v6.1": "Pdf-ing the items",
+    "v6.2": "Add mixed numbering-system links feature"
+}

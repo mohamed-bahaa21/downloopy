@@ -3,40 +3,83 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/tabs.css">
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/tabs.css">
+    <link rel="stylesheet" href="css/new.css">
 </head>
 
 <body>
 
+    <!-- Canvas -->
+    <canvas class="orb-canvas"></canvas>
+    <!-- Overlay -->
+    <div class="overlay">
+        <!-- Overlay inner wrapper -->
+        <div class="overlay__inner">
+            <!-- Buttons -->
+            <div class="overlay__btns">
+                <button class="overlay__btn overlay__btn--transparent">
+                    <a href="/" target="_blank">
+                        Go Back
+                    </a>
+                </button>
 
-    <form action="/path_parser" method="post">
-        <input type="text"  name="pathArr" value="<%=pathArr%>" readonly>
+                <button class="overlay__btn overlay__btn--colors">
+                    <span>Visit CodSki</span>
+                    <span class="overlay__btn-emoji"></span>
+                </button>
+            </div>
 
-        <select multiple data-placeholder="Add tools" name="url_path" id="url_path" onchange="this.form.submit()">
-            <% pathArr.forEach((ele, index) => { %>
-                <option>
-                    <%= index %>
-                    -
-                    <%= ele %>
-                </option>
-            <% }); %>
-        </select>
+            <br>
 
-        <!-- dribbble -->
-        <a class="dribbble" href="https://dribbble.com/shots/5112850-Multiple-select-animation-field" target="_blank">
-            <img src="https://cdn.dribbble.com/assets/dribbble-ball-1col-dnld-e29e0436f93d2f9c430fde5f3da66f94493fdca66351408ab0f96e2ec518ab17.png"
-                alt="">
-        </a>
+            <form action="/path_parser" method="post">
+                <input type="text" name="pathArr" value="<%=pathArr%>" readonly>
 
-        <input type="submit" value="Submit">
-    </form>
+                <select multiple data-placeholder="Add tools" name="url_path" id="url_path"
+                    onchange="this.form.submit()">
+                    <% pathArr.forEach((ele, index)=> { %>
+                        <option>
+                            <%= index %>
+                                -
+                                <%= ele %>
+                        </option>
+                        <% }); %>
+                </select>
 
+                <!-- dribbble
+                <a class="dribbble" href="https://dribbble.com/shots/5112850-Multiple-select-animation-field"
+                    target="_blank">
+                    <img src="https://cdn.dribbble.com/assets/dribbble-ball-1col-dnld-e29e0436f93d2f9c430fde5f3da66f94493fdca66351408ab0f96e2ec518ab17.png"
+                        alt="">
+                </a> -->
+
+                <input type="submit" value="Submit">
+            </form>
+
+        </div>
+
+        <div>
+            <div class="wrapper">
+                <ul class="StepProgress">
+                    <li class="StepProgress-item is-done"><strong>Choose System</strong></li>
+                    <li class="StepProgress-item current"><strong>URL Parser</strong></li>
+                    <li class="StepProgress-item"><strong>Path Parser</strong></li>
+                    <li class="StepProgress-item"><strong>Input Parser</strong></li>
+                    <li class="StepProgress-item"><strong>Result</strong></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="/js/main.js"></script>
+    <script src="js/main.js"></script>
+    <script type="module" src="js/new.js"></script>
+
 </body>
 
 </html>

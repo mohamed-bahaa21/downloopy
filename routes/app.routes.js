@@ -7,6 +7,7 @@ const controllers = require('../controllers/app.controllers')
 const MoveChosenFiles = require('../bin/move_chosen_files/move_chosen_files');
 
 route.get('/', controllers.getLanding)
+route.get('/download', controllers.getDownload)
 route.post('/url_parser', controllers.urlParser)
 route.post('/path_parser', controllers.pathParser)
 route.post('/input_parser', controllers.inputParser)

@@ -21,6 +21,13 @@ const checkValue = require('../bin/url_numbers_generator/zeros_pattern');
 const Parser = require('../bin/url_parser/url-parser');
 
 getLanding = (req, res, next) => {
+    res.render("landing", {
+        // msgs: req.flash('success'),
+        mixed: false,
+    })
+};
+
+getDownload = (req, res, next) => {
     res.render("download", {
         // msgs: req.flash('success'),
         mixed: false,
@@ -478,4 +485,4 @@ const pdfing = (req, res, next) => {
 }
 
 
-module.exports = { inputParser, urlParser, pathParser, getLanding, downloadAllPost, pdfing };
+module.exports = { inputParser, urlParser, pathParser, getLanding, getDownload, downloadAllPost, pdfing };

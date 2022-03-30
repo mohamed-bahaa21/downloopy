@@ -20,7 +20,7 @@ label {
 
 input {
     border: 1px solid #ccc;
-    margin: 1em 0;
+    /* margin: 1em 0; */
 }
 
 input,

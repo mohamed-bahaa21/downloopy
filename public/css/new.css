@@ -282,10 +282,10 @@ a {
     position: absolute;
     top: 0;
     left: -37px;
-    width: 12px;
-    height: 12px;
+    /* width: 12px; */
+    /* height: 12px; */
     border: 2px solid #ccc;
-    border-radius: 50%;
+    border-radius: 25%;
     background-color: #fff;
 }
 .StepProgress-item.is-done::before {
@@ -296,7 +296,7 @@ a {
     font-size: 10px;
     color: #fff;
     text-align: center;
-    border: 2px solid green;
+    border: 5px solid green;
     background-color: green;
 }
 .StepProgress-item.current::before {
@@ -306,9 +306,9 @@ a {
     content: counter(list);
     padding-top: 1px;
     width: 19px;
-    height: 18px;
-    top: -4px;
-    left: -40px;
+    /* height: 18px; */
+    /* top: -4px; */
+    /* left: -40px; */
     font-size: 14px;
     text-align: center;
     color: green;

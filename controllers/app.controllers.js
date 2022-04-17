@@ -37,18 +37,21 @@ getChooseSys = (req, res, next) => {
     res.render("1_choose_sys", {
         // msgs: req.flash('success'),
         mixed: false,
-        step: 'choose_sys'
+        step: 1
     })
 };
 
 urlParser = (req, res, next) => {
     const result = Parser.parseURL(req.body.url);
+    const FINISH_NUM = Number(req.body.FINISH_NUM);
     req.session.origin = result.origin;
+
+    req.session.FINISH_NUM = FINISH_NUM;
 
     // res.send(req.body);
     res.render('2_url_parser', {
         pathArr: result.pathArr,
-        step: 'url_parser'
+        step: 2
     });
 }
 
@@ -79,7 +82,7 @@ pathParser = (req, res, next) => {
     res.render('3_path_parser', {
         pathArr: req.body.pathArr,
         inputArr: inputArr,
-        step: 'path_parser'
+        step: 3
     });
 }
 
@@ -87,13 +90,25 @@ inputParser = (req, res, next) => {
     let { pathArr, inputs } = req.body;
     let { origin } = req.session;
 
-    const urls = Parser.generateNewUrls(origin, pathArr, inputs);
+    console.log(`req.session.FILES_NUMBER: ${req.session.FILES_NUMBER}`);
+
+    const urls = Parser.generateNewUrls(origin, pathArr, inputs, req.session.FINISH_NUM);
     req.session.urls = urls;
 
-    res.render("1_choose_sys", {
+    res.render("4_input_parser", {
         mixed: true,
         urls: urls,
-        step: 'input_parser'
+        step: 4
+    });
+}
+
+getResult = (req, res, next) => {
+    let result = req.query.result;
+
+    res.render("5_result", {
+        mixed: true,
+        result: result,
+        step: 5
     });
 }
 
@@ -216,7 +231,8 @@ function mixedNumbering(res, _urls, total_dir, FILE_NAME, FILE_TYPE) {
             });
 
             if (all_download_task && lost_pages.length == 0) {
-                res.send("Download Succeeded...")
+                // res.send("Download Succeeded...")
+                res.redirect(`/result?result=success`)
 
             } else if (all_download_task && lost_pages.length > 0) {
                 console.log("HERE")
@@ -285,7 +301,8 @@ function cipherNumbering(res, NTYPE, total_imgs_num, START_NUM, BASIS, FINISH_NU
             });
 
             if (all_download_task && lost_pages.length == 0) {
-                res.send("Download Succeeded...")
+                // res.send("Download Succeeded...")
+                res.redirect(`/result?result=success`)
 
             } else if (all_download_task && lost_pages.length > 0) {
                 console.log("HERE")
@@ -341,7 +358,8 @@ function normalNumbering(res, NTYPE, total_imgs_num, START_NUM, URI_START, URI_E
             });
 
             if (all_download_task && lost_pages.length == 0) {
-                res.send("Download Succeeded...")
+                // res.send("Download Succeeded...")
+                res.redirect(`/result?result=success`)
 
             } else if (all_download_task && lost_pages.length > 0) {
                 console.log("HERE")
@@ -429,14 +447,16 @@ function DownloadSelectNormalPattern(res, PAGES, total_imgs_num, URI_START, URI_
 
             if (selective_download_task && downloaded_pages.length == total_imgs_num && lost_pages.length != PAGES.length && lost_pages.length == 0) {
                 all_download_task = false;
-                res.send("Download Succeeded...");
+                // res.send("Download Succeeded...");
+                res.redirect(`/result?result=success`)
 
             } else if (selective_download_task && lost_pages.length < PAGES.length && lost_pages.length != 0) {
                 DownloadSelectNormalPattern(res, lost_pages, total_imgs_num, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE);
 
             } else if (selective_download_task && lost_pages.length == PAGES.length) {
                 all_download_task = false;
-                res.send("Download Failed...");
+                // res.send("Download Failed...");
+                res.redirect(`/result?result=failed`)
             }
         })
 
@@ -454,8 +474,6 @@ function DownloadSelectNormalPattern(res, PAGES, total_imgs_num, URI_START, URI_
         }).pipe(f);
     }
 }
-
-
 
 // =======================================================
 // Add images to a PDF File
@@ -505,4 +523,4 @@ const pdfing = (req, res, next) => {
 }
 
 
-module.exports = { inputParser, urlParser, pathParser, getLanding, getChooseSys, downloadAllPost, pdfing };
+module.exports = { inputParser, urlParser, pathParser, getLanding, getChooseSys, getResult, downloadAllPost, pdfing };

@@ -1,19 +1,19 @@
 <div>
     <div class="wrapper">
         <ul class="StepProgress">
-            <li class="StepProgress-item <%= step == 'choose_sys' ? 'current' : '' %>">
+            <li class="StepProgress-item <%= step == 1 ? 'current' : step > 1 ? 'is-done' : '' %>">
                 <strong>Choose System</strong>
             </li>
-            <li class="StepProgress-item <%= step == 'url_parser' ? 'current' : '' %>">
+            <li class="StepProgress-item <%= step == 2 ? 'current' : step > 2 ? 'is-done' : '' %>">
                 <strong>URL Parser</strong>
             </li>
-            <li class="StepProgress-item <%= step == 'path_parser' ? 'current' : '' %>">
+            <li class="StepProgress-item <%= step == 3 ? 'current' : step > 3 ? 'is-done' : '' %>">
                 <strong>Path Parser</strong>
             </li>
-            <li class="StepProgress-item <%= step == 'input_parser' ? 'current' : '' %>">
+            <li class="StepProgress-item <%= step == 4 ? 'current' : step > 4 ? 'is-done' : '' %>">
                 <strong>Input Parser</strong>
             </li>
-            <li class="StepProgress-item <%= step == 'result' ? 'current' : '' %>">
+            <li class="StepProgress-item <%= step == 5 ? 'current' : step > 5 ? 'is-done' : '' %>">
                 <strong>Result</strong>
             </li>
         </ul>

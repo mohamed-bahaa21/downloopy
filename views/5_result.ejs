@@ -34,47 +34,15 @@
 
             <br>
 
-            <form action="/api/download" method="post">
-                <p><b>Urls obtained successfuly</b></p>
-
-                <div class="form-item">
-                    <label for="website">File Type:</label>
-                    <select name="FILE_TYPE" id="FILE_TYPE">
-                        <option value="jpg">jpg</option>
-                        <option value="pdf">pdf</option>
-                    </select>
-                    <br><br>
-                </div>
-
-                <div class="form-item">
-                    <label for="FOLDER_NAME">Folder Name</label>
-                    <input type="text" name="FOLDER_NAME" id="FOLDER_NAME"><br>
-                </div>
-
-                <div class="form-item">
-                    <label for="FOLDER_NAME">File Name</label>
-                    <input type="text" name="FILE_NAME" id="FILE_NAME"><br>
-                </div>
-
-                <input type="text" name="NTYPE" value="MIXED" hidden><br>
-                <input type="text" name="DTYPE" value="ALL" hidden><br>
-
-                <input type="submit" value="Submit">
-            </form>
-
+            <% if(result=="success" ) { %>
+                <h1>Download Successeded</h1>
+                <% } else { %>
+                    <h1>Download Failed</h1>
+                    <% } %>
         </div>
 
         <%- include('./partials/steps.ejs') %>
-
     </div>
-
-    <ol>
-        <% urls.forEach(url=> { %>
-            <li>
-                <%=url%>
-            </li>
-            <% }) %>
-    </ol>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

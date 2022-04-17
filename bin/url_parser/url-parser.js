@@ -50,7 +50,7 @@ function parsePath(strA, strB) {
     };
 }
 
-function generateNewUrls(origin, pathArr, inputs) {
+function generateNewUrls(origin, pathArr, inputs, FINISH_NUM) {
     let paths = pathArr.split(',');
 
     let number = 0;
@@ -63,7 +63,7 @@ function generateNewUrls(origin, pathArr, inputs) {
     console.log(origin);
 
     newPathsArr = [];
-    for (let i = 1; i <= 12; i++) {
+    for (let i = 1; i <= FINISH_NUM; i++) {
         if (typeof inputs == Array) {
             inputs.map(ele => {
                 let tmp_ele = ele.split(',');

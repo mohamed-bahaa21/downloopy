@@ -83,7 +83,7 @@ input[type="submit"]:hover {
 .selectMultiple > div {
     position: relative;
     z-index: 2;
-    padding: 8px 12px 2px 12px;
+    padding: 8px 30px 2px 12px;
     border-radius: 8px;
     background: #fff;
     font-size: 14px;

@@ -27,10 +27,17 @@ getLanding = (req, res, next) => {
     })
 };
 
-getDownload = (req, res, next) => {
-    res.render("download", {
+// 1. Choose System
+// 2. URL Parser
+// 3. Path Parser
+// 4. Input Parser
+// 5. Result
+
+getChooseSys = (req, res, next) => {
+    res.render("1_choose_sys", {
         // msgs: req.flash('success'),
         mixed: false,
+        step: 'choose_sys'
     })
 };
 
@@ -39,8 +46,9 @@ urlParser = (req, res, next) => {
     req.session.origin = result.origin;
 
     // res.send(req.body);
-    res.render('path_parser', {
-        pathArr: result.pathArr
+    res.render('2_url_parser', {
+        pathArr: result.pathArr,
+        step: 'url_parser'
     });
 }
 
@@ -48,20 +56,30 @@ pathParser = (req, res, next) => {
     let tmp_inputArr = req.body.url_path;
     let inputArr = [];
 
-    tmp_inputArr.map((ele) => {
-        let tmp_ele = ele.split(' - ');
+    if (typeof tmp_inputArr == Array) {
+        tmp_inputArr.map((ele) => {
+            let tmp_ele = ele.split(' - ');
+            inputArr.push({
+                index: tmp_ele[0],
+                text: tmp_ele[1]
+            });
+        })
+    } else {
+        let tmp_ele = tmp_inputArr.split(' - ');
         inputArr.push({
             index: tmp_ele[0],
             text: tmp_ele[1]
         });
-    })
+    }
+
 
     // res.send(inputArr);
     console.log(req.body.pathArr);
 
-    res.render('input_parser', {
+    res.render('3_path_parser', {
         pathArr: req.body.pathArr,
-        inputArr: inputArr
+        inputArr: inputArr,
+        step: 'path_parser'
     });
 }
 
@@ -72,8 +90,10 @@ inputParser = (req, res, next) => {
     const urls = Parser.generateNewUrls(origin, pathArr, inputs);
     req.session.urls = urls;
 
-    res.render("download", {
+    res.render("1_choose_sys", {
         mixed: true,
+        urls: urls,
+        step: 'input_parser'
     });
 }
 
@@ -174,7 +194,7 @@ function mixedNumbering(res, _urls, total_dir, FILE_NAME, FILE_TYPE) {
 
         console.log('uri: ', uri);
         console.log('length: ', _urls.length);
-        
+
 
         f.on("finish", () => {
             console.log({
@@ -485,4 +505,4 @@ const pdfing = (req, res, next) => {
 }
 
 
-module.exports = { inputParser, urlParser, pathParser, getLanding, getDownload, downloadAllPost, pdfing };
+module.exports = { inputParser, urlParser, pathParser, getLanding, getChooseSys, downloadAllPost, pdfing };

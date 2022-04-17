@@ -16,6 +16,12 @@ function parseURL(link) {
     let pathArr = url.pathname.split('/');
     pathArr.shift();
 
+    console.log('====================================');
+    console.log(url);
+    console.log(url.origin);
+    console.log(pathArr);
+    console.log('====================================');
+
     return {
         url: url,
         origin: url.origin,
@@ -54,10 +60,34 @@ function generateNewUrls(origin, pathArr, inputs) {
     // let NORMAL_bool = false;
     // let CIPHER_bool = false;
 
+    console.log(origin);
+
     newPathsArr = [];
-    for (let i = 1; i <= 15; i++) {
-        inputs.map(ele => {
-            let tmp_ele = ele.split(',');
+    for (let i = 1; i <= 12; i++) {
+        if (typeof inputs == Array) {
+            inputs.map(ele => {
+                let tmp_ele = ele.split(',');
+
+                // NORMAL_bool = ele.includes("NORMAL");
+                // CIPHER_bool = ele.includes("CIPHER");
+
+                let str1 = paths[tmp_ele[0]];
+                let str2 = tmp_ele[1];
+                let newPath_tmp = this.parsePath(str1, str2); // page-1 / page-01
+
+                let str_type = tmp_ele[2];
+                if (str_type == "NORMAL") {
+                    number = i;
+                }
+                if (str_type == "CIPHER") {
+                    number = _pages_num[i - 1];
+                }
+
+                let result = `${newPath_tmp.str_before}${number}${newPath_tmp.str_after}`
+                paths[tmp_ele[0]] = result;
+            })
+        } else {
+            let tmp_ele = inputs.split(',');
 
             // NORMAL_bool = ele.includes("NORMAL");
             // CIPHER_bool = ele.includes("CIPHER");
@@ -76,7 +106,8 @@ function generateNewUrls(origin, pathArr, inputs) {
 
             let result = `${newPath_tmp.str_before}${number}${newPath_tmp.str_after}`
             paths[tmp_ele[0]] = result;
-        })
+        }
+
         let new_url = `${origin}/${paths.join('/')}`;
         newPathsArr.push(new_url);
     }

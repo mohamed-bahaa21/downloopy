@@ -10,13 +10,6 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/tabs.css">
     <link rel="stylesheet" href="css/new.css">
-
-    <style>
-        input {
-            display: block;
-            margin: 0.75em;
-        }
-    </style>
 </head>
 
 <body>
@@ -43,30 +36,33 @@
 
             <br>
 
-            <form action="/input_parser" method="post">
-                <p>Write <b>,</b> then name the <b>Numbering-System (NORMAL/CIPHER)</b> to count pages.</p>
+            <form action="/path_parser" method="post">
                 <input type="text" name="pathArr" value="<%=pathArr%>" readonly>
 
-                <% inputArr.forEach((ele, index)=> { %>
-                    <input type="text" id="<%= ele.index %>" name="inputs" value="<%=ele.index%>,<%=ele.text%>" />
-                    <% }); %>
+                <select multiple data-placeholder="Add tools" name="url_path" id="url_path"
+                    onchange="this.form.submit()">
+                    <% pathArr.forEach((ele, index)=> { %>
+                        <option>
+                            <%= index %>
+                                -
+                                <%= ele %>
+                        </option>
+                        <% }); %>
+                </select>
 
-                        <input type="submit" value="Submit">
+                <!-- dribbble
+                <a class="dribbble" href="https://dribbble.com/shots/5112850-Multiple-select-animation-field"
+                    target="_blank">
+                    <img src="https://cdn.dribbble.com/assets/dribbble-ball-1col-dnld-e29e0436f93d2f9c430fde5f3da66f94493fdca66351408ab0f96e2ec518ab17.png"
+                        alt="">
+                </a> -->
+
+                <input type="submit" value="Submit">
             </form>
 
         </div>
 
-        <div>
-            <div class="wrapper">
-                <ul class="StepProgress">
-                    <li class="StepProgress-item is-done"><strong>Choose System</strong></li>
-                    <li class="StepProgress-item is-done"><strong>URL Parser</strong></li>
-                    <li class="StepProgress-item current"><strong>Path Parser</strong></li>
-                    <li class="StepProgress-item"><strong>Input Parser</strong></li>
-                    <li class="StepProgress-item"><strong>Result</strong></li>
-                </ul>
-            </div>
-        </div>
+        <%- include('./partials/steps.ejs') %>
 
     </div>
 

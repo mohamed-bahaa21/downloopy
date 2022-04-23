@@ -1,0 +1,14 @@
+urls: 
+----------- Started Download All Normal Pattern ---------------
+uri: undefined
+Folder created OR Already found
+{
+  msg: 'STREAM::WRITE::PIPE::ERROR::1',
+  err: Error: getaddrinfo ENOTFOUND undefined
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:71:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'undefined'
+  }
+}

@@ -1,0 +1,26 @@
+----------- Started Download All Normal Pattern ---------------
+Folder created OR Already found
+====================================
+URL {
+  href: 'https://cs.nju.edu.cn/gchen/teaching/np/lecture12.pdf',
+  origin: 'https://cs.nju.edu.cn',
+  protocol: 'https:',
+  username: '',
+  password: '',
+  host: 'cs.nju.edu.cn',
+  hostname: 'cs.nju.edu.cn',
+  port: '',
+  pathname: '/gchen/teaching/np/lecture12.pdf',
+  search: '',
+  searchParams: URLSearchParams {},
+  hash: ''
+}
+https://cs.nju.edu.cn
+[ 'gchen', 'teaching', 'np', 'lecture12.pdf' ]
+====================================
+gchen,teaching,np,lecture12.pdf
+req.session.FILES_NUMBER: undefined
+https://cs.nju.edu.cn
+urls: 
+----------- Started Download All Normal Pattern ---------------
+Folder created OR Already found

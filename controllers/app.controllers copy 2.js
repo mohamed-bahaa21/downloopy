@@ -90,7 +90,7 @@ inputParser = (req, res, next) => {
     let { pathArr, inputs } = req.body;
     let { origin } = req.session;
 
-    console.log(`req.session.FINISH_NUM: ${req.session.FINISH_NUM}`);
+    console.log(`req.session.FILES_NUMBER: ${req.session.FILES_NUMBER}`);
 
     const urls = Parser.generateNewUrls(origin, pathArr, inputs, req.session.FINISH_NUM);
     req.session.urls = urls;

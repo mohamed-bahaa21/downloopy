@@ -1,0 +1,239 @@
+urls: 
+----------- Started Download All Normal Pattern ---------------
+uri: 
+length: 
+uri: 
+length: 
+uri: 
+length: 
+uri: 
+length: 
+uri: 
+length: 
+uri: 
+length: 
+uri: 
+length: 
+uri: 
+length: 
+uri: 
+length: 
+uri: 
+length: 
+uri: 
+length: 
+uri: 
+length: 
+uri: 
+length: 
+uri: 
+length: 
+uri: 
+length: 
+Folder created OR Already found
+{ msg: 'STREAM::WRITE::PIPE::ERROR::4', err: null }
+{ msg: 'STREAM::WRITE::PIPE::ERROR::5', err: null }
+{ msg: 'STREAM::WRITE::PIPE::ERROR::7', err: null }
+{ msg: 'STREAM::WRITE::PIPE::ERROR::6', err: null }
+{ msg: 'STREAM::WRITE::PIPE::DONE::5' }
+{ msg: 'STREAM::WRITE::PIPE::DONE::4' }
+{ msg: 'STREAM::WRITE::PIPE::DONE::7' }
+{ msg: 'STREAM::WRITE::PIPE::DONE::6' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::5',
+  downloaded_pages: 0,
+  lost_pages: 4,
+  urls: 15,
+  total: false,
+  all_download_task: false
+}
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::4',
+  downloaded_pages: 0,
+  lost_pages: 4,
+  urls: 15,
+  total: false,
+  all_download_task: false
+}
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::7',
+  downloaded_pages: 0,
+  lost_pages: 4,
+  urls: 15,
+  total: false,
+  all_download_task: false
+}
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::6',
+  downloaded_pages: 0,
+  lost_pages: 4,
+  urls: 15,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::ERROR::9', err: null }
+{ msg: 'STREAM::WRITE::PIPE::ERROR::3', err: null }
+{ msg: 'STREAM::WRITE::PIPE::ERROR::8', err: null }
+{ msg: 'STREAM::WRITE::PIPE::DONE::9' }
+{ msg: 'STREAM::WRITE::PIPE::DONE::3' }
+{ msg: 'STREAM::WRITE::PIPE::DONE::8' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::9',
+  downloaded_pages: 0,
+  lost_pages: 7,
+  urls: 15,
+  total: false,
+  all_download_task: false
+}
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::3',
+  downloaded_pages: 0,
+  lost_pages: 7,
+  urls: 15,
+  total: false,
+  all_download_task: false
+}
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::8',
+  downloaded_pages: 0,
+  lost_pages: 7,
+  urls: 15,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::ERROR::2', err: null }
+{ msg: 'STREAM::WRITE::PIPE::DONE::2' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::2',
+  downloaded_pages: 0,
+  lost_pages: 8,
+  urls: 15,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::ERROR::11', err: null }
+{ msg: 'STREAM::WRITE::PIPE::ERROR::1', err: null }
+{ msg: 'STREAM::WRITE::PIPE::DONE::11' }
+{ msg: 'STREAM::WRITE::PIPE::DONE::1' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::11',
+  downloaded_pages: 0,
+  lost_pages: 10,
+  urls: 15,
+  total: false,
+  all_download_task: false
+}
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::1',
+  downloaded_pages: 0,
+  lost_pages: 10,
+  urls: 15,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::12' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::12',
+  downloaded_pages: 1,
+  lost_pages: 10,
+  urls: 15,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::10' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::10',
+  downloaded_pages: 2,
+  lost_pages: 10,
+  urls: 15,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::14' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::14',
+  downloaded_pages: 3,
+  lost_pages: 10,
+  urls: 15,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::15' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::15',
+  downloaded_pages: 4,
+  lost_pages: 10,
+  urls: 15,
+  total: false,
+  all_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::13' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::13',
+  downloaded_pages: 5,
+  lost_pages: 10,
+  urls: 15,
+  total: true,
+  all_download_task: true
+}
+HERE
+----------- Started Download Select Mixed Pattern ---------------
+{
+  _urls: [
+    {
+      uri: 'https://proceedings.esri.com/library/userconf/devsummit17/papers/dev_int_4.pdf',
+      element: 4
+    },
+    {
+      uri: 'https://proceedings.esri.com/library/userconf/devsummit17/papers/dev_int_5.pdf',
+      element: 5
+    },
+    {
+      uri: 'https://proceedings.esri.com/library/userconf/devsummit17/papers/dev_int_7.pdf',
+      element: 7
+    },
+    {
+      uri: 'https://proceedings.esri.com/library/userconf/devsummit17/papers/dev_int_6.pdf',
+      element: 6
+    },
+    {
+      uri: 'https://proceedings.esri.com/library/userconf/devsummit17/papers/dev_int_9.pdf',
+      element: 9
+    },
+    {
+      uri: 'https://proceedings.esri.com/library/userconf/devsummit17/papers/dev_int_3.pdf',
+      element: 3
+    },
+    {
+      uri: 'https://proceedings.esri.com/library/userconf/devsummit17/papers/dev_int_8.pdf',
+      element: 8
+    },
+    {
+      uri: 'https://proceedings.esri.com/library/userconf/devsummit17/papers/dev_int_2.pdf',
+      element: 2
+    },
+    {
+      uri: 'https://proceedings.esri.com/library/userconf/devsummit17/papers/dev_int_11.pdf',
+      element: 11
+    },
+    {
+      uri: 'https://proceedings.esri.com/library/userconf/devsummit17/papers/dev_int_1.pdf',
+      element: 1
+    }
+  ],
+  total_imgs_num: 0,
+  downloaded_pages: 5,
+  lost_pages: 0
+}
+{ msg: 'STREAM::WRITE::PIPE::OPEN::5' }
+{ msg: 'STREAM::WRITE::PIPE::ERROR::5', err: null }
+{ msg: 'STREAM::WRITE::PIPE::DONE::5' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::5',
+  downloaded_pages: 5,
+  lost_pages: 1,
+  _urls: 10,
+  total_imgs_num: 0,
+  selective_download_task: false,
+  global_download_task: false
+}

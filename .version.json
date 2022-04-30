@@ -14,5 +14,6 @@
     "v0.6.1": "Pdf-ing the items",
     "v0.7.0": "Add mixed numbering-system links feature",
     "v0.7.1": "Update UI",
-    "v0.7.2": "Add process steps for mixed numbering-system"
+    "v0.7.2": "Add process steps for mixed numbering-system",
+    "v0.8.0": "Sync & Async Files Download"
 }

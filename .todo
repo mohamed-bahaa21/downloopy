@@ -5,3 +5,10 @@
 * promises w/ for-loop
 * synchronized number of promises (50 promise after 50 promise)
 * minify imgs OR pdf size
+* download one by one
+* download bulk by bulk
+* download all files async
+* add NORMAL numbering system
+* add CIPHER numbering system
+* download ALL type
+* download SELECT type

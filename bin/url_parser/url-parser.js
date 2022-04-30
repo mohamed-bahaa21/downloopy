@@ -16,11 +16,11 @@ function parseURL(link) {
     let pathArr = url.pathname.split('/');
     pathArr.shift();
 
-    console.log('====================================');
-    console.log(url);
-    console.log(url.origin);
-    console.log(pathArr);
-    console.log('====================================');
+    // console.log('====================================');
+    // console.log(url);
+    // console.log(url.origin);
+    // console.log(pathArr);
+    // console.log('====================================');
 
     return {
         url: url,
@@ -35,6 +35,7 @@ function parseURL(link) {
 function parsePath(strA, strB) {
     str_before = "";
     str_after = "";
+
     for (var i = 0; i < strA.length; i++) {
         checkLetterEqual = (strA.charAt(i) == strB.charAt(i))
 
@@ -52,6 +53,7 @@ function parsePath(strA, strB) {
 
 function generateNewUrls(origin, pathArr, inputs, FINISH_NUM) {
     let paths = pathArr.split(',');
+    // console.log({ a: paths });
 
     let number = 0;
     var _pages_num = checkValue(1, '00', 0, 16);
@@ -60,7 +62,7 @@ function generateNewUrls(origin, pathArr, inputs, FINISH_NUM) {
     // let NORMAL_bool = false;
     // let CIPHER_bool = false;
 
-    console.log(origin);
+    // console.log(origin);
 
     newPathsArr = [];
     for (let i = 1; i <= FINISH_NUM; i++) {
@@ -94,6 +96,17 @@ function generateNewUrls(origin, pathArr, inputs, FINISH_NUM) {
 
             let str1 = paths[tmp_ele[0]];
             let str2 = tmp_ele[1];
+
+            if (i == 12) {
+                console.log({
+                    a: paths,
+                    b: paths[tmp_ele[0]],
+                    c: paths[2],
+                    d: pathArr,
+                });
+            }
+
+
             let newPath_tmp = this.parsePath(str1, str2); // page-1 / page-01
 
             let str_type = tmp_ele[2];
@@ -105,6 +118,7 @@ function generateNewUrls(origin, pathArr, inputs, FINISH_NUM) {
             }
 
             let result = `${newPath_tmp.str_before}${number}${newPath_tmp.str_after}`
+            // console.log({ newPath_tmp, number });
             paths[tmp_ele[0]] = result;
         }
 

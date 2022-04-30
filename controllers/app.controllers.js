@@ -43,10 +43,10 @@ getChooseSys = (req, res, next) => {
 
 urlParser = (req, res, next) => {
     const result = Parser.parseURL(req.body.url);
-    const FINISH_NUM = Number(req.body.FINISH_NUM);
+    const FILES_NUMBER = Number(req.body.FILES_NUMBER);
     req.session.origin = result.origin;
 
-    req.session.FINISH_NUM = FINISH_NUM;
+    req.session.FILES_NUMBER = FILES_NUMBER;
 
     // res.send(req.body);
     res.render('2_url_parser', {
@@ -74,10 +74,7 @@ pathParser = (req, res, next) => {
             text: tmp_ele[1]
         });
     }
-
-
     // res.send(inputArr);
-    console.log(req.body.pathArr);
 
     res.render('3_path_parser', {
         pathArr: req.body.pathArr,
@@ -90,9 +87,9 @@ inputParser = (req, res, next) => {
     let { pathArr, inputs } = req.body;
     let { origin } = req.session;
 
-    console.log(`req.session.FINISH_NUM: ${req.session.FINISH_NUM}`);
+    // console.log(`req.session.FILES_NUMBER: ${req.session.FILES_NUMBER}`);
 
-    const urls = Parser.generateNewUrls(origin, pathArr, inputs, req.session.FINISH_NUM);
+    const urls = Parser.generateNewUrls(origin, pathArr, inputs, req.session.FILES_NUMBER);
     req.session.urls = urls;
 
     res.render("4_input_parser", {
@@ -236,15 +233,16 @@ function mixedNumbering(res, _urls, total_dir, FILE_NAME, FILE_TYPE) {
 
             } else if (all_download_task && lost_pages.length > 0) {
                 console.log("HERE")
-                res.send({
-                    msg: `STREAM::WRITE::PIPE::CLOSED::${element}`,
-                    downloaded_pages: downloaded_pages.length,
-                    lost_pages: lost_pages.length,
-                    urls: _urls.length,
-                    total: ((lost_pages.length + downloaded_pages.length) == _urls.length),
-                    all_download_task: all_download_task
-                })
-                // DownloadSelectNormalPattern(res, lost_pages, total_imgs_num, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE);
+                DownloadSelectMixedPattern(res, lost_pages, total_dir, FILE_NAME, FILE_TYPE);
+                // res.send({
+                //     msg: `STREAM::WRITE::PIPE::CLOSED::${element}`,
+                //     downloaded_pages: downloaded_pages.length,
+                //     lost_pages: lost_pages.length,
+                //     urls: _urls.length,
+                //     total: ((lost_pages.length + downloaded_pages.length) == _urls.length),
+                //     all_download_task: all_download_task
+                // })
+                // mixedNumbering(res, total_imgs_num, total_dir, FILE_NAME, FILE_TYPE);
             }
         })
 
@@ -253,12 +251,103 @@ function mixedNumbering(res, _urls, total_dir, FILE_NAME, FILE_TYPE) {
             if (!error && response.statusCode == 200) {
                 downloaded_pages.push(element);
             } else {
-                lost_pages.push(element);
+                lost_pages.push({ uri, element });
                 console.log({
                     msg: `STREAM::WRITE::PIPE::ERROR::${element}`,
                     err: error,
                 });
                 // return;
+            }
+        }).pipe(f);
+    }
+}
+function DownloadSelectMixedPattern(res, _urls, total_dir, FILE_NAME, FILE_TYPE) {
+    console.log("----------- Started Download Select Normal Pattern ---------------");
+    // if (PAGES.length == 0) res.send("Somehow, No other page to download...");
+
+    // var str = "5,15,150";
+    // .replace(/ /g, "")
+
+    let selective_download_task = false;
+
+    var lost_pages = [];
+    lost_pages.length = 0;
+
+    let total_imgs_num = lost_pages.length;
+
+    console.log({
+        _urls: _urls,
+        total_imgs_num: total_imgs_num,
+        downloaded_pages: downloaded_pages.length,
+        lost_pages: lost_pages.length,
+    })
+    let f;
+
+    for (let index = 0; index <= _urls.length - 1; index++) {
+        const element = _urls[index].element;
+        const uri = _urls[index].uri;
+
+        if (element == undefined) continue;
+        f = fs.createWriteStream(`${total_dir}/${FILE_NAME}-${element}.${FILE_TYPE}`);
+
+        f.on("ready", () => {
+            console.log({
+                msg: `STREAM::WRITE::PIPE::READY::${element}`
+            });
+        });
+
+        f.on("open", () => {
+            console.log({
+                msg: `STREAM::WRITE::PIPE::OPEN::${element}`
+            });
+        });
+
+        f.on("finish", () => {
+            console.log({
+                msg: `STREAM::WRITE::PIPE::DONE::${element}`
+            });
+
+            if ((lost_pages.length + downloaded_pages.length) == total_imgs_num) {
+                selective_download_task = true;
+            }
+        });
+
+        f.on('close', () => {
+            console.log({
+                msg: `STREAM::WRITE::PIPE::CLOSED::${element}`,
+                downloaded_pages: downloaded_pages.length,
+                lost_pages: lost_pages.length,
+                _urls: _urls.length,
+                total_imgs_num: total_imgs_num,
+                selective_download_task: selective_download_task,
+                global_download_task: global_download_task,
+            });
+
+            if (selective_download_task && downloaded_pages.length == total_imgs_num && lost_pages.length != _urls.length && lost_pages.length == 0) {
+                all_download_task = false;
+                // res.send("Download Succeeded...");
+                res.redirect(`/result?result=success`)
+
+            } else if (selective_download_task && lost_pages.length < _urls.length && lost_pages.length != 0) {
+                DownloadSelectMixedPattern(res, lost_pages, total_dir, FILE_NAME, FILE_TYPE);
+
+            } else if (selective_download_task && lost_pages.length == _urls.length) {
+                all_download_task = false;
+                // res.send("Download Failed...");
+                res.redirect(`/result?result=failed`)
+            }
+        })
+
+        needle.get(uri, function (error, response) {
+            // console.log(response)
+            if (!error && response.statusCode == 200) {
+                downloaded_pages.push(element);
+            } else {
+                lost_pages.push({ uri, element });
+                console.log({
+                    msg: `STREAM::WRITE::PIPE::ERROR::${element}`,
+                    err: error,
+                });
             }
         }).pipe(f);
     }

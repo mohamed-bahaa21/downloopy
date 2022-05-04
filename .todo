@@ -14,6 +14,7 @@
 -   download SELECT type
 -   analyze last url path char by char to guess how to generate all the urls ({
     unique IDs,
+    millis date ID,
     random letters,
     meaningful words,
     mixed paths

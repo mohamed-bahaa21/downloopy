@@ -1,14 +1,20 @@
-* update file read/write streaming
-* add choose_website service
-* add crawler OR manual services
-* process (download, pdf, compress)
-* promises w/ for-loop
-* synchronized number of promises (50 promise after 50 promise)
-* minify imgs OR pdf size
-* download one by one
-* download bulk by bulk
-* download all files async
-* add NORMAL numbering system
-* add CIPHER numbering system
-* download ALL type
-* download SELECT type
+-   update file read/write streaming
+-   add choose_website service
+-   add crawler OR manual services
+-   process (download, pdf, compress)
+-   promises w/ for-loop
+-   synchronized number of promises (50 promise after 50 promise)
+-   minify imgs OR pdf size
+-   download one by one
+-   download bulk by bulk
+-   download all files async
+-   add NORMAL numbering system
+-   add CIPHER numbering system
+-   download ALL type
+-   download SELECT type
+-   analyze last url path char by char to guess how to generate all the urls ({
+    unique IDs,
+    random letters,
+    meaningful words,
+    mixed paths
+    )}

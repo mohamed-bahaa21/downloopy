@@ -49,6 +49,8 @@ urlParser = (req, res, next) => {
     req.session.FILES_NUMBER = FILES_NUMBER;
     console.log(`FILES_NUMBER: ${FILES_NUMBER}`);
 
+    console.log(result);
+
     // res.send(req.body);
     res.render('2_url_parser', {
         pathArr: result.pathArr,
@@ -67,6 +69,7 @@ pathParser = (req, res, next) => {
                 index: tmp_ele[0],
                 text: tmp_ele[1]
             });
+
         })
     } else {
         let tmp_ele = tmp_inputArr.split(' - ');
@@ -77,6 +80,8 @@ pathParser = (req, res, next) => {
     }
     // res.send(inputArr);
 
+    req.session.pathArr = req.body.pathArr;
+
     res.render('3_path_parser', {
         pathArr: req.body.pathArr,
         inputArr: inputArr,
@@ -85,10 +90,11 @@ pathParser = (req, res, next) => {
 }
 
 inputParser = (req, res, next) => {
-    let { pathArr, inputs } = req.body;
-    let { origin } = req.session;
+    // let { pathArr, inputs } = req.body;
+    let { inputs } = req.body;
+    let { pathArr, origin } = req.session;
 
-    console.log(`req.session.FILES_NUMBER: ${req.session.FILES_NUMBER}`);
+    // console.log(`req.session.FILES_NUMBER: ${req.session.FILES_NUMBER}`);
 
     const urls = Parser.generateNewUrls(origin, pathArr, inputs, req.session.FILES_NUMBER);
     req.session.urls = urls;
@@ -220,7 +226,7 @@ function mixedNumbering(res, _urls, total_dir, FILE_NAME, FILE_TYPE, index = 1, 
             console.log({
                 msg: `STREAM::WRITE::PIPE::DONE::${element}`
             });
-            if (lost_pages.length + downloaded_pages.length == _urls.length) {
+            if ((lost_pages.length + downloaded_pages.length) == _urls.length) {
                 all_download_task = true;
             }
         });

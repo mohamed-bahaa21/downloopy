@@ -36,15 +36,15 @@ function parsePath(strA, strB) {
     str_before = "";
     str_after = "";
 
-    for (var i = 0; i < strA.length; i++) {
-        checkLetterEqual = (strA.charAt(i) == strB.charAt(i))
-
-        if (checkLetterEqual) {
-            str_before += strB.charAt(i);
-        } else {
-            str_after += strB.charAt(i);
-        }
+    let letter = 0;
+    while ((strA.charAt(letter) == strB.charAt(letter))) {
+        str_before += strB.charAt(letter);
+        letter++;
     }
+
+    let rest = strB.slice(letter, strB.length);
+    str_after += rest;
+
     return {
         str_before: str_before,
         str_after: str_after
@@ -53,7 +53,6 @@ function parsePath(strA, strB) {
 
 function generateNewUrls(origin, pathArr, inputs, FINISH_NUM) {
     let paths = pathArr.split(',');
-    // console.log({ a: paths });
 
     let number = 0;
     var _pages_num = checkValue(1, '00', 0, 16);
@@ -94,17 +93,17 @@ function generateNewUrls(origin, pathArr, inputs, FINISH_NUM) {
             // NORMAL_bool = ele.includes("NORMAL");
             // CIPHER_bool = ele.includes("CIPHER");
 
-            let str1 = paths[tmp_ele[0]];
-            let str2 = tmp_ele[1];
+            let str1 = paths[tmp_ele[0]]; // with numbers (page-12-)
+            let str2 = tmp_ele[1]; // without numbers (page--)
 
-            if (i == 12) {
-                console.log({
-                    a: paths,
-                    b: paths[tmp_ele[0]],
-                    c: paths[2],
-                    d: pathArr,
-                });
-            }
+            // if (i == 13) {
+            //     console.log({
+            //         a: paths,
+            //         b: paths[tmp_ele[0]],
+            //         c: paths[2],
+            //         d: pathArr,
+            //     });
+            // }
 
 
             let newPath_tmp = this.parsePath(str1, str2); // page-1 / page-01
@@ -117,8 +116,14 @@ function generateNewUrls(origin, pathArr, inputs, FINISH_NUM) {
                 number = _pages_num[i - 1];
             }
 
+            // from-web-developer-to-hardware-developer- - 1 024.jpg
+            // from-web-developer-to-hardware-developer- 5 - 1024.jpg
+            // 52
+            console.log('====================================');
+            console.log({ newPath_tmp, number });
+            console.log('====================================');
+
             let result = `${newPath_tmp.str_before}${number}${newPath_tmp.str_after}`
-            // console.log({ newPath_tmp, number });
             paths[tmp_ele[0]] = result;
         }
 

@@ -1,0 +1,1135 @@
+----------- Started Download All Normal Pattern ---------------
+----------- HERE MIXED ---------------
+index: 1
+uri: undefined
+length: undefined
+Folder created OR Already found
+{
+  msg: 'STREAM::WRITE::PIPE::ERROR::1',
+  err: Error: getaddrinfo ENOTFOUND undefined
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:71:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'undefined'
+  }
+}
+FILES_NUMBER: 52
+{
+  url: URL {
+    href: 'https://image.slidesharecdn.com/web2embedded-150227080205-conversion-gate01/95/from-web-developer-to-hardware-developer-5-1024.jpg',
+    origin: 'https://image.slidesharecdn.com',
+    protocol: 'https:',
+    username: '',
+    password: '',
+    host: 'image.slidesharecdn.com',
+    hostname: 'image.slidesharecdn.com',
+    port: '',
+    pathname: '/web2embedded-150227080205-conversion-gate01/95/from-web-developer-to-hardware-developer-5-1024.jpg',
+    search: '',
+    searchParams: URLSearchParams {},
+    hash: ''
+  },
+  origin: 'https://image.slidesharecdn.com',
+  pathArr: [
+    'web2embedded-150227080205-conversion-gate01',
+    '95',
+    'from-web-developer-to-hardware-developer-5-1024.jpg'
+  ]
+}
+====================================
+{
+  newPath_tmp: {
+    str_before: 'from-web-developer-to-hardware-developer-',
+    str_after: '-1024.jpg'
+  },
+  number: 1
+}
+====================================
+====================================
+{
+  newPath_tmp: {
+    str_before: 'from-web-developer-to-hardware-developer-',
+    str_after: '-1024.jpg'
+  },
+  number: 2
+}
+====================================
+====================================
+{
+  newPath_tmp: {
+    str_before: 'from-web-developer-to-hardware-developer-',
+    str_after: '-1024.jpg'
+  },
+  number: 3
+}
+====================================
+====================================
+{
+  newPath_tmp: {
+    str_before: 'from-web-developer-to-hardware-developer-',
+    str_after: '-1024.jpg'
+  },
+  number: 4
+}
+====================================
+====================================
+{
+  newPath_tmp: {
+    str_before: 'from-web-developer-to-hardware-developer-',
+    str_after: '-1024.jpg'
+  },
+  number: 5
+}
+====================================
+====================================
+{
+  newPath_tmp: {
+    str_before: 'from-web-developer-to-hardware-developer-',
+    str_after: '-1024.jpg'
+  },
+  number: 6
+}
+====================================
+====================================
+{
+  newPath_tmp: {
+    str_before: 'from-web-developer-to-hardware-developer-',
+    str_after: '-1024.jpg'
+  },
+  number: 7
+}
+====================================
+====================================
+{
+  newPath_tmp: {
+    str_before: 'from-web-developer-to-hardware-developer-',
+    str_after: '-1024.jpg'
+  },
+  number: 8
+}
+====================================
+====================================
+{
+  newPath_tmp: {
+    str_before: 'from-web-developer-to-hardware-developer-',
+    str_after: '-1024.jpg'
+  },
+  number: 9
+}
+====================================
+====================================
+{
+  newPath_tmp: {
+    str_before: 'from-web-developer-to-hardware-developer-',
+    str_after: '-1024.jpg'
+  },
+  number: 10
+}
+====================================
+====================================
+{
+  newPath_tmp: {
+    str_before: 'from-web-developer-to-hardware-developer-',
+    str_after: '-1024.jpg'
+  },
+  number: 11
+}
+====================================
+====================================
+{
+  newPath_tmp: {
+    str_before: 'from-web-developer-to-hardware-developer-',
+    str_after: '-1024.jpg'
+  },
+  number: 12
+}
+====================================
+====================================
+{
+  newPath_tmp: {
+    str_before: 'from-web-developer-to-hardware-developer-',
+    str_after: '-1024.jpg'
+  },
+  number: 13
+}
+====================================
+====================================
+{
+  newPath_tmp: {
+    str_before: 'from-web-developer-to-hardware-developer-',
+    str_after: '-1024.jpg'
+  },
+  number: 14
+}
+====================================
+====================================
+{
+  newPath_tmp: {
+    str_before: 'from-web-developer-to-hardware-developer-',
+    str_after: '-1024.jpg'
+  },
+  number: 15
+}
+====================================
+====================================
+{
+  newPath_tmp: {
+    str_before: 'from-web-developer-to-hardware-developer-',
+    str_after: '-1024.jpg'
+  },
+  number: 16
+}
+====================================
+====================================
+{
+  newPath_tmp: {
+    str_before: 'from-web-developer-to-hardware-developer-',
+    str_after: '-1024.jpg'
+  },
+  number: 17
+}
+====================================
+====================================
+{
+  newPath_tmp: {
+    str_before: 'from-web-developer-to-hardware-developer-',
+    str_after: '-1024.jpg'
+  },
+  number: 18
+}
+====================================
+====================================
+{
+  newPath_tmp: {
+    str_before: 'from-web-developer-to-hardware-developer-',
+    str_after: '-1024.jpg'
+  },
+  number: 19
+}
+====================================
+====================================
+{
+  newPath_tmp: {
+    str_before: 'from-web-developer-to-hardware-developer-',
+    str_after: '-1024.jpg'
+  },
+  number: 20
+}
+====================================
+====================================
+{
+  newPath_tmp: {
+    str_before: 'from-web-developer-to-hardware-developer-',
+    str_after: '-1024.jpg'
+  },
+  number: 21
+}
+====================================
+====================================
+{
+  newPath_tmp: {
+    str_before: 'from-web-developer-to-hardware-developer-',
+    str_after: '-1024.jpg'
+  },
+  number: 22
+}
+====================================
+====================================
+{
+  newPath_tmp: {
+    str_before: 'from-web-developer-to-hardware-developer-',
+    str_after: '-1024.jpg'
+  },
+  number: 23
+}
+====================================
+====================================
+{
+  newPath_tmp: {
+    str_before: 'from-web-developer-to-hardware-developer-',
+    str_after: '-1024.jpg'
+  },
+  number: 24
+}
+====================================
+====================================
+{
+  newPath_tmp: {
+    str_before: 'from-web-developer-to-hardware-developer-',
+    str_after: '-1024.jpg'
+  },
+  number: 25
+}
+====================================
+====================================
+{
+  newPath_tmp: {
+    str_before: 'from-web-developer-to-hardware-developer-',
+    str_after: '-1024.jpg'
+  },
+  number: 26
+}
+====================================
+====================================
+{
+  newPath_tmp: {
+    str_before: 'from-web-developer-to-hardware-developer-',
+    str_after: '-1024.jpg'
+  },
+  number: 27
+}
+====================================
+====================================
+{
+  newPath_tmp: {
+    str_before: 'from-web-developer-to-hardware-developer-',
+    str_after: '-1024.jpg'
+  },
+  number: 28
+}
+====================================
+====================================
+{
+  newPath_tmp: {
+    str_before: 'from-web-developer-to-hardware-developer-',
+    str_after: '-1024.jpg'
+  },
+  number: 29
+}
+====================================
+====================================
+{
+  newPath_tmp: {
+    str_before: 'from-web-developer-to-hardware-developer-',
+    str_after: '-1024.jpg'
+  },
+  number: 30
+}
+====================================
+====================================
+{
+  newPath_tmp: {
+    str_before: 'from-web-developer-to-hardware-developer-',
+    str_after: '-1024.jpg'
+  },
+  number: 31
+}
+====================================
+====================================
+{
+  newPath_tmp: {
+    str_before: 'from-web-developer-to-hardware-developer-',
+    str_after: '-1024.jpg'
+  },
+  number: 32
+}
+====================================
+====================================
+{
+  newPath_tmp: {
+    str_before: 'from-web-developer-to-hardware-developer-',
+    str_after: '-1024.jpg'
+  },
+  number: 33
+}
+====================================
+====================================
+{
+  newPath_tmp: {
+    str_before: 'from-web-developer-to-hardware-developer-',
+    str_after: '-1024.jpg'
+  },
+  number: 34
+}
+====================================
+====================================
+{
+  newPath_tmp: {
+    str_before: 'from-web-developer-to-hardware-developer-',
+    str_after: '-1024.jpg'
+  },
+  number: 35
+}
+====================================
+====================================
+{
+  newPath_tmp: {
+    str_before: 'from-web-developer-to-hardware-developer-',
+    str_after: '-1024.jpg'
+  },
+  number: 36
+}
+====================================
+====================================
+{
+  newPath_tmp: {
+    str_before: 'from-web-developer-to-hardware-developer-',
+    str_after: '-1024.jpg'
+  },
+  number: 37
+}
+====================================
+====================================
+{
+  newPath_tmp: {
+    str_before: 'from-web-developer-to-hardware-developer-',
+    str_after: '-1024.jpg'
+  },
+  number: 38
+}
+====================================
+====================================
+{
+  newPath_tmp: {
+    str_before: 'from-web-developer-to-hardware-developer-',
+    str_after: '-1024.jpg'
+  },
+  number: 39
+}
+====================================
+====================================
+{
+  newPath_tmp: {
+    str_before: 'from-web-developer-to-hardware-developer-',
+    str_after: '-1024.jpg'
+  },
+  number: 40
+}
+====================================
+====================================
+{
+  newPath_tmp: {
+    str_before: 'from-web-developer-to-hardware-developer-',
+    str_after: '-1024.jpg'
+  },
+  number: 41
+}
+====================================
+====================================
+{
+  newPath_tmp: {
+    str_before: 'from-web-developer-to-hardware-developer-',
+    str_after: '-1024.jpg'
+  },
+  number: 42
+}
+====================================
+====================================
+{
+  newPath_tmp: {
+    str_before: 'from-web-developer-to-hardware-developer-',
+    str_after: '-1024.jpg'
+  },
+  number: 43
+}
+====================================
+====================================
+{
+  newPath_tmp: {
+    str_before: 'from-web-developer-to-hardware-developer-',
+    str_after: '-1024.jpg'
+  },
+  number: 44
+}
+====================================
+====================================
+{
+  newPath_tmp: {
+    str_before: 'from-web-developer-to-hardware-developer-',
+    str_after: '-1024.jpg'
+  },
+  number: 45
+}
+====================================
+====================================
+{
+  newPath_tmp: {
+    str_before: 'from-web-developer-to-hardware-developer-',
+    str_after: '-1024.jpg'
+  },
+  number: 46
+}
+====================================
+====================================
+{
+  newPath_tmp: {
+    str_before: 'from-web-developer-to-hardware-developer-',
+    str_after: '-1024.jpg'
+  },
+  number: 47
+}
+====================================
+====================================
+{
+  newPath_tmp: {
+    str_before: 'from-web-developer-to-hardware-developer-',
+    str_after: '-1024.jpg'
+  },
+  number: 48
+}
+====================================
+====================================
+{
+  newPath_tmp: {
+    str_before: 'from-web-developer-to-hardware-developer-',
+    str_after: '-1024.jpg'
+  },
+  number: 49
+}
+====================================
+====================================
+{
+  newPath_tmp: {
+    str_before: 'from-web-developer-to-hardware-developer-',
+    str_after: '-1024.jpg'
+  },
+  number: 50
+}
+====================================
+====================================
+{
+  newPath_tmp: {
+    str_before: 'from-web-developer-to-hardware-developer-',
+    str_after: '-1024.jpg'
+  },
+  number: 51
+}
+====================================
+====================================
+{
+  newPath_tmp: {
+    str_before: 'from-web-developer-to-hardware-developer-',
+    str_after: '-1024.jpg'
+  },
+  number: 52
+}
+====================================
+urls: 
+----------- Started Download All Normal Pattern ---------------
+----------- HERE MIXED ---------------
+index: 1
+uri: https://image.slidesharecdn.com/web2embedded-150227080205-conversion-gate01/95/from-web-developer-to-hardware-developer-1-1024.jpg
+length: 52
+Folder created OR Already found
+{ msg: 'STREAM::WRITE::PIPE::DONE::1' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::1',
+  downloaded_pages: 1,
+  lost_pages: 0,
+  urls: 52,
+  total: false,
+  all_download_task: false
+}
+index: 2
+uri: https://image.slidesharecdn.com/web2embedded-150227080205-conversion-gate01/95/from-web-developer-to-hardware-developer-2-1024.jpg
+length: 52
+{ msg: 'STREAM::WRITE::PIPE::DONE::2' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::2',
+  downloaded_pages: 2,
+  lost_pages: 0,
+  urls: 52,
+  total: false,
+  all_download_task: false
+}
+index: 3
+uri: https://image.slidesharecdn.com/web2embedded-150227080205-conversion-gate01/95/from-web-developer-to-hardware-developer-3-1024.jpg
+length: 52
+{ msg: 'STREAM::WRITE::PIPE::DONE::3' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::3',
+  downloaded_pages: 3,
+  lost_pages: 0,
+  urls: 52,
+  total: false,
+  all_download_task: false
+}
+index: 4
+uri: https://image.slidesharecdn.com/web2embedded-150227080205-conversion-gate01/95/from-web-developer-to-hardware-developer-4-1024.jpg
+length: 52
+{ msg: 'STREAM::WRITE::PIPE::DONE::4' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::4',
+  downloaded_pages: 4,
+  lost_pages: 0,
+  urls: 52,
+  total: false,
+  all_download_task: false
+}
+index: 5
+uri: https://image.slidesharecdn.com/web2embedded-150227080205-conversion-gate01/95/from-web-developer-to-hardware-developer-5-1024.jpg
+length: 52
+{ msg: 'STREAM::WRITE::PIPE::DONE::5' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::5',
+  downloaded_pages: 5,
+  lost_pages: 0,
+  urls: 52,
+  total: false,
+  all_download_task: false
+}
+index: 6
+uri: https://image.slidesharecdn.com/web2embedded-150227080205-conversion-gate01/95/from-web-developer-to-hardware-developer-6-1024.jpg
+length: 52
+{ msg: 'STREAM::WRITE::PIPE::DONE::6' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::6',
+  downloaded_pages: 6,
+  lost_pages: 0,
+  urls: 52,
+  total: false,
+  all_download_task: false
+}
+index: 7
+uri: https://image.slidesharecdn.com/web2embedded-150227080205-conversion-gate01/95/from-web-developer-to-hardware-developer-7-1024.jpg
+length: 52
+{ msg: 'STREAM::WRITE::PIPE::DONE::7' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::7',
+  downloaded_pages: 7,
+  lost_pages: 0,
+  urls: 52,
+  total: false,
+  all_download_task: false
+}
+index: 8
+uri: https://image.slidesharecdn.com/web2embedded-150227080205-conversion-gate01/95/from-web-developer-to-hardware-developer-8-1024.jpg
+length: 52
+{ msg: 'STREAM::WRITE::PIPE::DONE::8' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::8',
+  downloaded_pages: 8,
+  lost_pages: 0,
+  urls: 52,
+  total: false,
+  all_download_task: false
+}
+index: 9
+uri: https://image.slidesharecdn.com/web2embedded-150227080205-conversion-gate01/95/from-web-developer-to-hardware-developer-9-1024.jpg
+length: 52
+{ msg: 'STREAM::WRITE::PIPE::DONE::9' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::9',
+  downloaded_pages: 9,
+  lost_pages: 0,
+  urls: 52,
+  total: false,
+  all_download_task: false
+}
+index: 10
+uri: https://image.slidesharecdn.com/web2embedded-150227080205-conversion-gate01/95/from-web-developer-to-hardware-developer-10-1024.jpg
+length: 52
+{ msg: 'STREAM::WRITE::PIPE::DONE::10' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::10',
+  downloaded_pages: 10,
+  lost_pages: 0,
+  urls: 52,
+  total: false,
+  all_download_task: false
+}
+index: 11
+uri: https://image.slidesharecdn.com/web2embedded-150227080205-conversion-gate01/95/from-web-developer-to-hardware-developer-11-1024.jpg
+length: 52
+{ msg: 'STREAM::WRITE::PIPE::DONE::11' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::11',
+  downloaded_pages: 11,
+  lost_pages: 0,
+  urls: 52,
+  total: false,
+  all_download_task: false
+}
+index: 12
+uri: https://image.slidesharecdn.com/web2embedded-150227080205-conversion-gate01/95/from-web-developer-to-hardware-developer-12-1024.jpg
+length: 52
+{ msg: 'STREAM::WRITE::PIPE::DONE::12' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::12',
+  downloaded_pages: 12,
+  lost_pages: 0,
+  urls: 52,
+  total: false,
+  all_download_task: false
+}
+index: 13
+uri: https://image.slidesharecdn.com/web2embedded-150227080205-conversion-gate01/95/from-web-developer-to-hardware-developer-13-1024.jpg
+length: 52
+{ msg: 'STREAM::WRITE::PIPE::DONE::13' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::13',
+  downloaded_pages: 13,
+  lost_pages: 0,
+  urls: 52,
+  total: false,
+  all_download_task: false
+}
+index: 14
+uri: https://image.slidesharecdn.com/web2embedded-150227080205-conversion-gate01/95/from-web-developer-to-hardware-developer-14-1024.jpg
+length: 52
+{ msg: 'STREAM::WRITE::PIPE::DONE::14' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::14',
+  downloaded_pages: 14,
+  lost_pages: 0,
+  urls: 52,
+  total: false,
+  all_download_task: false
+}
+index: 15
+uri: https://image.slidesharecdn.com/web2embedded-150227080205-conversion-gate01/95/from-web-developer-to-hardware-developer-15-1024.jpg
+length: 52
+{ msg: 'STREAM::WRITE::PIPE::DONE::15' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::15',
+  downloaded_pages: 15,
+  lost_pages: 0,
+  urls: 52,
+  total: false,
+  all_download_task: false
+}
+index: 16
+uri: https://image.slidesharecdn.com/web2embedded-150227080205-conversion-gate01/95/from-web-developer-to-hardware-developer-16-1024.jpg
+length: 52
+{ msg: 'STREAM::WRITE::PIPE::DONE::16' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::16',
+  downloaded_pages: 16,
+  lost_pages: 0,
+  urls: 52,
+  total: false,
+  all_download_task: false
+}
+index: 17
+uri: https://image.slidesharecdn.com/web2embedded-150227080205-conversion-gate01/95/from-web-developer-to-hardware-developer-17-1024.jpg
+length: 52
+{ msg: 'STREAM::WRITE::PIPE::DONE::17' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::17',
+  downloaded_pages: 17,
+  lost_pages: 0,
+  urls: 52,
+  total: false,
+  all_download_task: false
+}
+index: 18
+uri: https://image.slidesharecdn.com/web2embedded-150227080205-conversion-gate01/95/from-web-developer-to-hardware-developer-18-1024.jpg
+length: 52
+{ msg: 'STREAM::WRITE::PIPE::DONE::18' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::18',
+  downloaded_pages: 18,
+  lost_pages: 0,
+  urls: 52,
+  total: false,
+  all_download_task: false
+}
+index: 19
+uri: https://image.slidesharecdn.com/web2embedded-150227080205-conversion-gate01/95/from-web-developer-to-hardware-developer-19-1024.jpg
+length: 52
+{ msg: 'STREAM::WRITE::PIPE::DONE::19' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::19',
+  downloaded_pages: 19,
+  lost_pages: 0,
+  urls: 52,
+  total: false,
+  all_download_task: false
+}
+index: 20
+uri: https://image.slidesharecdn.com/web2embedded-150227080205-conversion-gate01/95/from-web-developer-to-hardware-developer-20-1024.jpg
+length: 52
+{ msg: 'STREAM::WRITE::PIPE::DONE::20' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::20',
+  downloaded_pages: 20,
+  lost_pages: 0,
+  urls: 52,
+  total: false,
+  all_download_task: false
+}
+index: 21
+uri: https://image.slidesharecdn.com/web2embedded-150227080205-conversion-gate01/95/from-web-developer-to-hardware-developer-21-1024.jpg
+length: 52
+{ msg: 'STREAM::WRITE::PIPE::DONE::21' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::21',
+  downloaded_pages: 21,
+  lost_pages: 0,
+  urls: 52,
+  total: false,
+  all_download_task: false
+}
+index: 22
+uri: https://image.slidesharecdn.com/web2embedded-150227080205-conversion-gate01/95/from-web-developer-to-hardware-developer-22-1024.jpg
+length: 52
+{ msg: 'STREAM::WRITE::PIPE::DONE::22' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::22',
+  downloaded_pages: 22,
+  lost_pages: 0,
+  urls: 52,
+  total: false,
+  all_download_task: false
+}
+index: 23
+uri: https://image.slidesharecdn.com/web2embedded-150227080205-conversion-gate01/95/from-web-developer-to-hardware-developer-23-1024.jpg
+length: 52
+{ msg: 'STREAM::WRITE::PIPE::DONE::23' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::23',
+  downloaded_pages: 23,
+  lost_pages: 0,
+  urls: 52,
+  total: false,
+  all_download_task: false
+}
+index: 24
+uri: https://image.slidesharecdn.com/web2embedded-150227080205-conversion-gate01/95/from-web-developer-to-hardware-developer-24-1024.jpg
+length: 52
+{ msg: 'STREAM::WRITE::PIPE::DONE::24' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::24',
+  downloaded_pages: 24,
+  lost_pages: 0,
+  urls: 52,
+  total: false,
+  all_download_task: false
+}
+index: 25
+uri: https://image.slidesharecdn.com/web2embedded-150227080205-conversion-gate01/95/from-web-developer-to-hardware-developer-25-1024.jpg
+length: 52
+{ msg: 'STREAM::WRITE::PIPE::DONE::25' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::25',
+  downloaded_pages: 25,
+  lost_pages: 0,
+  urls: 52,
+  total: false,
+  all_download_task: false
+}
+index: 26
+uri: https://image.slidesharecdn.com/web2embedded-150227080205-conversion-gate01/95/from-web-developer-to-hardware-developer-26-1024.jpg
+length: 52
+{ msg: 'STREAM::WRITE::PIPE::DONE::26' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::26',
+  downloaded_pages: 26,
+  lost_pages: 0,
+  urls: 52,
+  total: false,
+  all_download_task: false
+}
+index: 27
+uri: https://image.slidesharecdn.com/web2embedded-150227080205-conversion-gate01/95/from-web-developer-to-hardware-developer-27-1024.jpg
+length: 52
+{ msg: 'STREAM::WRITE::PIPE::DONE::27' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::27',
+  downloaded_pages: 27,
+  lost_pages: 0,
+  urls: 52,
+  total: false,
+  all_download_task: false
+}
+index: 28
+uri: https://image.slidesharecdn.com/web2embedded-150227080205-conversion-gate01/95/from-web-developer-to-hardware-developer-28-1024.jpg
+length: 52
+{ msg: 'STREAM::WRITE::PIPE::DONE::28' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::28',
+  downloaded_pages: 28,
+  lost_pages: 0,
+  urls: 52,
+  total: false,
+  all_download_task: false
+}
+index: 29
+uri: https://image.slidesharecdn.com/web2embedded-150227080205-conversion-gate01/95/from-web-developer-to-hardware-developer-29-1024.jpg
+length: 52
+{ msg: 'STREAM::WRITE::PIPE::DONE::29' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::29',
+  downloaded_pages: 29,
+  lost_pages: 0,
+  urls: 52,
+  total: false,
+  all_download_task: false
+}
+index: 30
+uri: https://image.slidesharecdn.com/web2embedded-150227080205-conversion-gate01/95/from-web-developer-to-hardware-developer-30-1024.jpg
+length: 52
+{ msg: 'STREAM::WRITE::PIPE::DONE::30' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::30',
+  downloaded_pages: 30,
+  lost_pages: 0,
+  urls: 52,
+  total: false,
+  all_download_task: false
+}
+index: 31
+uri: https://image.slidesharecdn.com/web2embedded-150227080205-conversion-gate01/95/from-web-developer-to-hardware-developer-31-1024.jpg
+length: 52
+{ msg: 'STREAM::WRITE::PIPE::DONE::31' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::31',
+  downloaded_pages: 31,
+  lost_pages: 0,
+  urls: 52,
+  total: false,
+  all_download_task: false
+}
+index: 32
+uri: https://image.slidesharecdn.com/web2embedded-150227080205-conversion-gate01/95/from-web-developer-to-hardware-developer-32-1024.jpg
+length: 52
+{ msg: 'STREAM::WRITE::PIPE::DONE::32' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::32',
+  downloaded_pages: 32,
+  lost_pages: 0,
+  urls: 52,
+  total: false,
+  all_download_task: false
+}
+index: 33
+uri: https://image.slidesharecdn.com/web2embedded-150227080205-conversion-gate01/95/from-web-developer-to-hardware-developer-33-1024.jpg
+length: 52
+{ msg: 'STREAM::WRITE::PIPE::DONE::33' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::33',
+  downloaded_pages: 33,
+  lost_pages: 0,
+  urls: 52,
+  total: false,
+  all_download_task: false
+}
+index: 34
+uri: https://image.slidesharecdn.com/web2embedded-150227080205-conversion-gate01/95/from-web-developer-to-hardware-developer-34-1024.jpg
+length: 52
+{ msg: 'STREAM::WRITE::PIPE::DONE::34' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::34',
+  downloaded_pages: 34,
+  lost_pages: 0,
+  urls: 52,
+  total: false,
+  all_download_task: false
+}
+index: 35
+uri: https://image.slidesharecdn.com/web2embedded-150227080205-conversion-gate01/95/from-web-developer-to-hardware-developer-35-1024.jpg
+length: 52
+{ msg: 'STREAM::WRITE::PIPE::DONE::35' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::35',
+  downloaded_pages: 35,
+  lost_pages: 0,
+  urls: 52,
+  total: false,
+  all_download_task: false
+}
+index: 36
+uri: https://image.slidesharecdn.com/web2embedded-150227080205-conversion-gate01/95/from-web-developer-to-hardware-developer-36-1024.jpg
+length: 52
+{ msg: 'STREAM::WRITE::PIPE::DONE::36' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::36',
+  downloaded_pages: 36,
+  lost_pages: 0,
+  urls: 52,
+  total: false,
+  all_download_task: false
+}
+index: 37
+uri: https://image.slidesharecdn.com/web2embedded-150227080205-conversion-gate01/95/from-web-developer-to-hardware-developer-37-1024.jpg
+length: 52
+{ msg: 'STREAM::WRITE::PIPE::DONE::37' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::37',
+  downloaded_pages: 37,
+  lost_pages: 0,
+  urls: 52,
+  total: false,
+  all_download_task: false
+}
+index: 38
+uri: https://image.slidesharecdn.com/web2embedded-150227080205-conversion-gate01/95/from-web-developer-to-hardware-developer-38-1024.jpg
+length: 52
+{ msg: 'STREAM::WRITE::PIPE::DONE::38' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::38',
+  downloaded_pages: 38,
+  lost_pages: 0,
+  urls: 52,
+  total: false,
+  all_download_task: false
+}
+index: 39
+uri: https://image.slidesharecdn.com/web2embedded-150227080205-conversion-gate01/95/from-web-developer-to-hardware-developer-39-1024.jpg
+length: 52
+{ msg: 'STREAM::WRITE::PIPE::DONE::39' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::39',
+  downloaded_pages: 39,
+  lost_pages: 0,
+  urls: 52,
+  total: false,
+  all_download_task: false
+}
+index: 40
+uri: https://image.slidesharecdn.com/web2embedded-150227080205-conversion-gate01/95/from-web-developer-to-hardware-developer-40-1024.jpg
+length: 52
+{ msg: 'STREAM::WRITE::PIPE::DONE::40' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::40',
+  downloaded_pages: 40,
+  lost_pages: 0,
+  urls: 52,
+  total: false,
+  all_download_task: false
+}
+index: 41
+uri: https://image.slidesharecdn.com/web2embedded-150227080205-conversion-gate01/95/from-web-developer-to-hardware-developer-41-1024.jpg
+length: 52
+{ msg: 'STREAM::WRITE::PIPE::DONE::41' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::41',
+  downloaded_pages: 41,
+  lost_pages: 0,
+  urls: 52,
+  total: false,
+  all_download_task: false
+}
+index: 42
+uri: https://image.slidesharecdn.com/web2embedded-150227080205-conversion-gate01/95/from-web-developer-to-hardware-developer-42-1024.jpg
+length: 52
+{ msg: 'STREAM::WRITE::PIPE::DONE::42' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::42',
+  downloaded_pages: 42,
+  lost_pages: 0,
+  urls: 52,
+  total: false,
+  all_download_task: false
+}
+index: 43
+uri: https://image.slidesharecdn.com/web2embedded-150227080205-conversion-gate01/95/from-web-developer-to-hardware-developer-43-1024.jpg
+length: 52
+{ msg: 'STREAM::WRITE::PIPE::DONE::43' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::43',
+  downloaded_pages: 43,
+  lost_pages: 0,
+  urls: 52,
+  total: false,
+  all_download_task: false
+}
+index: 44
+uri: https://image.slidesharecdn.com/web2embedded-150227080205-conversion-gate01/95/from-web-developer-to-hardware-developer-44-1024.jpg
+length: 52
+{ msg: 'STREAM::WRITE::PIPE::DONE::44' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::44',
+  downloaded_pages: 44,
+  lost_pages: 0,
+  urls: 52,
+  total: false,
+  all_download_task: false
+}
+index: 45
+uri: https://image.slidesharecdn.com/web2embedded-150227080205-conversion-gate01/95/from-web-developer-to-hardware-developer-45-1024.jpg
+length: 52
+{ msg: 'STREAM::WRITE::PIPE::DONE::45' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::45',
+  downloaded_pages: 45,
+  lost_pages: 0,
+  urls: 52,
+  total: false,
+  all_download_task: false
+}
+index: 46
+uri: https://image.slidesharecdn.com/web2embedded-150227080205-conversion-gate01/95/from-web-developer-to-hardware-developer-46-1024.jpg
+length: 52
+{ msg: 'STREAM::WRITE::PIPE::DONE::46' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::46',
+  downloaded_pages: 46,
+  lost_pages: 0,
+  urls: 52,
+  total: false,
+  all_download_task: false
+}
+index: 47
+uri: https://image.slidesharecdn.com/web2embedded-150227080205-conversion-gate01/95/from-web-developer-to-hardware-developer-47-1024.jpg
+length: 52
+{ msg: 'STREAM::WRITE::PIPE::DONE::47' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::47',
+  downloaded_pages: 47,
+  lost_pages: 0,
+  urls: 52,
+  total: false,
+  all_download_task: false
+}
+index: 48
+uri: https://image.slidesharecdn.com/web2embedded-150227080205-conversion-gate01/95/from-web-developer-to-hardware-developer-48-1024.jpg
+length: 52
+{ msg: 'STREAM::WRITE::PIPE::DONE::48' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::48',
+  downloaded_pages: 48,
+  lost_pages: 0,
+  urls: 52,
+  total: false,
+  all_download_task: false
+}
+index: 49
+uri: https://image.slidesharecdn.com/web2embedded-150227080205-conversion-gate01/95/from-web-developer-to-hardware-developer-49-1024.jpg
+length: 52
+{ msg: 'STREAM::WRITE::PIPE::DONE::49' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::49',
+  downloaded_pages: 49,
+  lost_pages: 0,
+  urls: 52,
+  total: false,
+  all_download_task: false
+}
+index: 50
+uri: https://image.slidesharecdn.com/web2embedded-150227080205-conversion-gate01/95/from-web-developer-to-hardware-developer-50-1024.jpg
+length: 52
+{ msg: 'STREAM::WRITE::PIPE::DONE::50' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::50',
+  downloaded_pages: 50,
+  lost_pages: 0,
+  urls: 52,
+  total: false,
+  all_download_task: false
+}
+index: 51
+uri: https://image.slidesharecdn.com/web2embedded-150227080205-conversion-gate01/95/from-web-developer-to-hardware-developer-51-1024.jpg
+length: 52
+{ msg: 'STREAM::WRITE::PIPE::DONE::51' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::51',
+  downloaded_pages: 51,
+  lost_pages: 0,
+  urls: 52,
+  total: false,
+  all_download_task: false
+}
+index: 52
+uri: https://image.slidesharecdn.com/web2embedded-150227080205-conversion-gate01/95/from-web-developer-to-hardware-developer-52-1024.jpg
+length: 52
+{ msg: 'STREAM::WRITE::PIPE::DONE::52' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::52',
+  downloaded_pages: 52,
+  lost_pages: 0,
+  urls: 52,
+  total: true,
+  all_download_task: true
+}

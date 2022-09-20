@@ -55,7 +55,7 @@ function generateNewUrls(origin, pathArr, inputs, FINISH_NUM) {
     let paths = pathArr.split(',');
 
     let number = 0;
-    var _pages_num = checkValue(1, '00', 0, 16);
+    var _pages_num = checkValue(1, '00', 0, FINISH_NUM+1);
     _pages_num.pop(-1);
 
     // let NORMAL_bool = false;
@@ -96,14 +96,14 @@ function generateNewUrls(origin, pathArr, inputs, FINISH_NUM) {
             let str1 = paths[tmp_ele[0]]; // with numbers (page-12-)
             let str2 = tmp_ele[1]; // without numbers (page--)
 
-            // if (i == 13) {
-            //     console.log({
-            //         a: paths,
-            //         b: paths[tmp_ele[0]],
-            //         c: paths[2],
-            //         d: pathArr,
-            //     });
-            // }
+            if (i == 17) {
+                console.log({
+                    a: paths,
+                    b: paths[tmp_ele[0]],
+                    c: paths[2],
+                    d: pathArr,
+                });
+            }
 
 
             let newPath_tmp = this.parsePath(str1, str2); // page-1 / page-01

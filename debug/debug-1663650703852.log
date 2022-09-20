@@ -1,0 +1,220 @@
+urls: 
+----------- Started Download All Normal Pattern ---------------
+----------- HERE MIXED ---------------
+index: 1
+uri: https://www.inf.ed.ac.uk/teaching/courses/comn/lecture-notes/lec01.pdf
+length: 18
+Folder created OR Already found
+{ msg: 'STREAM::WRITE::PIPE::DONE::1' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::1',
+  downloaded_pages: 1,
+  lost_pages: 0,
+  urls: 18,
+  total: false,
+  all_download_task: false
+}
+index: 2
+uri: https://www.inf.ed.ac.uk/teaching/courses/comn/lecture-notes/lec02.pdf
+length: 18
+{ msg: 'STREAM::WRITE::PIPE::DONE::2' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::2',
+  downloaded_pages: 2,
+  lost_pages: 0,
+  urls: 18,
+  total: false,
+  all_download_task: false
+}
+index: 3
+uri: https://www.inf.ed.ac.uk/teaching/courses/comn/lecture-notes/lec03.pdf
+length: 18
+{ msg: 'STREAM::WRITE::PIPE::DONE::3' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::3',
+  downloaded_pages: 3,
+  lost_pages: 0,
+  urls: 18,
+  total: false,
+  all_download_task: false
+}
+index: 4
+uri: https://www.inf.ed.ac.uk/teaching/courses/comn/lecture-notes/lec04.pdf
+length: 18
+{ msg: 'STREAM::WRITE::PIPE::DONE::4' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::4',
+  downloaded_pages: 4,
+  lost_pages: 0,
+  urls: 18,
+  total: false,
+  all_download_task: false
+}
+index: 5
+uri: https://www.inf.ed.ac.uk/teaching/courses/comn/lecture-notes/lec05.pdf
+length: 18
+{ msg: 'STREAM::WRITE::PIPE::DONE::5' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::5',
+  downloaded_pages: 5,
+  lost_pages: 0,
+  urls: 18,
+  total: false,
+  all_download_task: false
+}
+index: 6
+uri: https://www.inf.ed.ac.uk/teaching/courses/comn/lecture-notes/lec06.pdf
+length: 18
+{ msg: 'STREAM::WRITE::PIPE::DONE::6' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::6',
+  downloaded_pages: 6,
+  lost_pages: 0,
+  urls: 18,
+  total: false,
+  all_download_task: false
+}
+index: 7
+uri: https://www.inf.ed.ac.uk/teaching/courses/comn/lecture-notes/lec07.pdf
+length: 18
+{ msg: 'STREAM::WRITE::PIPE::DONE::7' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::7',
+  downloaded_pages: 7,
+  lost_pages: 0,
+  urls: 18,
+  total: false,
+  all_download_task: false
+}
+index: 8
+uri: https://www.inf.ed.ac.uk/teaching/courses/comn/lecture-notes/lec08.pdf
+length: 18
+{ msg: 'STREAM::WRITE::PIPE::DONE::8' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::8',
+  downloaded_pages: 8,
+  lost_pages: 0,
+  urls: 18,
+  total: false,
+  all_download_task: false
+}
+index: 9
+uri: https://www.inf.ed.ac.uk/teaching/courses/comn/lecture-notes/lec09.pdf
+length: 18
+{ msg: 'STREAM::WRITE::PIPE::DONE::9' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::9',
+  downloaded_pages: 9,
+  lost_pages: 0,
+  urls: 18,
+  total: false,
+  all_download_task: false
+}
+index: 10
+uri: https://www.inf.ed.ac.uk/teaching/courses/comn/lecture-notes/lec10.pdf
+length: 18
+{ msg: 'STREAM::WRITE::PIPE::DONE::10' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::10',
+  downloaded_pages: 10,
+  lost_pages: 0,
+  urls: 18,
+  total: false,
+  all_download_task: false
+}
+index: 11
+uri: https://www.inf.ed.ac.uk/teaching/courses/comn/lecture-notes/lec11.pdf
+length: 18
+{ msg: 'STREAM::WRITE::PIPE::DONE::11' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::11',
+  downloaded_pages: 11,
+  lost_pages: 0,
+  urls: 18,
+  total: false,
+  all_download_task: false
+}
+index: 12
+uri: https://www.inf.ed.ac.uk/teaching/courses/comn/lecture-notes/lec12.pdf
+length: 18
+{ msg: 'STREAM::WRITE::PIPE::DONE::12' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::12',
+  downloaded_pages: 12,
+  lost_pages: 0,
+  urls: 18,
+  total: false,
+  all_download_task: false
+}
+index: 13
+uri: https://www.inf.ed.ac.uk/teaching/courses/comn/lecture-notes/lec13.pdf
+length: 18
+{ msg: 'STREAM::WRITE::PIPE::DONE::13' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::13',
+  downloaded_pages: 13,
+  lost_pages: 0,
+  urls: 18,
+  total: false,
+  all_download_task: false
+}
+index: 14
+uri: https://www.inf.ed.ac.uk/teaching/courses/comn/lecture-notes/lec14.pdf
+length: 18
+{ msg: 'STREAM::WRITE::PIPE::DONE::14' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::14',
+  downloaded_pages: 14,
+  lost_pages: 0,
+  urls: 18,
+  total: false,
+  all_download_task: false
+}
+index: 15
+uri: https://www.inf.ed.ac.uk/teaching/courses/comn/lecture-notes/lec15.pdf
+length: 18
+{ msg: 'STREAM::WRITE::PIPE::DONE::15' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::15',
+  downloaded_pages: 15,
+  lost_pages: 0,
+  urls: 18,
+  total: false,
+  all_download_task: false
+}
+index: 16
+uri: https://www.inf.ed.ac.uk/teaching/courses/comn/lecture-notes/lec16.pdf
+length: 18
+{ msg: 'STREAM::WRITE::PIPE::DONE::16' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::16',
+  downloaded_pages: 16,
+  lost_pages: 0,
+  urls: 18,
+  total: false,
+  all_download_task: false
+}
+index: 17
+uri: https://www.inf.ed.ac.uk/teaching/courses/comn/lecture-notes/lec17.pdf
+length: 18
+{ msg: 'STREAM::WRITE::PIPE::DONE::17' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::17',
+  downloaded_pages: 17,
+  lost_pages: 0,
+  urls: 18,
+  total: false,
+  all_download_task: false
+}
+index: 18
+uri: https://www.inf.ed.ac.uk/teaching/courses/comn/lecture-notes/lec18.pdf
+length: 18
+{ msg: 'STREAM::WRITE::PIPE::DONE::18' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::18',
+  downloaded_pages: 18,
+  lost_pages: 0,
+  urls: 18,
+  total: true,
+  all_download_task: true
+}

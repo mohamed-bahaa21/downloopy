@@ -1,3 +1,6 @@
+- visualize downloading files
+- simplify step 1_choose_sys
+
 -   update file read/write streaming
 -   add choose_website service
 -   add crawler OR manual services

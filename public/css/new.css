@@ -30,8 +30,8 @@ body {
     min-height: 100vh;
     /* min-height: 100vh; */
     display: grid;
-    place-items: center;
-    padding: 2rem;
+    /* place-items: center; */
+    /* padding: 2rem; */
     font-family: var(--font-family);
     color: var(--dark-color);
     background: var(--bg-gradient);
@@ -68,6 +68,7 @@ strong {
 
 .overlay__inner {
     max-width: 36rem;
+    margin: 2em auto;
 }
 
 .overlay__title {
@@ -243,7 +244,7 @@ a {
     width: 100%;
     /* font-family: "Helvetica"; */
     font-size: 14px;
-    border: 0px solid #ccc;
+    border: 0px solid #fff;
     margin: 0 auto;
 }
 .StepProgress {
@@ -259,7 +260,7 @@ a {
     left: 15px;
     width: 10px;
     height: 100%;
-    border-left: 2px solid #ccc;
+    border-left: 2px solid #fff;
 }
 .StepProgress-item {
     position: relative;
@@ -282,11 +283,12 @@ a {
     position: absolute;
     top: 0;
     left: -37px;
-    /* width: 12px; */
-    /* height: 12px; */
-    border: 2px solid #ccc;
+    min-width: 16px;
+    min-height: 24px;
+    /* border: 2px solid #ccc;
     border-radius: 25%;
-    background-color: #fff;
+    background-color: #fff; */
+    color
 }
 .StepProgress-item.is-done::before {
     border-left: 2px solid green;

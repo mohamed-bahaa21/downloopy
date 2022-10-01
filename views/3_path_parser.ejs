@@ -22,9 +22,8 @@
 <body>
 
     <!-- Canvas -->
-    <canvas class="orb-canvas"></canvas>
     <!-- Overlay -->
-    <div class="overlay">
+    <div class="">
         <!-- Overlay inner wrapper -->
         <div class="overlay__inner">
             <!-- Buttons -->
@@ -42,6 +41,25 @@
             </div>
 
             <br>
+        </div>
+
+        <div style="display: flex; justify-content: center; align-items: center;">
+            <style>
+                label {
+                    background-color: transparent;
+                    border: 0;
+                    font-size: 0.9em;
+                    font-weight: 700;
+                }
+
+                input[type="submit"] {
+                    background-color: transparent;
+                    color: white;
+                    border: 0;
+                    font-weight: 700;
+                }
+            </style>
+
 
             <form action="/input_parser" method="post">
                 <p>Write <b>,</b> then name the <b>Numbering-System (NORMAL/CIPHER)</b> to count pages.</p>
@@ -51,12 +69,16 @@
                     <input type="text" id="<%= ele.index %>" name="inputs" value="<%=ele.index%>,<%=ele.text%>" />
                     <% }); %>
 
-                        <input type="submit" value="Submit">
+                        <button class="overlay__btn overlay__btn--colors" style="margin: 0 auto !important;">
+                            <input type="submit" value="Submit">
+                            <span class="overlay__btn-emoji"></span>
+                        </button>
             </form>
 
+
+            <%- include('./partials/steps.ejs') %>
         </div>
 
-        <%- include('./partials/steps.ejs') %>
 
     </div>
 

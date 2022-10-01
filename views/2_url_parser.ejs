@@ -15,9 +15,9 @@
 <body>
 
     <!-- Canvas -->
-    <canvas class="orb-canvas"></canvas>
+    <!-- <canvas class="orb-canvas"></canvas> -->
     <!-- Overlay -->
-    <div class="overlay">
+    <div class="">
         <!-- Overlay inner wrapper -->
         <div class="overlay__inner">
             <!-- Buttons -->
@@ -33,8 +33,26 @@
                     <span class="overlay__btn-emoji"></span>
                 </button>
             </div>
+        </div>
+        <br>
 
-            <br>
+        <div style="display: flex; justify-content: center; align-items: center;">
+            <style>
+                label {
+                    background-color: transparent;
+                    border: 0;
+                    font-size: 0.9em;
+                    font-weight: 700;
+                }
+
+                input[type="submit"] {
+                    background-color: transparent;
+                    color: white;
+                    border: 0;
+                    font-weight: 700;
+                }
+            </style>
+
 
             <form action="/path_parser" method="post">
                 <input type="text" name="pathArr" value="<%=pathArr%>" readonly>
@@ -51,18 +69,21 @@
                 </select>
 
                 <!-- dribbble
-                <a class="dribbble" href="https://dribbble.com/shots/5112850-Multiple-select-animation-field"
-                    target="_blank">
-                    <img src="https://cdn.dribbble.com/assets/dribbble-ball-1col-dnld-e29e0436f93d2f9c430fde5f3da66f94493fdca66351408ab0f96e2ec518ab17.png"
-                        alt="">
-                </a> -->
+    <a class="dribbble" href="https://dribbble.com/shots/5112850-Multiple-select-animation-field"
+        target="_blank">
+        <img src="https://cdn.dribbble.com/assets/dribbble-ball-1col-dnld-e29e0436f93d2f9c430fde5f3da66f94493fdca66351408ab0f96e2ec518ab17.png"
+            alt="">
+    </a> -->
 
-                <input type="submit" value="Submit">
+                <button class="overlay__btn overlay__btn--colors" style="margin: 0 auto !important;">
+                    <input type="submit" value="Submit">
+                    <span class="overlay__btn-emoji"></span>
+                </button>
             </form>
 
-        </div>
 
-        <%- include('./partials/steps.ejs') %>
+            <%- include('./partials/steps.ejs') %>
+        </div>
 
     </div>
 

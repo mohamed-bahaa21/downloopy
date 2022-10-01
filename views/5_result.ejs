@@ -13,9 +13,8 @@
 <body>
 
     <!-- Canvas -->
-    <canvas class="orb-canvas"></canvas>
     <!-- Overlay -->
-    <div class="overlay">
+    <div class="">
         <!-- Overlay inner wrapper -->
         <div class="overlay__inner">
             <!-- Buttons -->
@@ -33,15 +32,36 @@
             </div>
 
             <br>
+        </div>
+
+
+        <div style="display: flex; justify-content: center; align-items: center;">
+            <style>
+                label {
+                    background-color: transparent;
+                    border: 0;
+                    font-size: 0.9em;
+                    font-weight: 700;
+                }
+
+                input[type="submit"] {
+                    background-color: transparent;
+                    color: white;
+                    border: 0;
+                    font-weight: 700;
+                }
+            </style>
+
 
             <% if(result=="success" ) { %>
                 <h1>Download Successeded</h1>
                 <% } else { %>
                     <h1>Download Failed</h1>
-                    <% } %>
-        </div>
+            <% } %>
 
-        <%- include('./partials/steps.ejs') %>
+
+            <%- include('./partials/steps.ejs') %>
+        </div>
     </div>
 
 

@@ -18,12 +18,13 @@ label {
     padding: 0.15rem 0;
 }
 
-input {
+input[type="text"] {
     border: 1px solid #ccc;
     /* margin: 1em 0; */
 }
 
-input,
+input[type="text"],
+input[type="number"],
 select,
 option {
     position: relative;
@@ -34,7 +35,7 @@ option {
     padding: 0.5rem 0.75rem;
     font-size: 1rem;
     background: #fff;
-    border-radius: 0px;
+    border-radius: 0.5rem;
     box-shadow: 0 4px 16px 0 rgba(22, 42, 90, 0.12);
     transition: box-shadow 0.3s ease;
 }
@@ -51,7 +52,7 @@ input[type="radio"]:checked ~ label ~ .tab-content {
     display: block;
 }
 
-input[type="submit"] {
+/* input[type="submit"] {
     display: block;
     border: 1px solid;
     width: auto;
@@ -64,7 +65,7 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
     box-shadow: 0.15rem 0.15rem 0 0 #666;
-}
+} */
 
 /* ================================ */
 /* ================================ */

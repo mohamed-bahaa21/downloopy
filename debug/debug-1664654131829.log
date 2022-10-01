@@ -1,0 +1,102 @@
+----------- Started Download Select Normal Pattern ---------------
+{
+  PAGES: '1,5,10',
+  total_imgs_num: 6,
+  downloaded_pages: 0,
+  lost_pages: 0
+}
+{ msg: 'STREAM::WRITE::PIPE::OPEN::1' }
+{ msg: 'STREAM::WRITE::PIPE::OPEN::,' }
+{ msg: 'STREAM::WRITE::PIPE::OPEN::5' }
+{ msg: 'STREAM::WRITE::PIPE::OPEN::,' }
+{ msg: 'STREAM::WRITE::PIPE::OPEN::1' }
+{ msg: 'STREAM::WRITE::PIPE::OPEN::0' }
+Folder created OR Already found
+{ msg: 'STREAM::WRITE::PIPE::ERROR::,', err: null }
+{ msg: 'STREAM::WRITE::PIPE::DONE::,' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::,',
+  downloaded_pages: 0,
+  lost_pages: 1,
+  PAGES: 6,
+  total_imgs_num: 6,
+  selective_download_task: false,
+  global_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::ERROR::,', err: null }
+{ msg: 'STREAM::WRITE::PIPE::ERROR::0', err: null }
+{ msg: 'STREAM::WRITE::PIPE::DONE::,' }
+{ msg: 'STREAM::WRITE::PIPE::DONE::0' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::,',
+  downloaded_pages: 0,
+  lost_pages: 3,
+  PAGES: 6,
+  total_imgs_num: 6,
+  selective_download_task: false,
+  global_download_task: false
+}
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::0',
+  downloaded_pages: 0,
+  lost_pages: 3,
+  PAGES: 6,
+  total_imgs_num: 6,
+  selective_download_task: false,
+  global_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::5' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::5',
+  downloaded_pages: 1,
+  lost_pages: 3,
+  PAGES: 6,
+  total_imgs_num: 6,
+  selective_download_task: false,
+  global_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::1' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::1',
+  downloaded_pages: 2,
+  lost_pages: 3,
+  PAGES: 6,
+  total_imgs_num: 6,
+  selective_download_task: false,
+  global_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::1' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::1',
+  downloaded_pages: 3,
+  lost_pages: 3,
+  PAGES: 6,
+  total_imgs_num: 6,
+  selective_download_task: true,
+  global_download_task: false
+}
+----------- Started Download Select Normal Pattern ---------------
+{
+  PAGES: [ ',', ',', '0' ],
+  total_imgs_num: 6,
+  downloaded_pages: 3,
+  lost_pages: 0
+}
+{ msg: 'STREAM::WRITE::PIPE::OPEN::,' }
+{ msg: 'STREAM::WRITE::PIPE::OPEN::,' }
+{ msg: 'STREAM::WRITE::PIPE::OPEN::0' }
+{ msg: 'STREAM::WRITE::PIPE::ERROR::0', err: null }
+{ msg: 'STREAM::WRITE::PIPE::DONE::0' }
+{ msg: 'STREAM::WRITE::PIPE::ERROR::,', err: null }
+{ msg: 'STREAM::WRITE::PIPE::ERROR::,', err: null }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::0',
+  downloaded_pages: 3,
+  lost_pages: 3,
+  PAGES: 3,
+  total_imgs_num: 6,
+  selective_download_task: false,
+  global_download_task: false
+}
+{ msg: 'STREAM::WRITE::PIPE::DONE::,' }
+{ msg: 'STREAM::WRITE::PIPE::DONE::,' }

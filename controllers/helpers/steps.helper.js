@@ -17,6 +17,7 @@ getChooseSys = (req, res, next) => {
 
 // 2/5
 urlParser = (req, res, next) => {
+    // let DTYPE =  req.body.DTYPE;
     let result;
     let FILES_NUMBER;
 

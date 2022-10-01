@@ -65,7 +65,7 @@ downloadAllPost = (req, res, next) => {
         DownloadAllPattern(res, NTYPE, total_imgs_num, START_NUM, BASIS, FINISH_NUM, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE)
     }
     if (DTYPE == "SELECT") {
-        DownloadSelectNormalPattern(res, PAGES, PAGES.length, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE);
+        DownloadSelectPattern(res, PAGES, PAGES.length, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE);
     }
 
     // // add the test sample to download.samples file
@@ -329,7 +329,7 @@ function cipherNumbering(res, NTYPE, total_imgs_num, START_NUM, BASIS, FINISH_NU
 
             } else if (all_download_task && lost_pages.length > 0) {
                 console.log("HERE")
-                DownloadSelectNormalPattern(res, lost_pages, total_imgs_num, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE);
+                DownloadSelectPattern(res, lost_pages, total_imgs_num, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE);
             }
         })
 
@@ -386,7 +386,7 @@ function normalNumbering(res, NTYPE, total_imgs_num, START_NUM, URI_START, URI_E
 
             } else if (all_download_task && lost_pages.length > 0) {
                 console.log("HERE")
-                DownloadSelectNormalPattern(res, lost_pages, lost_pages.length, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE);
+                DownloadSelectPattern(res, lost_pages, lost_pages.length, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE);
             }
         })
 
@@ -407,7 +407,7 @@ function normalNumbering(res, NTYPE, total_imgs_num, START_NUM, URI_START, URI_E
 
 // ===================================================
 
-function DownloadSelectNormalPattern(res, PAGES, total_imgs_num, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE) {
+function DownloadSelectPattern(res, PAGES, total_imgs_num, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE) {
     console.log("----------- Started Download Select Normal Pattern ---------------");
     // if (PAGES.length == 0) res.send("Somehow, No other page to download...");
 
@@ -474,7 +474,7 @@ function DownloadSelectNormalPattern(res, PAGES, total_imgs_num, URI_START, URI_
                 res.redirect(`/result?result=success`)
 
             } else if (selective_download_task && lost_pages.length < PAGES.length && lost_pages.length != 0) {
-                DownloadSelectNormalPattern(res, lost_pages, total_imgs_num, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE);
+                DownloadSelectPattern(res, lost_pages, total_imgs_num, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE);
 
             } else if (selective_download_task && lost_pages.length == PAGES.length) {
                 all_download_task = false;

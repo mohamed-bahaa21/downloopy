@@ -1,0 +1,28 @@
+urls: 
+----------- Started Download All Normal Pattern ---------------
+----------- HERE MIXED ---------------
+index: 1
+uri: https://www.inf.ed.ac.uk/teaching/courses/comn/lecture-notes/lec01.pdf
+length: 2
+Folder created OR Already found
+{ msg: 'STREAM::WRITE::PIPE::DONE::1' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::1',
+  downloaded_pages: 1,
+  lost_pages: 0,
+  urls: 2,
+  total: false,
+  all_download_task: false
+}
+index: 2
+uri: https://www.inf.ed.ac.uk/teaching/courses/comn/lecture-notes/lec02.pdf
+length: 2
+{ msg: 'STREAM::WRITE::PIPE::DONE::2' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::2',
+  downloaded_pages: 2,
+  lost_pages: 0,
+  urls: 2,
+  total: true,
+  all_download_task: true
+}

@@ -288,21 +288,23 @@ a {
     /* border: 2px solid #ccc;
     border-radius: 25%;
     background-color: #fff; */
-    color
 }
+
 .StepProgress-item.is-done::before {
-    border-left: 2px solid green;
+    border-left: 2px solid var(--dark-color);
 }
+
 .StepProgress-item.is-done::after {
     content: "✔";
     font-size: 10px;
     color: #fff;
     text-align: center;
-    border: 5px solid green;
-    background-color: green;
+    border: 5px solid var(--dark-color);
+    background-color: var(--dark-color);
+    border-radius: 5px;
 }
 .StepProgress-item.current::before {
-    border-left: 2px solid green;
+    border-left: 2px solid var(--dark-color);
 }
 .StepProgress-item.current::after {
     content: counter(list);
@@ -313,9 +315,10 @@ a {
     /* left: -40px; */
     font-size: 14px;
     text-align: center;
-    color: green;
-    border: 2px solid green;
+    color: var(--dark-color);
+    border: 2px solid var(--dark-color);
     background-color: white;
+    border-radius: 5px;
 }
 .StepProgress strong {
     display: block;

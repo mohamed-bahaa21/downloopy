@@ -50,17 +50,25 @@
                     border: 0;
                     font-weight: 700;
                 }
+
+                h1 {
+                    display: block;
+                    font-size: 5em !important;
+                    font-weight: 900;
+                    text-align: center;
+                    margin-right: 0.5em;
+                    color: var(--dark-color);
+                }
             </style>
 
-
             <% if(result=="success" ) { %>
-                <h1>Download Successeded</h1>
+                <h1 class="succeeded">Download <br> Succeeded</h1>
                 <% } else { %>
-                    <h1>Download Failed</h1>
-            <% } %>
+                    <h1 class="failed">Download <br> Failed</h1>
+                    <% } %>
 
 
-            <%- include('./partials/steps.ejs') %>
+                        <%- include('./partials/steps.ejs') %>
         </div>
     </div>
 

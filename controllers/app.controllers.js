@@ -1,24 +1,10 @@
-const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
 const Promise = require("bluebird");
-// const request = Promise.promisifyAll(require("request"), {
-//     multiArgs: true
-// });
 var needle = require('needle');
-// const { response } = require("express");
-var progress = require('progress-stream');
-// var fs = require('fs');
 const fs = require('fs-extra')
-// const fs = Promise.promisifyAll(require("fs-extra"));
 PDFDocument = require('pdfkit');
-// const htmlparser2 = require("htmlparser2");
-var domtoimage = require('dom-to-image');
-
-const addNewSampleToFile = require('../services/fs_push_download_test_sample/fs_push_download_test_sample')
-
 const checkValue = require('../bin/url_numbers_generator/zeros_pattern');
-const Parser = require('../bin/url_parser/url-parser');
 
 getLanding = (req, res, next) => {
     res.render("landing", {
@@ -26,119 +12,6 @@ getLanding = (req, res, next) => {
         mixed: false,
     })
 };
-
-// 1. Choose System
-// 2. URL Parser
-// 3. Path Parser
-// 4. Input Parser
-// 5. Result
-
-// 1/5
-getChooseSys = (req, res, next) => {
-    res.render("1_choose_sys", {
-        // msgs: req.flash('success'),
-        mixed: false,
-        step: 1
-    })
-};
-
-// 2/5
-urlParser = (req, res, next) => {
-    let result;
-    let FILES_NUMBER;
-
-    try {
-        result = Parser.parseURL(req.body.url);
-        FILES_NUMBER = Number(req.body.FILES_NUMBER);
-    } catch (error) {
-        res.redirect('/')
-    }
-
-    req.session.origin = result.origin;
-    req.session.FILES_NUMBER = FILES_NUMBER;
-    console.log(`FILES_NUMBER: ${FILES_NUMBER}`);
-
-    console.log(result);
-
-    // res.send(req.body);
-    res.render('2_url_parser', {
-        pathArr: result.pathArr,
-        step: 2
-    });
-}
-
-// 3/5
-pathParser = (req, res, next) => {
-    let tmp_inputArr;
-    let inputArr = [];
-
-    try {
-        tmp_inputArr = req.body.url_path;
-    } catch (error) {
-        res.redirect('/')
-    }
-
-    if (typeof tmp_inputArr == Array) {
-        tmp_inputArr.map((ele) => {
-            let tmp_ele = ele.split(' - ');
-            inputArr.push({
-                index: tmp_ele[0],
-                text: tmp_ele[1]
-            });
-
-        })
-    } else {
-        let tmp_ele = tmp_inputArr.split(' - ');
-        inputArr.push({
-            index: tmp_ele[0],
-            text: tmp_ele[1]
-        });
-    }
-    // res.send(inputArr);
-
-    req.session.pathArr = req.body.pathArr;
-
-    res.render('3_path_parser', {
-        pathArr: req.body.pathArr,
-        inputArr: inputArr,
-        step: 3
-    });
-}
-
-// 4/5
-inputParser = (req, res, next) => {
-    // let { pathArr, inputs } = req.body;
-    let { inputs } = req.body;
-    let { pathArr, origin } = req.session;
-
-    // console.log(`req.session.FILES_NUMBER: ${req.session.FILES_NUMBER}`);
-
-    let urls;
-
-    try {
-        urls = Parser.generateNewUrls(origin, pathArr, inputs, req.session.FILES_NUMBER);
-    } catch (error) {
-        res.redirect('/')
-    }
-    req.session.urls = urls;
-
-    res.render("4_input_parser", {
-        mixed: true,
-        urls: urls,
-        step: 4
-    });
-}
-
-// 5/5
-getResult = (req, res, next) => {
-    let result = req.query.result;
-
-    res.render("5_result", {
-        mixed: true,
-        result: result,
-        step: 5
-    });
-}
 
 var global_download_task = false;
 var all_download_task = false;
@@ -673,4 +546,4 @@ const pdfing = (req, res, next) => {
 }
 
 
-module.exports = { inputParser, urlParser, pathParser, getLanding, getChooseSys, getResult, downloadAllPost, pdfing };
+module.exports = { getLanding, downloadAllPost, pdfing };

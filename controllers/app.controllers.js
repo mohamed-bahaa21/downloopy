@@ -62,7 +62,7 @@ downloadAllPost = (req, res, next) => {
     var download_task;
 
     if (DTYPE == "ALL") {
-        DownloadAllNormalPattern(res, NTYPE, total_imgs_num, START_NUM, BASIS, FINISH_NUM, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE)
+        DownloadAllPattern(res, NTYPE, total_imgs_num, START_NUM, BASIS, FINISH_NUM, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE)
     }
     if (DTYPE == "SELECT") {
         DownloadSelectNormalPattern(res, PAGES, PAGES.length, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE);
@@ -77,7 +77,7 @@ downloadAllPost = (req, res, next) => {
     // addNewSampleToFile(newSample);
 };
 
-function DownloadAllNormalPattern(res, NTYPE, total_imgs_num, START_NUM, BASIS, FINISH_NUM, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE) {
+function DownloadAllPattern(res, NTYPE, total_imgs_num, START_NUM, BASIS, FINISH_NUM, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE) {
     console.log("----------- Started Download All Normal Pattern ---------------");
 
     downloaded_pages.length = 0;

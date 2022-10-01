@@ -1,5 +1,9 @@
 :root {
-    --dark-color: hsl(var(--hue), 100%, 9%);
+    --hue: 241;
+    --hue-complimentary1: 271;
+    --hue-complimentary2: 301;
+
+    --dark-color: hsl(238deg 100% 9%);
     --light-color: hsl(var(--hue), 95%, 98%);
     --base: hsl(var(--hue), 95%, 50%);
     --complimentary1: hsl(var(--hue-complimentary1), 95%, 50%);
@@ -28,13 +32,13 @@ html {
 body {
     max-width: 1920px;
     min-height: 100vh;
-    /* min-height: 100vh; */
     display: grid;
-    /* place-items: center; */
-    /* padding: 2rem; */
     font-family: var(--font-family);
     color: var(--dark-color);
     background: var(--bg-gradient);
+    /* min-height: 100vh; */
+    /* place-items: center; */
+    /* padding: 2rem; */
 }
 
 .orb-canvas {

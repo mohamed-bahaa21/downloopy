@@ -1,0 +1,57 @@
+----------- Started Download All Normal Pattern ---------------
+----------- HERE MIXED ---------------
+index: 1
+uri: undefined
+length: undefined
+Folder created OR Already found
+{
+  msg: 'STREAM::WRITE::PIPE::ERROR::1',
+  err: Error: getaddrinfo ENOTFOUND undefined
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:71:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'undefined'
+  }
+}
+FILES_NUMBER: 1
+{
+  url: URL {
+    href: 'https://cs.nju.edu.cn/gchen/teaching/np/lecture12.pdf',
+    origin: 'https://cs.nju.edu.cn',
+    protocol: 'https:',
+    username: '',
+    password: '',
+    host: 'cs.nju.edu.cn',
+    hostname: 'cs.nju.edu.cn',
+    port: '',
+    pathname: '/gchen/teaching/np/lecture12.pdf',
+    search: '',
+    searchParams: URLSearchParams {},
+    hash: ''
+  },
+  origin: 'https://cs.nju.edu.cn',
+  pathArr: [ 'gchen', 'teaching', 'np', 'lecture12.pdf' ]
+}
+====================================
+{
+  newPath_tmp: { str_before: 'lecture', str_after: '.pdf' },
+  number: 1
+}
+====================================
+urls: 
+----------- Started Download All Normal Pattern ---------------
+----------- HERE MIXED ---------------
+index: 1
+uri: https://cs.nju.edu.cn/gchen/teaching/np/lecture1.pdf
+length: 1
+Folder created OR Already found
+{ msg: 'STREAM::WRITE::PIPE::DONE::1' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::1',
+  downloaded_pages: 1,
+  lost_pages: 0,
+  urls: 1,
+  total: true,
+  all_download_task: true
+}

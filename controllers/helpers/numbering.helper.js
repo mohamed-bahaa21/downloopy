@@ -1,5 +1,14 @@
 var needle = require('needle');
-const fs = require('fs-extra')
+const fs = require('fs-extra');
+PDFDocument = require('pdfkit');
+const checkValue = require('../../bin/url_numbers_generator/zeros_pattern');
+
+let { global_download_task, all_download_task, downloaded_pages } = require('./global.controller')
+const { DownloadSelectMixedPattern, DownloadSelectPattern } = require('./downloadPatterns.helper')
+
+// var global_download_task = false;
+// var all_download_task = false;
+// var downloaded_pages = [];
 
 // https://papers.rgrossman.com/proc-
 function cipherNumbering(res, NTYPE, total_imgs_num, START_NUM, BASIS, FINISH_NUM, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE) {

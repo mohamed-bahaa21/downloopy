@@ -19,7 +19,7 @@ route.post('/input_parser', stepsHelper.inputParser);
 // 5. Result
 route.get('/result', stepsHelper.getResult);
 
-route.post('/api/download', controllers.downloadAllPost)
+route.post('/api/download', controllers.downloadPost)
 route.post('/api/pdf', controllers.pdfing)
 
 route.post('/api/filter', (req, res) => {

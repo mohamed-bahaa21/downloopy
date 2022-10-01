@@ -20,7 +20,7 @@ var downloaded_pages = [];
 
 // =======================================================
 // download all files
-downloadAllPost = (req, res, next) => {
+downloadPost = (req, res, next) => {
     require('../services/file-console-log')
 
     const FOLDER_DIR = "data/imgs/";
@@ -546,4 +546,4 @@ const pdfing = (req, res, next) => {
 }
 
 
-module.exports = { getLanding, downloadAllPost, pdfing };
+module.exports = { getLanding, downloadPost, pdfing };

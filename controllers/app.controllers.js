@@ -33,6 +33,7 @@ getLanding = (req, res, next) => {
 // 4. Input Parser
 // 5. Result
 
+// 1/5
 getChooseSys = (req, res, next) => {
     res.render("1_choose_sys", {
         // msgs: req.flash('success'),
@@ -41,11 +42,19 @@ getChooseSys = (req, res, next) => {
     })
 };
 
+// 2/5
 urlParser = (req, res, next) => {
-    const result = Parser.parseURL(req.body.url);
-    const FILES_NUMBER = Number(req.body.FILES_NUMBER);
-    req.session.origin = result.origin;
+    let result;
+    let FILES_NUMBER;
 
+    try {
+        result = Parser.parseURL(req.body.url);
+        FILES_NUMBER = Number(req.body.FILES_NUMBER);
+    } catch (error) {
+        res.redirect('/')
+    }
+
+    req.session.origin = result.origin;
     req.session.FILES_NUMBER = FILES_NUMBER;
     console.log(`FILES_NUMBER: ${FILES_NUMBER}`);
 
@@ -58,9 +67,16 @@ urlParser = (req, res, next) => {
     });
 }
 
+// 3/5
 pathParser = (req, res, next) => {
-    let tmp_inputArr = req.body.url_path;
+    let tmp_inputArr;
     let inputArr = [];
+
+    try {
+        tmp_inputArr = req.body.url_path;
+    } catch (error) {
+        res.redirect('/')
+    }
 
     if (typeof tmp_inputArr == Array) {
         tmp_inputArr.map((ele) => {
@@ -89,6 +105,7 @@ pathParser = (req, res, next) => {
     });
 }
 
+// 4/5
 inputParser = (req, res, next) => {
     // let { pathArr, inputs } = req.body;
     let { inputs } = req.body;
@@ -96,7 +113,13 @@ inputParser = (req, res, next) => {
 
     // console.log(`req.session.FILES_NUMBER: ${req.session.FILES_NUMBER}`);
 
-    const urls = Parser.generateNewUrls(origin, pathArr, inputs, req.session.FILES_NUMBER);
+    let urls;
+
+    try {
+        urls = Parser.generateNewUrls(origin, pathArr, inputs, req.session.FILES_NUMBER);
+    } catch (error) {
+        res.redirect('/')
+    }
     req.session.urls = urls;
 
     res.render("4_input_parser", {
@@ -106,6 +129,7 @@ inputParser = (req, res, next) => {
     });
 }
 
+// 5/5
 getResult = (req, res, next) => {
     let result = req.query.result;
 

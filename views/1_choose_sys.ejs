@@ -5,7 +5,7 @@
     <!-- Overlay -->
     <div class="">
         <!-- Overlay inner wrapper -->
-        <div class="overlay__inner">
+        <div class="overlay__inner" style="margin-bottom: 0;">
             <!-- Buttons -->
             <div class="overlay__btns">
                 <button class="overlay__btn overlay__btn--transparent">
@@ -20,10 +20,44 @@
                 </button>
             </div>
 
+
+            <style>
+                .tags {
+                    margin-top: 3em;
+                }
+
+                .tag {
+                    background-color: var(--dark-color);
+                    color: var(--light-color);
+                    font-size: 0.85em;
+                    font-weight: 700;
+                    border-radius: 0.85rem;
+                    padding: 0.25rem 1rem 0.35rem 1rem;
+                    margin: 1rem 0.5em;
+                    opacity: 0.75;
+                }
+
+                .tag:hover {
+                    cursor: pointer;
+                    opacity: 1;
+                }
+
+                .tag.active {
+                    background-color: var(--light-color);
+                    color: var(--dark-color);
+                    box-shadow: 0 5px 15px -5px var(--dark-color);
+                    opacity: 1;
+                }
+            </style>
+
+            <div class="tags">
+                <span class="tag active" id="mixed">Mixed</span>
+                <span class="tag" id="selective">Selective</span>
+            </div>
         </div>
 
-        <div style="display: flex; justify-content: center; align-items: center;">
 
+        <div style="display: flex; justify-content: center; align-items: center;">
             <!-- Mixed -->
             <style>
                 label {
@@ -40,22 +74,25 @@
                     font-weight: 700;
                 }
             </style>
-            <form action="/url_parser" method="post">
-                <div class="form-item">
-                    <label for="FILES_NUMBER">Files Number</label>
-                    <input type="number" name="FILES_NUMBER" id="FILES_NUMBER"><br>
-                </div>
 
-                <div class="form-item">
-                    <label for="url">URL</label>
-                    <input type="text" name="url" id="url" />
-                </div>
+            <div style="width: fit-content; margin: 0 auto;" id="form-content">
+                <form action="/url_parser" method="post">
+                    <div class="form-item">
+                        <label for="FILES_NUMBER">Files Number</label>
+                        <input type="number" name="FILES_NUMBER" id="FILES_NUMBER"><br>
+                    </div>
 
-                <button class="overlay__btn overlay__btn--colors" style="margin: 0 auto !important;">
-                    <input type="submit" value="Submit">
-                    <span class="overlay__btn-emoji"></span>
-                </button>
-            </form>
+                    <div class="form-item">
+                        <label for="url">URL</label>
+                        <input type="text" name="url" id="url" />
+                    </div>
+
+                    <button class="overlay__btn overlay__btn--colors" style="margin: 0 auto !important;">
+                        <input type="submit" value="Submit">
+                        <span class="overlay__btn-emoji"></span>
+                    </button>
+                </form>
+            </div>
 
             <%- include('./partials/steps.ejs') %>
 
@@ -64,7 +101,8 @@
     </div>
 
     <!-- <script type="module" src="js/new.js"></script> -->
+    <script type="module" src="js/choose_sys.js"></script>
 
-</body>
+    </body>
 
-</html>
+    </html>

@@ -57,7 +57,9 @@ function cipherNumbering(res, NTYPE, total_imgs_num, START_NUM, BASIS, FINISH_NU
         })
 
         needle.get(uri, (error, response) => {
-            // console.log(response)
+            // #3
+            console.log('==> #3');
+            console.log(response.bytes)
             if (!error && response.statusCode == 200) {
                 downloaded_pages.push(element);
             } else {
@@ -114,7 +116,9 @@ function normalNumbering(res, NTYPE, total_imgs_num, START_NUM, URI_START, URI_E
         })
 
         needle.get(uri, (error, response) => {
-            // console.log(response)
+            // #4
+            console.log('==> #4');
+            console.log(response.bytes)
             if (!error && response.statusCode == 200) {
                 downloaded_pages.push(element);
             } else {
@@ -128,7 +132,7 @@ function normalNumbering(res, NTYPE, total_imgs_num, START_NUM, URI_START, URI_E
     }
 }
 
-function mixedNumbering(res, _urls, total_dir, FILE_NAME, FILE_TYPE, index = 1, lost_pages) {
+function mixedNumbering(req, res, _urls, total_dir, FILE_NAME, FILE_TYPE, index = 1, lost_pages, result_table) {
 
     console.log(`index: ${index}`);
     if (index == 1) {
@@ -140,7 +144,7 @@ function mixedNumbering(res, _urls, total_dir, FILE_NAME, FILE_TYPE, index = 1, 
     // for (let index = 1; index <= _urls.length; index++) {
     const element = index;
     if (element == undefined) {
-        mixedNumbering(res, _urls, total_dir, FILE_NAME, FILE_TYPE, index++, lost_pages);
+        mixedNumbering(req, res, _urls, total_dir, FILE_NAME, FILE_TYPE, index++, lost_pages, result_table);
     } else {
         let uri = `${_urls[index - 1]}`;
         let f = fs.createWriteStream(`${total_dir}/${FILE_NAME}-${element}.${FILE_TYPE}`);
@@ -169,7 +173,7 @@ function mixedNumbering(res, _urls, total_dir, FILE_NAME, FILE_TYPE, index = 1, 
 
             if (!all_download_task) {
                 index = index + 1;
-                mixedNumbering(res, _urls, total_dir, FILE_NAME, FILE_TYPE, index, lost_pages);
+                mixedNumbering(req, res, _urls, total_dir, FILE_NAME, FILE_TYPE, index, lost_pages, result_table);
 
             } else if (all_download_task && lost_pages.length == 0) {
                 // res.send("Download Succeeded...")
@@ -193,11 +197,28 @@ function mixedNumbering(res, _urls, total_dir, FILE_NAME, FILE_TYPE, index = 1, 
 
         needle
             .get(uri, (error, response) => {
-                // console.log(response)
+                // #5
+                console.log('==> #5');
+                // console.log(response.bytes)
+
                 if (!error && response.statusCode == 200) {
                     downloaded_pages.push(element);
+
+                    // add result succeeded child 
+                    result_table.addChild(`${FILE_NAME}-${element}.${FILE_TYPE}`, true, response.bytes);
+                    console.log('====================================');
+                    console.log(result_table);
+                    console.log('====================================');
+                    req.session.result_table = result_table;
                 } else {
                     lost_pages.push({ uri, element });
+                    // add result failed child 
+                    result_table.addChild(`${FILE_NAME}-${element}.${FILE_TYPE}`, false, response.bytes);
+                    console.log('====================================');
+                    console.log(result_table);
+                    console.log('====================================');
+                    req.session.result_table = result_table;
+
                     console.log({
                         msg: `STREAM::WRITE::PIPE::ERROR::${element}`,
                         err: error,

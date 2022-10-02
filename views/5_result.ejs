@@ -66,26 +66,13 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="succeeded">
-                            <td>lecture-note-1</td>
-                            <td>Succeeded</td>
-                            <td>9450.5KB</td>
-                        </tr>
-                        <tr class="succeeded">
-                            <td>lecture-note-1</td>
-                            <td>Succeeded</td>
-                            <td>9450.5KB</td>
-                        </tr>
-                        <tr class="failed">
-                            <td>lecture-note-1</td>
-                            <td>Failed</td>
-                            <td>9450.5KB</td>
-                        </tr>
-                        <tr class="succeeded">
-                            <td>lecture-note-1</td>
-                            <td>Succeeded</td>
-                            <td>9450.5KB</td>
-                        </tr>
+                        <% result.forEach(child => { %>
+                            <tr class="<%= child.status ? 'succeeded' : 'failed' %>">
+                                <td><%= child.name %></td>
+                                <td><%= child.status ? 'Succeeded' : 'Failed' %></td>
+                                <td><%= child.size/1000 %> KB</td>
+                            </tr>
+                        <% }); %>
                     </tbody>
                     <tfoot>
                         <!-- <tr>

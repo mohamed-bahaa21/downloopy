@@ -1,0 +1,79 @@
+urls: 
+----------- Started Download All Normal Pattern ---------------
+----------- HERE MIXED ---------------
+index: 1
+uri: https://image.slidesharecdn.com/dequeanditsapplications-111130111845-phpapp01/95/deque-and-its-applications-12-1024.jpg
+length: 4
+Folder created OR Already found
+==> #5
+====================================
+Result {
+  nodes: [ { name: 'teeee-1.jpg', status: true, size: 81035 } ]
+}
+====================================
+{ msg: 'STREAM::WRITE::PIPE::DONE::1' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::1',
+  downloaded_pages: 1,
+  lost_pages: 0,
+  urls: 4,
+  total: false,
+  all_download_task: false
+}
+index: 2
+uri: https://image.slidesharecdn.com/dequeanditsapplications-111130111845-phpapp01/95/deque-and-its-applications-13-1024.jpg
+length: 4
+==> #5
+====================================
+Result {
+  nodes: [ { name: 'teeee-2.jpg', status: true, size: 94687 } ]
+}
+====================================
+{ msg: 'STREAM::WRITE::PIPE::DONE::2' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::2',
+  downloaded_pages: 2,
+  lost_pages: 0,
+  urls: 4,
+  total: false,
+  all_download_task: false
+}
+index: 3
+uri: https://image.slidesharecdn.com/dequeanditsapplications-111130111845-phpapp01/95/deque-and-its-applications-15-1024.jpg
+length: 4
+==> #5
+====================================
+Result {
+  nodes: [ { name: 'teeee-3.jpg', status: true, size: 66656 } ]
+}
+====================================
+{ msg: 'STREAM::WRITE::PIPE::DONE::3' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::3',
+  downloaded_pages: 3,
+  lost_pages: 0,
+  urls: 4,
+  total: false,
+  all_download_task: false
+}
+index: 4
+uri: https://image.slidesharecdn.com/dequeanditsapplications-111130111845-phpapp01/95/deque-and-its-applications-undefined-1024.jpg
+length: 4
+==> #5
+====================================
+Result { nodes: [ { name: 'teeee-4.jpg', status: false, size: 0 } ] }
+====================================
+{ msg: 'STREAM::WRITE::PIPE::ERROR::4', err: null }
+{ msg: 'STREAM::WRITE::PIPE::DONE::4' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::4',
+  downloaded_pages: 3,
+  lost_pages: 1,
+  urls: 4,
+  total: true,
+  all_download_task: true
+}
+HERE
+====================================
+[ { name: 'teeee-4.jpg', status: false, size: 0 } ]
+====================================

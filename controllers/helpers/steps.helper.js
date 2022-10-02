@@ -137,11 +137,30 @@ inputParser = (req, res, next) => {
 
 // 5/5
 getResult = (req, res, next) => {
-    let result = req.query.result;
+    let status = req.query.result;
+    try {
+        console.log('====================================');
+        console.log(req.session.result_table.nodes);
+        console.log('====================================');
+        var result_table = req.session.result_table.nodes;
+    } catch (error) {
+        res.redirect('/');
+    }
+
+    // Test Adding samplees to result class
+    // let sept_10022022 = new Result();
+    // sept_10022022.addChild('lecture-1', true, 945020)
+    // sept_10022022.addChild('lecture-2', true, 15020)
+    // sept_10022022.addChild('lecture-3', true, 24020)
+    // sept_10022022.addChild('lecture-4', false, 0)
+    // sept_10022022.addChild('lecture-5', true, 7520)
+
+    // res.send(sept_10022022)
 
     res.render("5_result", {
         mixed: true,
-        result: result,
+        result: result_table,
+        status: status,
         step: 5
     });
 }

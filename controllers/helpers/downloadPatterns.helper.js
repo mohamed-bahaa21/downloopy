@@ -9,13 +9,14 @@ const checkValue = require('../../bin/url_numbers_generator/zeros_pattern');
 // TODO:: Solve the circular dependency
 let { global_download_task, all_download_task, downloaded_pages } = require('./global.controller')
 const { cipherNumbering, normalNumbering, mixedNumbering } = require('./numbering.helper')
+let ResultTable = require('./ResultTable')
 
 // var global_download_task = false;
 // var all_download_task = false;
 
 // var downloaded_pages = [];
 
-function DownloadAllPattern(res, NTYPE, total_imgs_num, START_NUM, BASIS, FINISH_NUM, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE) {
+function DownloadAllPattern(req, res, NTYPE, total_imgs_num, START_NUM, BASIS, FINISH_NUM, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE) {
     console.log("----------- Started Download All Normal Pattern ---------------");
 
     downloaded_pages.length = 0;
@@ -32,7 +33,8 @@ function DownloadAllPattern(res, NTYPE, total_imgs_num, START_NUM, BASIS, FINISH
 
     if (NTYPE == "MIXED") {
         console.log("----------- HERE MIXED ---------------");
-        mixedNumbering(res, total_imgs_num, total_dir, FILE_NAME, FILE_TYPE, 1, lost_pages);
+        let result_table = new ResultTable();
+        mixedNumbering(req, res, total_imgs_num, total_dir, FILE_NAME, FILE_TYPE, 1, lost_pages, result_table);
     }
 
 }
@@ -123,7 +125,9 @@ function DownloadSelectMixedPattern(res, _urls, total_dir, FILE_NAME, FILE_TYPE,
 
         needle
             .get(uri, function (error, response) {
-                // console.log(response)
+                // #1
+                console.log('==> #1');
+                console.log(response.bytes)
                 if (!error && response.statusCode == 200) {
                     downloaded_pages.push(element);
                 } else {
@@ -219,7 +223,9 @@ function DownloadSelectPattern(res, PAGES, total_imgs_num, URI_START, URI_END, t
         })
 
         needle.get(uri, function (error, response) {
-            // console.log(response)
+            // #2
+            console.log('==> #2');
+            console.log(response.bytes)
             if (!error && response.statusCode == 200) {
                 downloaded_pages.push(element);
             } else {

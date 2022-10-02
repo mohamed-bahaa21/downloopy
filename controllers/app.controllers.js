@@ -63,7 +63,7 @@ downloadPost = (req, res, next) => {
     var download_task;
 
     if (DTYPE == "ALL") {
-        DownloadAllPattern(res, NTYPE, total_imgs_num, START_NUM, BASIS, FINISH_NUM, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE)
+        DownloadAllPattern(req, res, NTYPE, total_imgs_num, START_NUM, BASIS, FINISH_NUM, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE)
     }
     if (DTYPE == "SELECT") {
         DownloadSelectPattern(res, PAGES, PAGES.length, URI_START, URI_END, total_dir, FILE_NAME, FILE_TYPE);

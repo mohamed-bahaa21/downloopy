@@ -146,6 +146,7 @@
                                 width: 25rem;
                                 overflow-x: scroll;
                                 display: flex;
+                                padding: 0.5em;
                             }
 
                             #selected_pages .page {
@@ -155,7 +156,14 @@
                                 color: white;
                                 font-size: 0.75em;
                                 font-weight: 700;
-                                margin-right: 0.25rem
+                                margin-right: 0.25rem;
+                                opacity: 0.75;
+                            }
+
+                            #selected_pages .page:hover {
+                                scale: 1.2;
+                                opacity: 1;
+                                cursor: pointer;
                             }
                         </style>
 
@@ -180,7 +188,8 @@
                                     Add
                                 </span>
                             </div>
-                            <textarea name="pages_arr" id="pages_arr" cols="30" rows="10"></textarea>
+                            <textarea name="pages_arr" id="pages_arr" cols="30" rows="10"
+                                style="display: none;"></textarea>
                         </div>
 
                         <div class="form-item">

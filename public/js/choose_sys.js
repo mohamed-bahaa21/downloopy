@@ -48,8 +48,15 @@ add_page_btn.addEventListener('click', () => {
         pages_arr_input.value = files;
 
         selected_pages.innerHTML = '';
-        files.forEach(number => {
-            selected_pages.innerHTML += `<span class="page">${number}</span>`;
+        files.forEach((number, index) => {
+            // var newSpan = document.createElement('span')
+            // newSpan.innerHTML = number;
+            // newSpan.id = `page-${index}`
+            // newSpan.className = 'page';
+            // newSpan.addEventListener("click",deleteNumber(index), false);
+            // selected_pages.appendChild(newSpan);
+
+            selected_pages.innerHTML += `<span class="page" id="${index}">${number}</span>`;
         })
 
         // selected_pages.innerHTML += `<span class="page">${pages_input.value}</span>`;
@@ -62,8 +69,15 @@ add_page_btn.addEventListener('click', () => {
 })
 
 function compareNumbers(a, b) {
-    console.log(a, b);
+    // console.log(a, b);
     return a - b;
+}
+
+function deleteNumber(index) {
+    files.splice(index, 1);
+    files.forEach((number, index) => {
+        selected_pages.innerHTML += `<span class="page" id="${index}" onclick="deleteNumber(this)">${number}</span>`;
+    })
 }
 
 const unique = (value, index, self) => {

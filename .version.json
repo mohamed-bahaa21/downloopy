@@ -17,5 +17,6 @@
     "v0.7.2": "Add process steps for mixed numbering-system",
     "v0.8.0": "Sync & Async Files Download",
     "v0.8.1": "New Mixed && Selective Systems",
-    "v0.8.2": "New Mixed && Selective Systems"
+    "v0.8.2": "Detailed result table for downloaded files w/ file-name, status, size",
+    "v0.8.3": "Download all files button"
 }

@@ -43,6 +43,7 @@ function compareNumbers(a, b) {
 
 function deleteNumber(index) {
     files.splice(index, 1);
+    pages_arr_input.value = files;
     selected_pages.innerHTML = '';
     files.forEach((number, index) => {
         selected_pages.innerHTML += `<span class="page" id="${index}" onclick="deleteNumber(${index})">${number}</span>`;

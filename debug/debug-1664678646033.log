@@ -1,0 +1,55 @@
+urls: 
+----------- Started Download All Normal Pattern ---------------
+----------- HERE MIXED ---------------
+index: 1
+uri: https://cseweb.ucsd.edu/classes/wi13/cse222A-a/lectures/222A-wi13-l3.pdf
+length: 4
+Folder created OR Already found
+{ msg: 'STREAM::WRITE::PIPE::DONE::1' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::1',
+  downloaded_pages: 1,
+  lost_pages: 0,
+  urls: 4,
+  total: false,
+  all_download_task: false
+}
+index: 2
+uri: https://cseweb.ucsd.edu/classes/wi13/cse222A-a/lectures/222A-wi13-l10.pdf
+length: 4
+{ msg: 'STREAM::WRITE::PIPE::ERROR::2', err: null }
+{ msg: 'STREAM::WRITE::PIPE::DONE::2' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::2',
+  downloaded_pages: 1,
+  lost_pages: 1,
+  urls: 4,
+  total: false,
+  all_download_task: false
+}
+index: 3
+uri: https://cseweb.ucsd.edu/classes/wi13/cse222A-a/lectures/222A-wi13-l123.pdf
+length: 4
+{ msg: 'STREAM::WRITE::PIPE::ERROR::3', err: null }
+{ msg: 'STREAM::WRITE::PIPE::DONE::3' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::3',
+  downloaded_pages: 1,
+  lost_pages: 2,
+  urls: 4,
+  total: false,
+  all_download_task: false
+}
+index: 4
+uri: https://cseweb.ucsd.edu/classes/wi13/cse222A-a/lectures/222A-wi13-lundefined.pdf
+length: 4
+{ msg: 'STREAM::WRITE::PIPE::ERROR::4', err: null }
+{ msg: 'STREAM::WRITE::PIPE::DONE::4' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::4',
+  downloaded_pages: 1,
+  lost_pages: 3,
+  urls: 4,
+  total: true,
+  all_download_task: true
+}

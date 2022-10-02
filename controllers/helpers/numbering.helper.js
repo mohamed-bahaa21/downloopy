@@ -177,7 +177,8 @@ function mixedNumbering(res, _urls, total_dir, FILE_NAME, FILE_TYPE, index = 1, 
 
             } else if (all_download_task && lost_pages.length > 0) {
                 console.log("HERE")
-                DownloadSelectMixedPattern(res, lost_pages, total_dir, FILE_NAME, FILE_TYPE);
+                res.redirect(`/result?result=failed`);
+                // DownloadSelectMixedPattern(res, lost_pages, total_dir, FILE_NAME, FILE_TYPE);
                 // res.send({
                 //     msg: `STREAM::WRITE::PIPE::CLOSED::${element}`,
                 //     downloaded_pages: downloaded_pages.length,

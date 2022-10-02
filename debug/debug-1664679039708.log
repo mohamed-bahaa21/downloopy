@@ -1,0 +1,86 @@
+----------- Started Download All Normal Pattern ---------------
+----------- HERE MIXED ---------------
+index: 1
+uri: undefined
+length: undefined
+Folder created OR Already found
+{
+  msg: 'STREAM::WRITE::PIPE::ERROR::1',
+  err: Error: getaddrinfo ENOTFOUND undefined
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:71:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'undefined'
+  }
+}
+pages_arr: 0,2,10
+FILES_NUMBER: 3
+[ 0, 2, 10 ]
+====================================
+{
+  newPath_tmp: { str_before: '222A-wi13-l', str_after: '.pdf' },
+  number: 2
+}
+====================================
+{
+  a: [ 'classes', 'wi13', 'cse222A-a', 'lectures', '222A-wi13-l2.pdf' ],
+  b: '222A-wi13-l2.pdf',
+  c: 'cse222A-a',
+  d: 'classes,wi13,cse222A-a,lectures,222A-wi13-l1.pdf'
+}
+====================================
+{
+  newPath_tmp: { str_before: '222A-wi13-l', str_after: '.pdf' },
+  number: 10
+}
+====================================
+====================================
+{
+  newPath_tmp: { str_before: '222A-wi13-l', str_after: '.pdf' },
+  number: undefined
+}
+====================================
+urls: 
+----------- Started Download All Normal Pattern ---------------
+----------- HERE MIXED ---------------
+index: 1
+uri: https://cseweb.ucsd.edu/classes/wi13/cse222A-a/lectures/222A-wi13-l2.pdf
+length: 3
+Folder created OR Already found
+{ msg: 'STREAM::WRITE::PIPE::DONE::1' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::1',
+  downloaded_pages: 1,
+  lost_pages: 0,
+  urls: 3,
+  total: false,
+  all_download_task: false
+}
+index: 2
+uri: https://cseweb.ucsd.edu/classes/wi13/cse222A-a/lectures/222A-wi13-l10.pdf
+length: 3
+{ msg: 'STREAM::WRITE::PIPE::ERROR::2', err: null }
+{ msg: 'STREAM::WRITE::PIPE::DONE::2' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::2',
+  downloaded_pages: 1,
+  lost_pages: 1,
+  urls: 3,
+  total: false,
+  all_download_task: false
+}
+index: 3
+uri: https://cseweb.ucsd.edu/classes/wi13/cse222A-a/lectures/222A-wi13-lundefined.pdf
+length: 3
+{ msg: 'STREAM::WRITE::PIPE::ERROR::3', err: null }
+{ msg: 'STREAM::WRITE::PIPE::DONE::3' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::3',
+  downloaded_pages: 1,
+  lost_pages: 2,
+  urls: 3,
+  total: true,
+  all_download_task: true
+}
+HERE

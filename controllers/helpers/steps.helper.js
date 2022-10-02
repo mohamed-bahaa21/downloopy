@@ -18,21 +18,47 @@ getChooseSys = (req, res, next) => {
 // 2/5
 urlParser = (req, res, next) => {
     // let DTYPE =  req.body.DTYPE;
-    let result;
-    let FILES_NUMBER;
+    // res.send(pages_arr);
 
-    try {
-        result = Parser.parseURL(req.body.url);
-        FILES_NUMBER = Number(req.body.FILES_NUMBER);
-    } catch (error) {
-        res.redirect('/')
+    switch (req.body.DTYPE) {
+        case 'mixed':
+            var result;
+            var FILES_NUMBER;
+
+            try {
+                result = Parser.parseURL(req.body.url);
+                FILES_NUMBER = Number(req.body.FILES_NUMBER);
+            } catch (error) {
+                res.redirect('/')
+            }
+
+            req.session.origin = result.origin;
+            req.session.FILES_NUMBER = FILES_NUMBER;
+            console.log(`FILES_NUMBER: ${FILES_NUMBER}`);
+            console.log(result);
+            break;
+
+        case 'selective':
+
+            var result;
+            var FILES_NUMBER;
+            var pages_arr = req.body.pages_arr;
+
+            try {
+                result = Parser.parseURL(req.body.url);
+                pages_arr = pages_arr.split(',').map(Number);
+                FILES_NUMBER = pages_arr.length
+            } catch (error) {
+                res.redirect('/')
+            }
+
+            req.session.origin = result.origin;
+            req.session.FILES_NUMBER = FILES_NUMBER;
+            req.session.pages_arr = pages_arr;
+            console.log(`pages_arr: ${pages_arr}`);
+            console.log(`FILES_NUMBER: ${FILES_NUMBER}`);
+            break;
     }
-
-    req.session.origin = result.origin;
-    req.session.FILES_NUMBER = FILES_NUMBER;
-    console.log(`FILES_NUMBER: ${FILES_NUMBER}`);
-
-    console.log(result);
 
     // res.send(req.body);
     res.render('2_url_parser', {
@@ -43,6 +69,7 @@ urlParser = (req, res, next) => {
 
 // 3/5
 pathParser = (req, res, next) => {
+    console.log(req.session.pages_arr);
     let tmp_inputArr;
     let inputArr = [];
 
@@ -86,11 +113,11 @@ inputParser = (req, res, next) => {
     let { pathArr, origin } = req.session;
 
     // console.log(`req.session.FILES_NUMBER: ${req.session.FILES_NUMBER}`);
-
+    // req.session.pages_arr
     let urls;
 
     try {
-        urls = Parser.generateNewUrls(origin, pathArr, inputs, req.session.FILES_NUMBER);
+        urls = Parser.generateNewUrls(origin, pathArr, inputs, req.session.FILES_NUMBER, req.session.pages_arr);
     } catch (error) {
         res.redirect('/')
     }

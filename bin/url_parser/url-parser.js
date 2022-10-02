@@ -51,84 +51,158 @@ function parsePath(strA, strB) {
     };
 }
 
-function generateNewUrls(origin, pathArr, inputs, FINISH_NUM) {
+function generateNewUrls(origin, pathArr, inputs, FINISH_NUM, pages_arr) {
     let paths = pathArr.split(',');
 
-    let number = 0;
-    var _pages_num = checkValue(1, '00', 0, FINISH_NUM+1);
-    _pages_num.pop(-1);
+    if (pages_arr.length !== null) {
+        newPathsArr = [];
+        for (let i = 1; i <= pages_arr.length; i++) {
+            if (typeof inputs == Array) {
+                inputs.map(ele => {
+                    let tmp_ele = ele.split(',');
 
-    // let NORMAL_bool = false;
-    // let CIPHER_bool = false;
+                    // NORMAL_bool = ele.includes("NORMAL");
+                    // CIPHER_bool = ele.includes("CIPHER");
 
-    // console.log(origin);
+                    let str1 = paths[tmp_ele[0]];
+                    let str2 = tmp_ele[1];
+                    let newPath_tmp = this.parsePath(str1, str2); // page-1 / page-01
 
-    newPathsArr = [];
-    for (let i = 1; i <= FINISH_NUM; i++) {
-        if (typeof inputs == Array) {
-            inputs.map(ele => {
-                let tmp_ele = ele.split(',');
+                    let str_type = tmp_ele[2];
+                    if (str_type == "NORMAL") {
+                        number = pages_arr[i];
+                    }
+                    if (str_type == "CIPHER") {
+                        number = pages_arr[i];
+                    }
+
+                    let result = `${newPath_tmp.str_before}${number}${newPath_tmp.str_after}`
+                    paths[tmp_ele[0]] = result;
+                })
+            } else {
+                let tmp_ele = inputs.split(',');
 
                 // NORMAL_bool = ele.includes("NORMAL");
                 // CIPHER_bool = ele.includes("CIPHER");
 
-                let str1 = paths[tmp_ele[0]];
-                let str2 = tmp_ele[1];
+                let str1 = paths[tmp_ele[0]]; // with numbers (page-12-)
+                let str2 = tmp_ele[1]; // without numbers (page--)
+
+                if (pages_arr[i] == 10) {
+                    console.log({
+                        a: paths,
+                        b: paths[tmp_ele[0]],
+                        c: paths[2],
+                        d: pathArr,
+                    });
+                }
+
+
                 let newPath_tmp = this.parsePath(str1, str2); // page-1 / page-01
 
                 let str_type = tmp_ele[2];
                 if (str_type == "NORMAL") {
-                    number = i;
+                    number = pages_arr[i];
                 }
                 if (str_type == "CIPHER") {
-                    number = _pages_num[i - 1];
+                    number = pages_arr[i];
                 }
+
+                // from-web-developer-to-hardware-developer- - 1 024.jpg
+                // from-web-developer-to-hardware-developer- 5 - 1024.jpg
+                // 52
+                console.log('====================================');
+                console.log({ newPath_tmp, number });
+                console.log('====================================');
 
                 let result = `${newPath_tmp.str_before}${number}${newPath_tmp.str_after}`
                 paths[tmp_ele[0]] = result;
-            })
-        } else {
-            let tmp_ele = inputs.split(',');
-
-            // NORMAL_bool = ele.includes("NORMAL");
-            // CIPHER_bool = ele.includes("CIPHER");
-
-            let str1 = paths[tmp_ele[0]]; // with numbers (page-12-)
-            let str2 = tmp_ele[1]; // without numbers (page--)
-
-            if (i == 17) {
-                console.log({
-                    a: paths,
-                    b: paths[tmp_ele[0]],
-                    c: paths[2],
-                    d: pathArr,
-                });
             }
 
-
-            let newPath_tmp = this.parsePath(str1, str2); // page-1 / page-01
-
-            let str_type = tmp_ele[2];
-            if (str_type == "NORMAL") {
-                number = i;
-            }
-            if (str_type == "CIPHER") {
-                number = _pages_num[i - 1];
-            }
-
-            // from-web-developer-to-hardware-developer- - 1 024.jpg
-            // from-web-developer-to-hardware-developer- 5 - 1024.jpg
-            // 52
-            console.log('====================================');
-            console.log({ newPath_tmp, number });
-            console.log('====================================');
-
-            let result = `${newPath_tmp.str_before}${number}${newPath_tmp.str_after}`
-            paths[tmp_ele[0]] = result;
+            let new_url = `${origin}/${paths.join('/')}`;
+            newPathsArr.push(new_url);
         }
+    } else {
+        try {
+            let number = 0;
+            var _pages_num = checkValue(1, '00', 0, FINISH_NUM + 1);
+            _pages_num.pop(-1);
 
-        let new_url = `${origin}/${paths.join('/')}`;
-        newPathsArr.push(new_url);
+            // let NORMAL_bool = false;
+            // let CIPHER_bool = false;
+
+            // console.log(origin);
+
+            newPathsArr = [];
+            for (let i = 1; i <= FINISH_NUM; i++) {
+                if (typeof inputs == Array) {
+                    inputs.map(ele => {
+                        let tmp_ele = ele.split(',');
+
+                        // NORMAL_bool = ele.includes("NORMAL");
+                        // CIPHER_bool = ele.includes("CIPHER");
+
+                        let str1 = paths[tmp_ele[0]];
+                        let str2 = tmp_ele[1];
+                        let newPath_tmp = this.parsePath(str1, str2); // page-1 / page-01
+
+                        let str_type = tmp_ele[2];
+                        if (str_type == "NORMAL") {
+                            number = i;
+                        }
+                        if (str_type == "CIPHER") {
+                            number = _pages_num[i - 1];
+                        }
+
+                        let result = `${newPath_tmp.str_before}${number}${newPath_tmp.str_after}`
+                        paths[tmp_ele[0]] = result;
+                    })
+                } else {
+                    let tmp_ele = inputs.split(',');
+
+                    // NORMAL_bool = ele.includes("NORMAL");
+                    // CIPHER_bool = ele.includes("CIPHER");
+
+                    let str1 = paths[tmp_ele[0]]; // with numbers (page-12-)
+                    let str2 = tmp_ele[1]; // without numbers (page--)
+
+                    if (i == 17) {
+                        console.log({
+                            a: paths,
+                            b: paths[tmp_ele[0]],
+                            c: paths[2],
+                            d: pathArr,
+                        });
+                    }
+
+
+                    let newPath_tmp = this.parsePath(str1, str2); // page-1 / page-01
+
+                    let str_type = tmp_ele[2];
+                    if (str_type == "NORMAL") {
+                        number = i;
+                    }
+                    if (str_type == "CIPHER") {
+                        number = _pages_num[i - 1];
+                    }
+
+                    // from-web-developer-to-hardware-developer- - 1 024.jpg
+                    // from-web-developer-to-hardware-developer- 5 - 1024.jpg
+                    // 52
+                    console.log('====================================');
+                    console.log({ newPath_tmp, number });
+                    console.log('====================================');
+
+                    let result = `${newPath_tmp.str_before}${number}${newPath_tmp.str_after}`
+                    paths[tmp_ele[0]] = result;
+                }
+
+                let new_url = `${origin}/${paths.join('/')}`;
+                newPathsArr.push(new_url);
+            }
+        } catch (error) {
+            res.redirect('/');
+        }
     }
 
     return newPathsArr;

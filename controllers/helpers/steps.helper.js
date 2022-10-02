@@ -8,6 +8,9 @@ const Parser = require('../../bin/url_parser/url-parser');
 
 // 1/5
 getChooseSys = (req, res, next) => {
+    req.session.origin = undefined;
+    req.session.FILES_NUMBER = undefined;
+    req.session.pages_arr = undefined;
     res.render("1_choose_sys", {
         // msgs: req.flash('success'),
         mixed: false,
@@ -19,6 +22,7 @@ getChooseSys = (req, res, next) => {
 urlParser = (req, res, next) => {
     // let DTYPE =  req.body.DTYPE;
     // res.send(pages_arr);
+    // res.send(req.body);
 
     switch (req.body.DTYPE) {
         case 'mixed':
@@ -39,7 +43,6 @@ urlParser = (req, res, next) => {
             break;
 
         case 'selective':
-
             var result;
             var FILES_NUMBER;
             var pages_arr = req.body.pages_arr;
@@ -117,8 +120,10 @@ inputParser = (req, res, next) => {
     let urls;
 
     try {
+        console.log('arr ', req.session.pages_arr);
         urls = Parser.generateNewUrls(origin, pathArr, inputs, req.session.FILES_NUMBER, req.session.pages_arr);
     } catch (error) {
+        // res.send(error)
         res.redirect('/')
     }
     req.session.urls = urls;

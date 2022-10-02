@@ -51,10 +51,13 @@ function parsePath(strA, strB) {
     };
 }
 
-function generateNewUrls(origin, pathArr, inputs, FINISH_NUM, pages_arr) {
+function generateNewUrls(origin, pathArr, inputs, FINISH_NUM, pages_arr = null) {
     let paths = pathArr.split(',');
 
-    if (pages_arr.length !== null) {
+    // console.log(pages_arr);
+
+    if (pages_arr) {
+        console.log('WTH');
         newPathsArr = [];
         for (let i = 1; i <= pages_arr.length; i++) {
             if (typeof inputs == Array) {
@@ -123,6 +126,7 @@ function generateNewUrls(origin, pathArr, inputs, FINISH_NUM, pages_arr) {
             newPathsArr.push(new_url);
         }
     } else {
+        console.log('WTF');
         try {
             let number = 0;
             var _pages_num = checkValue(1, '00', 0, FINISH_NUM + 1);

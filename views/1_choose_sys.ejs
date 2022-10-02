@@ -67,6 +67,13 @@
                     font-weight: 700;
                 }
 
+                input::placeholder {
+                    color: var(--dark-color);
+                    opacity: 0.75;
+                    font-weight: 700;
+                    font-size: 0.8em;
+                }
+
                 input[type="submit"] {
                     background-color: transparent;
                     color: white;
@@ -79,13 +86,13 @@
                 <div class="tag-cont" id="mixed">
                     <form action="/url_parser" method="post">
                         <div class="form-item">
-                            <label for="FILES_NUMBER">Files Number</label>
-                            <input type="number" name="FILES_NUMBER" id="FILES_NUMBER"><br>
+                            <!-- <label for="FILES_NUMBER">Files Number</label> -->
+                            <input type="number" name="FILES_NUMBER" id="FILES_NUMBER" placeholder="How many files ?"><br>
                         </div>
 
                         <div class="form-item">
-                            <label for="url">URL</label>
-                            <input type="text" name="url" id="url" />
+                            <!-- <label for="url">URL</label> -->
+                            <input type="text" name="url" id="url" placeholder="Add a url for any file"/>
                         </div>
 
                         <button class="overlay__btn overlay__btn--colors" style="margin: 0 auto !important;">
@@ -165,16 +172,17 @@
                                 opacity: 1;
                                 cursor: pointer;
                             }
+                            
                         </style>
 
                         <div class="form-item">
-                            <label for="PAGES">Pages: </label>
+                            <label for="PAGES">Selected Pages: </label>
 
                             <div id="selected_pages">
                             </div>
 
                             <div style="display: flex">
-                                <input type="number" name="PAGES" id="pages_input">
+                                <input type="number" name="PAGES" id="pages_input" placeholder="What is the file number ?">
                                 <span id="add_page_btn" class="overlay__btn overlay__btn--colors" style="margin: 0 auto !important;
                                 width: fit-content !important;
                                 position: relative;
@@ -193,8 +201,8 @@
                         </div>
 
                         <div class="form-item">
-                            <label for="url">URL</label>
-                            <input type="text" name="url" id="url" />
+                            <!-- <label for="url">URL</label> -->
+                            <input type="text" name="url" id="url" placeholder="Insert a url for only one file"/>
                         </div>
 
                         <input type="text" name="DTYPE" value="selective" hidden>

@@ -22,7 +22,6 @@
             <br>
         </div>
 
-
         <div style="display: flex; justify-content: center; align-items: center;">
             <style>
                 label {
@@ -49,14 +48,63 @@
                 }
             </style>
 
-            <% if(result=="success" ) { %>
-                <h1 class="succeeded">Download <br> Succeeded</h1>
-                <% } else { %>
-                    <h1 class="failed">Download <br> Failed</h1>
-                    <% } %>
+            <div class="table">
+                <table cellspacing="0" cellpadding="0">
+                    <thead>
+                        <tr>
+                            <td colspan="2">
+                                <span class="header">Download Results</span>
+                            </td>
+                            <td colspan="2">
+                                <!-- <input class="search overlay__btn" placeholder="Search..." /> -->
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Name</td>
+                            <td>Status</td>
+                            <td>Size</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="succeeded">
+                            <td>lecture-note-1</td>
+                            <td>Succeeded</td>
+                            <td>9450.5KB</td>
+                        </tr>
+                        <tr class="succeeded">
+                            <td>lecture-note-1</td>
+                            <td>Succeeded</td>
+                            <td>9450.5KB</td>
+                        </tr>
+                        <tr class="failed">
+                            <td>lecture-note-1</td>
+                            <td>Failed</td>
+                            <td>9450.5KB</td>
+                        </tr>
+                        <tr class="succeeded">
+                            <td>lecture-note-1</td>
+                            <td>Succeeded</td>
+                            <td>9450.5KB</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <!-- <tr>
+                        <td colspan="100%">
+                            <div class="pagination">
+                                <div class="page active">1</div>
+                                <div class="page">2</div>
+                                <div class="page">3</div>
+                                <div class="page">4</div>
+                                <div class="page">5</div>
+                            </div>
+                        </td>
+                    </tr> -->
+                    </tfoot>
+                </table>
+            </div>
 
+            <%- include('./partials/steps.ejs') %>
 
-                        <%- include('./partials/steps.ejs') %>
         </div>
     </div>
 
@@ -65,5 +113,4 @@
     <script src="js/main.js"></script>
     <!-- <script type="module" src="js/new.js"></script> -->
 </body>
-
 </html>

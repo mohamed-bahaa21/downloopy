@@ -358,6 +358,12 @@
 
         <%- include('./partials/steps.ejs') %>
 
+        <% if(result=="success" ) { %>
+            <h1 class="succeeded">Download <br> Succeeded</h1>
+        <% } else { %>
+            <h1 class="failed">Download <br> Failed</h1>
+        <% } %>
+
     </div>
 
     <script type="module" src="js/new.js"></script>

@@ -1,0 +1,125 @@
+.title {
+    text-align: center;
+    padding: 40px 0;
+    font-size: 40px;
+    font-weight: 300;
+    color: #636983;
+}
+
+.table-wrapper {
+    background-color: #f6f8ff;
+    width: 100%;
+    min-height: 100vh;
+}
+.table-wrapper .line {
+    width: 50%;
+    margin: 50px auto 0 auto;
+    height: 1px;
+    background-color: #c3d2e3;
+}
+
+.table {
+    width: 60%;
+    margin: 0 auto;
+}
+.table .header {
+    font-size: 0.85em;
+    font-weight: 700;
+}
+.table table {
+    width: 100%;
+    font-size: 0.95em;
+    background-color: rgba(255, 255, 255, 0.41);
+    border-radius: 10px;
+    box-shadow: 0 25px 20px -25px rgba(0, 0, 0, 0.1);
+}
+.table table input.search {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 0;
+    outline: 1px solid #efefef;
+    background: #fbfbfb;
+    transition: all 0.2s;
+}
+.table table input.search:focus {
+    outline: 2px solid var(--dark-color);
+    background: white;
+}
+.table table thead {
+    border-spacing: 0;
+}
+.table table thead td {
+    font-size: 18px;
+    font-weight: 600;
+    color: #666;
+    padding: 10px;
+}
+.table table thead tr:nth-child(1) {
+    background-color: #fbfbfb66;
+}
+.table table thead tr:nth-child(1) td:nth-child(1) {
+    border-radius: 10px 0 0 0;
+}
+.table table thead tr:nth-child(1) td:nth-last-child(1) {
+    border-radius: 0 10px 0 0;
+}
+.table table tbody tr {
+    transition: all 0.2s;
+}
+.table table tbody tr td {
+    padding: 10px;
+    color: #666;
+}
+.table table tbody tr:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -15px rgba(0, 0, 0, 0.04);
+    background-color: #ededed1c;
+}
+.table table tbody tr.succeeded td {
+    color: #46c93a;
+    background: #e8f5e7;
+}
+.table table tbody tr.failed td {
+    color: #c93a3a;
+    background: #c93a3a29;
+}
+.table table tfoot tr td {
+    border-radius: 0 0 10px 10px;
+}
+.table table tfoot tr td {
+    padding: 3px 10px;
+    background-color: #fbfbfb;
+    text-align: right;
+}
+
+.pagination {
+    display: flex;
+    position: relative;
+    right: 10px;
+    justify-content: flex-end;
+    gap: 5px;
+}
+.pagination .page {
+    width: 10px;
+    height: 30px;
+    flex-basis: 30px;
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 6px;
+    background: #f0f3f4;
+    border-radius: 7px;
+    color: var(--dark-color);
+    cursor: pointer;
+}
+.pagination .page.active {
+    background-color: var(--dark-color);
+    color: white;
+    font-weight: 600;
+}
+@media (max-width: 700px) {
+    .table {
+        width: 90%;
+    }
+}

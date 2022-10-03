@@ -19,8 +19,8 @@
 }
 
 .table {
-    width: 60%;
-    margin: 0 auto;
+    width: 90%;
+    margin: 2em auto;
 }
 .table .header {
     font-size: 0.85em;
@@ -89,7 +89,7 @@
     border-radius: 0 0 10px 10px;
 }
 .table table tfoot tr td {
-    padding: 3px 10px;
+    padding: 0.5em 0;
     background-color: #fbfbfb;
     text-align: right;
 }

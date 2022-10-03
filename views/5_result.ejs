@@ -2,102 +2,116 @@
 
     <!-- Canvas -->
     <!-- Overlay -->
-    <div class="">
+    <div class="" style="display: flex;
+    justify-content: center;
+    align-items: baseline;
+    margin-top: 5em;
+    height: fit-content;">
         <!-- Overlay inner wrapper -->
-        <div class="overlay__inner">
-            <!-- Buttons -->
-            <div class="overlay__btns">
-                <button class="overlay__btn overlay__btn--transparent">
-                    <a href="/">
-                        Go Back
-                    </a>
-                </button>
+        <div style="width: 75%;">
+            <div class="overlay__inner">
+                <!-- Buttons -->
+                <div class="overlay__btns">
+                    <button class="overlay__btn overlay__btn--transparent">
+                        <a href="/">
+                            Go Back
+                        </a>
+                    </button>
 
-                <button class="overlay__btn overlay__btn--colors">
-                    <span>Visit CodSki</span>
-                    <span class="overlay__btn-emoji"></span>
-                </button>
-            </div>
+                    <button class="overlay__btn overlay__btn--colors">
+                        <span>Visit CodSki</span>
+                    </button>
+                </div>
 
-            <br>
-        </div>
+                <style>
+                    label {
+                        background-color: transparent;
+                        border: 0;
+                        font-size: 0.9em;
+                        font-weight: 700;
+                    }
 
-        <div style="display: flex; justify-content: center; align-items: center;">
-            <style>
-                label {
-                    background-color: transparent;
-                    border: 0;
-                    font-size: 0.9em;
-                    font-weight: 700;
-                }
+                    input[type="submit"] {
+                        background-color: transparent;
+                        color: white;
+                        border: 0;
+                        font-weight: 700;
+                    }
 
-                input[type="submit"] {
-                    background-color: transparent;
-                    color: white;
-                    border: 0;
-                    font-weight: 700;
-                }
+                    h1 {
+                        display: block;
+                        font-size: 5em !important;
+                        font-weight: 900;
+                        text-align: center;
+                        margin-right: 0.5em;
+                        color: var(--dark-color);
+                    }
+                </style>
 
-                h1 {
-                    display: block;
-                    font-size: 5em !important;
-                    font-weight: 900;
-                    text-align: center;
-                    margin-right: 0.5em;
-                    color: var(--dark-color);
-                }
-            </style>
-
-            <div class="table">
-                <table cellspacing="0" cellpadding="0">
-                    <thead>
-                        <tr>
-                            <td colspan="2">
-                                <span class="header">Download Results</span>
-                            </td>
-                            <td colspan="2">
-                                <!-- <input class="search overlay__btn" placeholder="Search..." /> -->
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Name</td>
-                            <td>Status</td>
-                            <td>Size</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <% result.forEach(child => { %>
-                            <tr class="<%= child.status ? 'succeeded' : 'failed' %>">
-                                <td><%= child.name %></td>
-                                <td><%= child.status ? 'Succeeded' : 'Failed' %></td>
-                                <td><%= child.size/1000 %> KB</td>
+                <div class="table">
+                    <table cellspacing="0" cellpadding="0">
+                        <thead>
+                            <tr>
+                                <td colspan="2">
+                                    <span class="header">Result Table</span>
+                                </td>
+                                <td colspan="2">
+                                    <!-- <input class="search overlay__btn" placeholder="Search..." /> -->
+                                </td>
                             </tr>
-                        <% }); %>
-                    </tbody>
-                    <tfoot>
-                        <!-- <tr>
-                        <td colspan="100%">
-                            <div class="pagination">
-                                <div class="page active">1</div>
-                                <div class="page">2</div>
-                                <div class="page">3</div>
-                                <div class="page">4</div>
-                                <div class="page">5</div>
-                            </div>
-                        </td>
-                    </tr> -->
-                    </tfoot>
-                </table>
+                            <tr>
+                                <td>Name</td>
+                                <td>Status</td>
+                                <td>Size</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% result.forEach(child=> { %>
+                                <tr class="<%= child.status ? 'succeeded' : 'failed' %>">
+                                    <td>
+                                        <%= child.name %>
+                                    </td>
+                                    <td>
+                                        <%= child.status ? 'Succeeded' : 'Failed' %>
+                                    </td>
+                                    <td>
+                                        <%= child.size/1000 %> KB
+                                    </td>
+                                </tr>
+                                <% }); %>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="100%">
+                                    <div class="pagination">
+                                        <button class="overlay__btn overlay__btn--colors"
+                                            style="width: fit-content; padding: 0.75em; font-size: 0.8em; font-weight: 700;">
+                                            <a href="/" style="color: white;">
+                                                <span>Download Files</span>
+                                            </a>
+                                        </button>
+                                        <!-- <div class="page active">1</div>
+                                        <div class="page">2</div>
+                                        <div class="page">3</div>
+                                        <div class="page">4</div>
+                                        <div class="page">5</div> -->
+                                    </div>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
             </div>
-
-            <%- include('./partials/steps.ejs') %>
-
         </div>
+
+
+        <%- include('./partials/steps.ejs') %>
     </div>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/main.js"></script>
     <!-- <script type="module" src="js/new.js"></script> -->
-</body>
-</html>
+    </body>
+
+    </html>

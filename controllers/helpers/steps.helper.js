@@ -139,28 +139,29 @@ inputParser = (req, res, next) => {
 // 5/5
 getResult = (req, res, next) => {
     let status = req.query.result;
-    try {
-        console.log('====================================');
-        console.log(req.session.result_table.nodes);
-        console.log('====================================');
-        var result_table = req.session.result_table.nodes;
-    } catch (error) {
-        res.redirect('/');
-    }
+    // try {
+    //     console.log('====================================');
+    //     console.log(req.session.result_table.nodes);
+    //     console.log('====================================');
+    //     var result_table = req.session.result_table.nodes;
+    // } catch (error) {
+    //     res.redirect('/');
+    // }
 
     // Test Adding samplees to result class
-    // let sept_10022022 = new Result();
-    // sept_10022022.addChild('lecture-1', true, 945020)
-    // sept_10022022.addChild('lecture-2', true, 15020)
-    // sept_10022022.addChild('lecture-3', true, 24020)
-    // sept_10022022.addChild('lecture-4', false, 0)
-    // sept_10022022.addChild('lecture-5', true, 7520)
+    let ResultTable = require('./ResultTable');
+    let result_table = new ResultTable();
+    result_table.addChild('lecture-1', true, 945020)
+    result_table.addChild('lecture-2', true, 15020)
+    result_table.addChild('lecture-3', true, 24020)
+    result_table.addChild('lecture-4', false, 0)
+    result_table.addChild('lecture-5', true, 7520)
 
-    // res.send(sept_10022022)
+    // res.send(result_table)
 
     res.render("5_result", {
         mixed: true,
-        result: result_table,
+        result: result_table.nodes,
         status: status,
         step: 5
     });

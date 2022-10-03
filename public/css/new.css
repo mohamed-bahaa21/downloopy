@@ -73,8 +73,8 @@ strong {
 }
 
 .overlay__inner {
-    max-width: 36rem;
-    margin: 2em auto;
+    /* max-width: 36rem; */
+    /* margin: 2em auto; */
 }
 
 .overlay__title {

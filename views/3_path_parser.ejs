@@ -1,70 +1,81 @@
 <%- include('./partials/header.partial.ejs') %>
 
-    <style>
-        input {
-            display: block;
-            margin: 0.75em;
-        }
-    </style>
+    
 
     <!-- Canvas -->
     <!-- Overlay -->
-    <div class="">
-        <!-- Overlay inner wrapper -->
-        <div class="overlay__inner">
-            <!-- Buttons -->
-            <div class="overlay__btns">
-                <button class="overlay__btn overlay__btn--transparent">
-                    <a href="/" target="_blank">
-                        Go Back
-                    </a>
-                </button>
+    <div class="" style="display: flex;
+    justify-content: center;
+    align-items: baseline;
+    margin-top: 5em;
+    height: fit-content;">
+        <div style="width: 75%;">
+            <!-- Overlay inner wrapper -->
+            <div class="overlay__inner">
+                <!-- Buttons -->
+                <div class="overlay__btns">
+                    <button class="overlay__btn overlay__btn--transparent">
+                        <a href="/" target="_blank">
+                            Go Back
+                        </a>
+                    </button>
 
-                <button class="overlay__btn overlay__btn--colors">
-                    <span>Visit CodSki</span>
-                    <span class="overlay__btn-emoji"></span>
-                </button>
+                    <button class="overlay__btn overlay__btn--colors">
+                        <span>Visit CodSki</span>
+                        <span class="overlay__btn-emoji"></span>
+                    </button>
+                </div>
             </div>
 
-            <br>
-        </div>
+            <div style="">
+                <style>
+                    label {
+                        background-color: transparent;
+                        border: 0;
+                        font-size: 0.9em;
+                        font-weight: 700;
+                    }
 
-        <div style="display: flex; justify-content: center; align-items: center;">
-            <style>
-                label {
-                    background-color: transparent;
-                    border: 0;
-                    font-size: 0.9em;
-                    font-weight: 700;
-                }
-
-                input[type="submit"] {
-                    background-color: transparent;
-                    color: white;
-                    border: 0;
-                    font-weight: 700;
-                }
-            </style>
+                    input[type="submit"] {
+                        background-color: transparent;
+                        color: white;
+                        border: 0;
+                        font-weight: 700;
+                    }
+                </style>
 
 
-            <form action="/input_parser" method="post">
-                <p>Write <b>,</b> then name the <b>Numbering-System (NORMAL/CIPHER)</b> to count pages.</p>
-                <input type="text" name="pathArr" value="<%=pathArr%>" readonly>
+                <form action="/input_parser" method="post">
+                    <style>
+                        .form-note {
+                            display: block;
+                            margin-top: 0.5em;
+                            font-size: 0.85em;
+                            font-weight: 500;
+                        }
+                    </style>
+                    <span class="form-note">* Only remove the charachter that changes.</span>
+                    <span class="form-note">* Write <b>(NORMAL or CIPHER)</b> at the end of the input depend on how the
+                        files count.</span>
 
-                <% inputArr.forEach((ele, index)=> { %>
-                    <input type="text" id="<%= ele.index %>" name="inputs" value="<%=ele.index%>,<%=ele.text%>" />
+                    <input style="margin: 0.75em auto;" type="text" name="pathArr" value="<%=pathArr%>" hidden>
+
+                    <% inputArr.forEach((ele, index)=> { %>
+                        <div class="form-item" style="display: flex;">
+                            <input style="margin: 0.75em auto;" type="text" id="<%= ele.index %>" name="inputs"
+                                value="<%=ele.index%>,<%=ele.text%>" />
+                        </div>
                     <% }); %>
 
-                        <button class="overlay__btn overlay__btn--colors" style="margin: 0 auto !important;">
-                            <input type="submit" value="Submit">
-                            <span class="overlay__btn-emoji"></span>
-                        </button>
-            </form>
-
-
-            <%- include('./partials/steps.ejs') %>
+                    <button class="overlay__btn overlay__btn--colors" style="margin: 0 auto !important;">
+                        <input type="submit" value="Submit">
+                        <span class="overlay__btn-emoji"></span>
+                    </button>
+                </form>
+            </div>
         </div>
 
+        <%- include('./partials/steps.ejs') %>
 
     </div>
 
@@ -72,6 +83,6 @@
     <script src="js/main.js"></script>
     <!-- <script type="module" src="js/new.js"></script> -->
 
-</body>
+    </body>
 
-</html>
+    </html>

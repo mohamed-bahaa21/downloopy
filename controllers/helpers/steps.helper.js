@@ -72,7 +72,7 @@ urlParser = (req, res, next) => {
 
 // 3/5
 pathParser = (req, res, next) => {
-    console.log(req.session.pages_arr);
+    // console.log(req.session.pages_arr);
     let tmp_inputArr;
     let inputArr = [];
 
@@ -82,7 +82,8 @@ pathParser = (req, res, next) => {
         res.redirect('/')
     }
 
-    if (typeof tmp_inputArr == Array) {
+    // res.send({tmp_inputArr, type: typeof tmp_inputArr, length: tmp_inputArr.length});
+    if (tmp_inputArr.length > 1 && (typeof tmp_inputArr) == 'object') {
         tmp_inputArr.map((ele) => {
             let tmp_ele = ele.split(' - ');
             inputArr.push({
@@ -123,7 +124,7 @@ inputParser = (req, res, next) => {
         console.log('arr ', req.session.pages_arr);
         urls = Parser.generateNewUrls(origin, pathArr, inputs, req.session.FILES_NUMBER, req.session.pages_arr);
     } catch (error) {
-        // res.send(error)
+        // res.send(req.session)
         res.redirect('/')
     }
     req.session.urls = urls;

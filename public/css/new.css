@@ -36,8 +36,8 @@ body {
     font-family: var(--font-family);
     color: var(--dark-color);
     background: var(--bg-gradient);
-    margin: 5rem;
     padding: 0;
+    /* margin: 5rem; */
     /* min-height: 100vh; */
     /* place-items: center; */
     /* padding: 2rem; */
@@ -107,6 +107,7 @@ strong {
     width: 100%;
     max-width: 30rem;
     display: flex;
+    margin: 0 auto;
 }
 
 .overlay__btn {

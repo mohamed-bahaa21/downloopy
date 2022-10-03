@@ -3,73 +3,81 @@
     <!-- Canvas -->
     <!-- <canvas class="orb-canvas"></canvas> -->
     <!-- Overlay -->
-    <div class="">
-        <!-- Overlay inner wrapper -->
-        <div class="overlay__inner">
-            <!-- Buttons -->
-            <div class="overlay__btns">
-                <button class="overlay__btn overlay__btn--transparent">
-                    <a href="/" target="_blank">
-                        Go Back
-                    </a>
-                </button>
+    <div class="" style="display: flex;
+    justify-content: center;
+    align-items: baseline;
+    margin-top: 5em;
+    height: fit-content;">
+        <div style="width: 75%;">
+            <!-- Overlay inner wrapper -->
+            <div class="overlay__inner">
+                <!-- Buttons -->
+                <div class="overlay__btns">
+                    <button class="overlay__btn overlay__btn--transparent">
+                        <a href="/" target="_blank">
+                            Go Back
+                        </a>
+                    </button>
 
-                <button class="overlay__btn overlay__btn--colors">
-                    <span>Visit CodSki</span>
-                    <span class="overlay__btn-emoji"></span>
-                </button>
+                    <button class="overlay__btn overlay__btn--colors">
+                        <span>Visit CodSki</span>
+                        <span class="overlay__btn-emoji"></span>
+                    </button>
+                </div>
             </div>
-        </div>
-        <br>
 
-        <div style="display: flex; justify-content: center; align-items: center;">
-            <style>
-                label {
-                    background-color: transparent;
-                    border: 0;
-                    font-size: 0.9em;
-                    font-weight: 700;
-                }
+            <div style="">
+                <style>
+                    label {
+                        background-color: transparent;
+                        border: 0;
+                        font-size: 0.9em;
+                        font-weight: 700;
+                    }
 
-                input[type="submit"] {
-                    background-color: transparent;
-                    color: white;
-                    border: 0;
-                    font-weight: 700;
-                }
-            </style>
+                    input[type="submit"] {
+                        background-color: transparent;
+                        color: white;
+                        border: 0;
+                        font-weight: 700;
+                    }
+
+                    select {
+                        width: 100%;
+                    }
+                </style>
 
 
-            <form action="/path_parser" method="post">
-                <input type="text" name="pathArr" value="<%=pathArr%>" readonly>
+                <form action="/path_parser" method="post">
+                    <input type="text" name="pathArr" value="<%=pathArr%>" hidden>
 
-                <select multiple data-placeholder="Add tools" name="url_path" id="url_path"
-                    onchange="this.form.submit()">
-                    <% pathArr.forEach((ele, index)=> { %>
-                        <option>
-                            <%= index %>
-                                -
-                                <%= ele %>
-                        </option>
-                        <% }); %>
-                </select>
+                    <select multiple data-placeholder="Add tools" name="url_path" id="url_path"
+                        onchange="this.form.submit()">
+                        <% pathArr.forEach((ele, index)=> { %>
+                            <option>
+                                <%= index %>
+                                    -
+                                    <%= ele %>
+                            </option>
+                            <% }); %>
+                    </select>
 
-                <!-- dribbble
+                    <!-- dribbble
     <a class="dribbble" href="https://dribbble.com/shots/5112850-Multiple-select-animation-field"
         target="_blank">
         <img src="https://cdn.dribbble.com/assets/dribbble-ball-1col-dnld-e29e0436f93d2f9c430fde5f3da66f94493fdca66351408ab0f96e2ec518ab17.png"
             alt="">
     </a> -->
 
-                <button class="overlay__btn overlay__btn--colors" style="margin: 0 auto !important;">
-                    <input type="submit" value="Submit">
-                    <span class="overlay__btn-emoji"></span>
-                </button>
-            </form>
-
-
-            <%- include('./partials/steps.ejs') %>
+                    <button class="overlay__btn overlay__btn--colors" style="margin: 0 auto !important;">
+                        <input type="submit" value="Submit">
+                        <span class="overlay__btn-emoji"></span>
+                    </button>
+                </form>
+            </div>
         </div>
+
+        <%- include('./partials/steps.ejs') %>
 
     </div>
 
@@ -77,6 +85,6 @@
     <script src="js/main.js"></script>
     <!-- <script type="module" src="js/new.js"></script> -->
 
-</body>
+    </body>
 
-</html>
+    </html>

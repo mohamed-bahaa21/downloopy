@@ -2,76 +2,79 @@
 
     <!-- Canvas -->
     <!-- Overlay -->
-    <div class="">
+    <div class="" style="display: flex; justify-content: center; align-items: center;">
         <!-- Overlay inner wrapper -->
-        <div class="overlay__inner">
-            <!-- Buttons -->
-            <div class="overlay__btns">
-                <button class="overlay__btn overlay__btn--transparent">
-                    <a href="/" target="_blank">
-                        Go Back
-                    </a>
-                </button>
+        <div style="width: 75%;">
+            <div class="overlay__inner">
+                <!-- Buttons -->
+                <div class="overlay__btns">
+                    <button class="overlay__btn overlay__btn--transparent">
+                        <a href="/" target="_blank">
+                            Go Back
+                        </a>
+                    </button>
 
-                <button class="overlay__btn overlay__btn--colors">
-                    <span>Visit CodSki</span>
-                    <span class="overlay__btn-emoji"></span>
-                </button>
+                    <button class="overlay__btn overlay__btn--colors">
+                        <span>Visit CodSki</span>
+                        <span class="overlay__btn-emoji"></span>
+                    </button>
+                </div>
+                <br>
             </div>
-            <br>
+
+            <div style="">
+                <style>
+                    label {
+                        background-color: transparent;
+                        border: 0;
+                        font-size: 0.9em;
+                        font-weight: 700;
+                    }
+
+                    input[type="submit"] {
+                        background-color: transparent;
+                        color: white;
+                        border: 0;
+                        font-weight: 700;
+                    }
+                </style>
+
+
+                <form action="/api/download" method="post">
+                    <p><b>Urls obtained successfuly</b></p>
+
+                    <div class="form-item">
+                        <!-- <label for="website">File Type:</label> -->
+                        <select name="FILE_TYPE" id="FILE_TYPE">
+                            <option value="" disabled selected>Select File Type</option>
+                            <option value="jpg">jpg</option>
+                            <option value="pdf">pdf</option>
+                        </select>
+
+                    </div>
+
+                    <div class="form-item">
+                        <!-- <label for="FOLDER_NAME">Folder Name</label> -->
+                        <input type="text" name="FOLDER_NAME" id="FOLDER_NAME" placeholder="Folder Name">
+                    </div>
+
+                    <div class="form-item">
+                        <!-- <label for="FOLDER_NAME">File Name</label> -->
+                        <input type="text" name="FILE_NAME" id="FILE_NAME" placeholder="File Name">
+                    </div>
+
+                    <input type="text" name="NTYPE" value="MIXED" hidden>
+                    <input type="text" name="DTYPE" value="ALL" hidden>
+
+                    <button class="overlay__btn overlay__btn--colors" style="margin: 0 auto !important;">
+                        <input type="submit" value="Submit">
+                        <span class="overlay__btn-emoji"></span>
+                    </button>
+                </form>
+            </div>
         </div>
 
-        <div style="display: flex; justify-content: center; align-items: center;">
-            <style>
-                label {
-                    background-color: transparent;
-                    border: 0;
-                    font-size: 0.9em;
-                    font-weight: 700;
-                }
-
-                input[type="submit"] {
-                    background-color: transparent;
-                    color: white;
-                    border: 0;
-                    font-weight: 700;
-                }
-            </style>
-
-
-            <form action="/api/download" method="post">
-                <p><b>Urls obtained successfuly</b></p>
-
-                <div class="form-item">
-                    <label for="website">File Type:</label>
-                    <select name="FILE_TYPE" id="FILE_TYPE">
-                        <option value="jpg">jpg</option>
-                        <option value="pdf">pdf</option>
-                    </select>
-                    
-                </div>
-
-                <div class="form-item">
-                    <label for="FOLDER_NAME">Folder Name</label>
-                    <input type="text" name="FOLDER_NAME" id="FOLDER_NAME">
-                </div>
-
-                <div class="form-item">
-                    <label for="FOLDER_NAME">File Name</label>
-                    <input type="text" name="FILE_NAME" id="FILE_NAME">
-                </div>
-
-                <input type="text" name="NTYPE" value="MIXED" hidden>
-                <input type="text" name="DTYPE" value="ALL" hidden>
-
-                <button class="overlay__btn overlay__btn--colors" style="margin: 0 auto !important;">
-                    <input type="submit" value="Submit">
-                    <span class="overlay__btn-emoji"></span>
-                </button>
-            </form>
-
-            <%- include('./partials/steps.ejs') %>
-        </div>
+        <%- include('./partials/steps.ejs') %>
     </div>
 
     <ol style="height: 1em; overflow-y: scroll;">
@@ -86,6 +89,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/main.js"></script>
     <!-- <script type="module" src="js/new.js"></script> -->
-</body>
+    </body>
 
-</html>
+    </html>

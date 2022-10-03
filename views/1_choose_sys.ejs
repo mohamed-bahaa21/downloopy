@@ -3,190 +3,157 @@
     <!-- Canvas -->
     <!-- <canvas class="orb-canvas"></canvas> -->
     <!-- Overlay -->
-    <div class="">
-        <!-- Overlay inner wrapper -->
-        <div class="overlay__inner" style="margin-bottom: 0;">
-            <!-- Buttons -->
-            <div class="overlay__btns">
-                <button class="overlay__btn overlay__btn--transparent">
-                    <a href="/">
-                        Go Back
-                    </a>
-                </button>
+    <div class="" style="display: flex;
+    justify-content: center;
+    align-items: baseline;
+    margin-top: 5em;
+    height: fit-content;">
 
-                <button class="overlay__btn overlay__btn--colors">
-                    <span>Visit CodSki</span>
-                    <span class="overlay__btn-emoji"></span>
-                </button>
-            </div>
+        <div style="width: 75%;">
+            <!-- Overlay inner wrapper -->
+            <div class="overlay__inner" style="margin-bottom: 0;">
+                <!-- Buttons -->
+                <div class="overlay__btns">
+                    <button class="overlay__btn overlay__btn--transparent">
+                        <a href="/">
+                            Go Back
+                        </a>
+                    </button>
 
-
-            <style>
-                .tags {
-                    margin-top: 3em;
-                }
-
-                .tag {
-                    background-color: var(--dark-color);
-                    color: var(--light-color);
-                    font-size: 0.85em;
-                    font-weight: 700;
-                    border-radius: 0.85rem;
-                    padding: 0.25rem 1rem 0.35rem 1rem;
-                    margin: 1rem 0.5em;
-                    opacity: 0.75;
-                }
-
-                .tag:hover {
-                    cursor: pointer;
-                    opacity: 1;
-                }
-
-                .tag.active {
-                    background-color: var(--light-color);
-                    color: var(--dark-color);
-                    box-shadow: 0 5px 15px -5px var(--dark-color);
-                    opacity: 1;
-                }
-            </style>
-
-            <div class="tags">
-                <span class="tag active" id="mixed">mixed</span>
-                <span class="tag" id="selective">selective</span>
-            </div>
-        </div>
-
-
-        <div style="display: flex; justify-content: center; align-items: center;">
-            <!-- Mixed -->
-            <style>
-                label {
-                    background-color: transparent;
-                    border: 0;
-                    font-size: 0.9em;
-                    font-weight: 700;
-                }
-
-                input::placeholder {
-                    color: var(--dark-color);
-                    opacity: 0.75;
-                    font-weight: 700;
-                    font-size: 0.8em;
-                }
-
-                input[type="submit"] {
-                    background-color: transparent;
-                    color: white;
-                    border: 0;
-                    font-weight: 700;
-                }
-            </style>
-
-            <div style="width: fit-content; margin: 0 auto;" id="form-content">
-                <div class="tag-cont" id="mixed">
-                    <form action="/url_parser" method="post">
-                        <div class="form-item">
-                            <!-- <label for="FILES_NUMBER">Files Number</label> -->
-                            <input type="number" name="FILES_NUMBER" id="FILES_NUMBER"
-                                placeholder="How many files ?"><br>
-                        </div>
-
-                        <div class="form-item">
-                            <!-- <label for="url">URL</label> -->
-                            <input type="text" name="url" id="url" placeholder="Add a url for any file" />
-                        </div>
-
-                        <input type="text" name="DTYPE" value="mixed" hidden>
-
-                        <button class="overlay__btn overlay__btn--colors" style="margin: 0 auto !important;">
-                            <input type="submit" value="Submit">
-                            <span class="overlay__btn-emoji"></span>
-                        </button>
-                    </form>
+                    <button class="overlay__btn overlay__btn--colors">
+                        <span>Visit CodSki</span>
+                        <span class="overlay__btn-emoji"></span>
+                    </button>
                 </div>
 
-                <div class="tag-cont" id="selective">
-                    <form action="/url_parser" method="post">
-                        <!-- 
-                        <div class="form-item">
-                            <label for="website">Choose a website:</label>
-                            <select name="website" id="website">
-                                <option value="Google-Drive">Google-Drive</option>
-                                <option value="QNL">QNL</option>
-                                <option value="Slideshare">Slideshare</option>
-                                <option value="archive.alsharekh">archive.alsharekh</option>
-                                <option value="dar.bibalex">dar.bibalex</option>
-                                <option value="yunong.io">yunong.io</option>
-                                <option value="InfoQ">InfoQ</option>
-                            </select>    
-                        </div>
-            
-                        <div class="form-item">
-                            <label for="website">File Type:</label>
-                            <select name="FILE_TYPE" id="FILE_TYPE">
-                                <option value="jpg">jpg</option>
-                                <option value="pdf">pdf</option>
-                            </select>
-                            
-                        </div>
-            
-                        <div class="form-item">
-                            <label for="FOLDER_NAME">Folder Name</label>
-                            <input type="text" name="FOLDER_NAME" id="FOLDER_NAME">
-                        </div>
-            
-                        <div class="form-item">
-                            <label for="FOLDER_NAME">File Name</label>
-                            <input type="text" name="FILE_NAME" id="FILE_NAME">
-                        </div>
-            
-                        <div class="form-item">
-                            <label for="URI_START">URI_START</label>
-                            <input type="text" name="URI_START" id="URI_START">
-                        </div>
-            
-                        <div class="form-item">
-                            <label for="URI_END">URI_END</label>
-                            <input type="text" name="URI_END" id="URI_END">
-                        </div>
-                        -->
 
-                        <style>
-                            #selected_pages {
-                                width: 25rem;
-                                overflow-x: scroll;
-                                display: flex;
-                                padding: 0.5em;
-                            }
+                <style>
+                    .tags {
+                        display: flex;
+                        justify-content: center;
+                        margin-top: 1em;
+                    }
 
-                            #selected_pages .page {
-                                background-color: var(--dark-color);
-                                border-radius: 3px;
-                                padding: 0.25rem;
-                                color: white;
-                                font-size: 0.75em;
-                                font-weight: 700;
-                                margin-right: 0.25rem;
-                                opacity: 0.75;
-                            }
+                    .tag {
+                        background-color: var(--dark-color);
+                        color: var(--light-color);
+                        font-size: 0.85em;
+                        font-weight: 700;
+                        border-radius: 0.85rem;
+                        padding: 0.25rem 1rem 0.35rem 1rem;
+                        margin: 1rem 0.5em;
+                        opacity: 0.75;
+                    }
 
-                            #selected_pages .page:hover {
-                                scale: 1.2;
-                                opacity: 1;
-                                cursor: pointer;
-                            }
-                        </style>
+                    .tag:hover {
+                        cursor: pointer;
+                        opacity: 1;
+                    }
 
-                        <div class="form-item">
-                            <label for="PAGES">Selected Pages: </label>
+                    .tag.active {
+                        background-color: var(--light-color);
+                        color: var(--dark-color);
+                        box-shadow: 0 5px 15px -5px var(--dark-color);
+                        opacity: 1;
+                    }
+                </style>
 
-                            <div id="selected_pages">
+                <div class="tags">
+                    <span class="tag active" id="mixed">mixed</span>
+                    <span class="tag" id="selective">selective</span>
+                </div>
+
+                <!-- Mixed -->
+                <style>
+                    label {
+                        background-color: transparent;
+                        border: 0;
+                        font-size: 0.9em;
+                        font-weight: 700;
+                    }
+
+                    input::placeholder {
+                        color: var(--dark-color);
+                        opacity: 0.75;
+                        font-weight: 700;
+                        font-size: 0.8em;
+                    }
+
+                    input[type="submit"] {
+                        background-color: transparent;
+                        color: white;
+                        border: 0;
+                        font-weight: 700;
+                    }
+                </style>
+
+                <div style="width: fit-content; margin: 0 auto;" id="form-content">
+                    <div class="tag-cont" id="mixed">
+                        <form action="/url_parser" method="post">
+
+                            <div class="form-item">
+                                <!-- <label for="url">URL</label> -->
+                                <input type="text" name="url" id="url" placeholder="Add a url for any file" />
                             </div>
 
-                            <div style="display: flex">
-                                <input type="number" name="PAGES" id="pages_input"
-                                    placeholder="What is the file number ?">
-                                <span id="add_page_btn" class="overlay__btn overlay__btn--colors" style="margin: 0 auto !important;
+                            <div class="form-item">
+                                <!-- <label for="FILES_NUMBER">Files Number</label> -->
+                                <input type="number" name="FILES_NUMBER" id="FILES_NUMBER"
+                                    placeholder="How many files ?">
+                            </div>
+
+                            <input type="text" name="DTYPE" value="mixed" hidden>
+
+                            <button class="overlay__btn overlay__btn--colors" style="margin: 0 auto !important;">
+                                <input type="submit" value="Submit">
+                                <span class="overlay__btn-emoji"></span>
+                            </button>
+                        </form>
+                    </div>
+
+                    <div class="tag-cont" id="selective">
+                        <form action="/url_parser" method="post">
+
+                            <style>
+                                #selected_pages {
+                                    width: 25rem;
+                                    overflow-x: scroll;
+                                    display: flex;
+                                    padding: 0.5em;
+                                    background-color: rgba(255, 255, 255, 0.41);
+                                    margin-top: 0.5em;
+                                }
+
+                                #selected_pages .page {
+                                    background-color: var(--dark-color);
+                                    border-radius: 3px;
+                                    padding: 0.25rem;
+                                    color: white;
+                                    font-size: 0.75em;
+                                    font-weight: 700;
+                                    margin-right: 0.25rem;
+                                    opacity: 0.75;
+                                }
+
+                                #selected_pages .page:hover {
+                                    scale: 1.2;
+                                    opacity: 1;
+                                    cursor: pointer;
+                                }
+                            </style>
+
+                            <div class="form-item">
+                                <!-- <label for="url">URL</label> -->
+                                <input type="text" name="url" id="url" placeholder="Insert a url for only one file" />
+                            </div>
+
+                            <div class="form-item">
+
+                                <div style="display: flex">
+                                    <input type="number" name="PAGES" id="pages_input"
+                                        placeholder="What is the file number ?">
+
+                                    <span id="add_page_btn" class="overlay__btn overlay__btn--colors" style="margin: 0 auto !important;
                                 width: fit-content !important;
                                 position: relative;
                                 left: -2.5rem;
@@ -196,31 +163,43 @@
                                 font-size: 0.75em;
                                 padding: 0rem 0.6rem;
                                 scale: 1.075;">
-                                    Add
-                                </span>
+                                        Add
+                                    </span>
+                                </div>
+
+                                <textarea name="pages_arr" id="pages_arr" cols="30" rows="10"
+                                    style="display: none;"></textarea>
+
+                                <style>
+                                    .form-note {
+                                        display: block;
+                                        margin-top: 0.5em;
+                                        font-size: 0.85em;
+                                        font-weight: 500;
+                                    }
+                                </style>
+                                <span class="form-note">* click on the number to remove it.</span>
+                                <span class="form-note">* selected Pages: </span>
+
+                                <div id="selected_pages">
+                                </div>
                             </div>
-                            <textarea name="pages_arr" id="pages_arr" cols="30" rows="10"
-                                style="display: none;"></textarea>
-                        </div>
 
-                        <div class="form-item">
-                            <!-- <label for="url">URL</label> -->
-                            <input type="text" name="url" id="url" placeholder="Insert a url for only one file" />
-                        </div>
+                            <input type="text" name="DTYPE" value="selective" hidden>
 
-                        <input type="text" name="DTYPE" value="selective" hidden>
-
-                        <button class="overlay__btn overlay__btn--colors" style="margin: 0 auto !important;">
-                            <input type="submit" value="Submit">
-                            <span class="overlay__btn-emoji"></span>
-                        </button>
-                    </form>
+                            <button class="overlay__btn overlay__btn--colors" style="margin: 0 auto !important;">
+                                <input type="submit" value="Submit">
+                                <span class="overlay__btn-emoji"></span>
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
-
-            <%- include('./partials/steps.ejs') %>
-
         </div>
+
+
+
+        <%- include('./partials/steps.ejs') %>
 
     </div>
 

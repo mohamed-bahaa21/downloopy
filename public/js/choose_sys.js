@@ -8,6 +8,7 @@ for (let i = 0; i < tag_cont.length; i++) {
 }
 
 let currTag = 'mixed';
+form_content.children[currTag].style.display = 'block';
 
 
 for (let i = 0; i < tags.length; i++) {

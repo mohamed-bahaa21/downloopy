@@ -32,10 +32,11 @@ option {
     border-radius: 0.5rem;
     box-shadow: 0 4px 16px 0 rgba(22, 42, 90, 0.12);
     transition: box-shadow 0.3s ease;
+    /* margin: 0.75em auto; */
 }
 
 option:hover {
-    background: #4d18ff;
+    background: var(--dark-color);
 }
 
 input[type="radio"]:checked ~ label {
@@ -175,7 +176,7 @@ input[type="submit"]:hover {
     position: absolute;
     left: 50%;
     top: 50%;
-    background: #4d18ff;
+    background: var(--dark-color);
     border-radius: 1px;
 }
 .selectMultiple > div a i:before {
@@ -274,7 +275,7 @@ input[type="submit"]:hover {
     border-radius: 8px;
 }
 .selectMultiple > ul li:hover {
-    background: #4d18ff;
+    background: var(--dark-color);
     color: #fff;
 }
 .selectMultiple > ul li:after {
@@ -379,7 +380,8 @@ html {
 }
 
 .selectMultiple {
-    margin: 1em 0;
+    width: 28rem;
+    margin: 1em auto;
 }
 .dribbble {
     position: fixed;

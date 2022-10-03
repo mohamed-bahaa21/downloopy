@@ -59,7 +59,7 @@ function generateNewUrls(origin, pathArr, inputs, FINISH_NUM, pages_arr = null) 
     if (pages_arr) {
         console.log('WTH');
         newPathsArr = [];
-        for (let i = 1; i <= pages_arr.length; i++) {
+        for (let i = 0; i <= pages_arr.length-1; i++) {
             if (typeof inputs == Array) {
                 inputs.map(ele => {
                     let tmp_ele = ele.split(',');

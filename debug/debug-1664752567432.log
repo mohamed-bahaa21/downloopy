@@ -1,0 +1,207 @@
+urls: 
+----------- Started Download All Normal Pattern ---------------
+----------- HERE MIXED ---------------
+index: 1
+uri: https://image.slidesharecdn.com/dequeanditsapplications-111130111845-phpapp01/95/deque-and-its-applications-3-1024.jpg
+length: 8
+Folder created OR Already found
+==> #5
+====================================
+ResultTable {
+  nodes: [ { name: 'teees-1.jpg', status: true, size: 95432 } ]
+}
+====================================
+{ msg: 'STREAM::WRITE::PIPE::DONE::1' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::1',
+  downloaded_pages: 1,
+  lost_pages: 0,
+  urls: 8,
+  total: false,
+  all_download_task: false
+}
+index: 2
+uri: https://image.slidesharecdn.com/dequeanditsapplications-111130111845-phpapp01/95/deque-and-its-applications-5-1024.jpg
+length: 8
+==> #5
+====================================
+ResultTable {
+  nodes: [
+    { name: 'teees-1.jpg', status: true, size: 95432 },
+    { name: 'teees-2.jpg', status: true, size: 81667 }
+  ]
+}
+====================================
+{ msg: 'STREAM::WRITE::PIPE::DONE::2' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::2',
+  downloaded_pages: 2,
+  lost_pages: 0,
+  urls: 8,
+  total: false,
+  all_download_task: false
+}
+index: 3
+uri: https://image.slidesharecdn.com/dequeanditsapplications-111130111845-phpapp01/95/deque-and-its-applications-11-1024.jpg
+length: 8
+==> #5
+====================================
+ResultTable {
+  nodes: [
+    { name: 'teees-1.jpg', status: true, size: 95432 },
+    { name: 'teees-2.jpg', status: true, size: 81667 },
+    { name: 'teees-3.jpg', status: true, size: 94901 }
+  ]
+}
+====================================
+{ msg: 'STREAM::WRITE::PIPE::DONE::3' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::3',
+  downloaded_pages: 3,
+  lost_pages: 0,
+  urls: 8,
+  total: false,
+  all_download_task: false
+}
+index: 4
+uri: https://image.slidesharecdn.com/dequeanditsapplications-111130111845-phpapp01/95/deque-and-its-applications-12-1024.jpg
+length: 8
+==> #5
+====================================
+ResultTable {
+  nodes: [
+    { name: 'teees-1.jpg', status: true, size: 95432 },
+    { name: 'teees-2.jpg', status: true, size: 81667 },
+    { name: 'teees-3.jpg', status: true, size: 94901 },
+    { name: 'teees-4.jpg', status: true, size: 81035 }
+  ]
+}
+====================================
+{ msg: 'STREAM::WRITE::PIPE::DONE::4' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::4',
+  downloaded_pages: 4,
+  lost_pages: 0,
+  urls: 8,
+  total: false,
+  all_download_task: false
+}
+index: 5
+uri: https://image.slidesharecdn.com/dequeanditsapplications-111130111845-phpapp01/95/deque-and-its-applications-21-1024.jpg
+length: 8
+==> #5
+====================================
+ResultTable {
+  nodes: [
+    { name: 'teees-1.jpg', status: true, size: 95432 },
+    { name: 'teees-2.jpg', status: true, size: 81667 },
+    { name: 'teees-3.jpg', status: true, size: 94901 },
+    { name: 'teees-4.jpg', status: true, size: 81035 },
+    { name: 'teees-5.jpg', status: false, size: 0 }
+  ]
+}
+====================================
+{ msg: 'STREAM::WRITE::PIPE::ERROR::5', err: null }
+{ msg: 'STREAM::WRITE::PIPE::DONE::5' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::5',
+  downloaded_pages: 4,
+  lost_pages: 1,
+  urls: 8,
+  total: false,
+  all_download_task: false
+}
+index: 6
+uri: https://image.slidesharecdn.com/dequeanditsapplications-111130111845-phpapp01/95/deque-and-its-applications-41-1024.jpg
+length: 8
+==> #5
+====================================
+ResultTable {
+  nodes: [
+    { name: 'teees-1.jpg', status: true, size: 95432 },
+    { name: 'teees-2.jpg', status: true, size: 81667 },
+    { name: 'teees-3.jpg', status: true, size: 94901 },
+    { name: 'teees-4.jpg', status: true, size: 81035 },
+    { name: 'teees-5.jpg', status: false, size: 0 },
+    { name: 'teees-6.jpg', status: false, size: 0 }
+  ]
+}
+====================================
+{ msg: 'STREAM::WRITE::PIPE::ERROR::6', err: null }
+{ msg: 'STREAM::WRITE::PIPE::DONE::6' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::6',
+  downloaded_pages: 4,
+  lost_pages: 2,
+  urls: 8,
+  total: false,
+  all_download_task: false
+}
+index: 7
+uri: https://image.slidesharecdn.com/dequeanditsapplications-111130111845-phpapp01/95/deque-and-its-applications-123-1024.jpg
+length: 8
+==> #5
+====================================
+ResultTable {
+  nodes: [
+    { name: 'teees-1.jpg', status: true, size: 95432 },
+    { name: 'teees-2.jpg', status: true, size: 81667 },
+    { name: 'teees-3.jpg', status: true, size: 94901 },
+    { name: 'teees-4.jpg', status: true, size: 81035 },
+    { name: 'teees-5.jpg', status: false, size: 0 },
+    { name: 'teees-6.jpg', status: false, size: 0 },
+    { name: 'teees-7.jpg', status: false, size: 0 }
+  ]
+}
+====================================
+{ msg: 'STREAM::WRITE::PIPE::ERROR::7', err: null }
+{ msg: 'STREAM::WRITE::PIPE::DONE::7' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::7',
+  downloaded_pages: 4,
+  lost_pages: 3,
+  urls: 8,
+  total: false,
+  all_download_task: false
+}
+index: 8
+uri: https://image.slidesharecdn.com/dequeanditsapplications-111130111845-phpapp01/95/deque-and-its-applications-undefined-1024.jpg
+length: 8
+==> #5
+====================================
+ResultTable {
+  nodes: [
+    { name: 'teees-1.jpg', status: true, size: 95432 },
+    { name: 'teees-2.jpg', status: true, size: 81667 },
+    { name: 'teees-3.jpg', status: true, size: 94901 },
+    { name: 'teees-4.jpg', status: true, size: 81035 },
+    { name: 'teees-5.jpg', status: false, size: 0 },
+    { name: 'teees-6.jpg', status: false, size: 0 },
+    { name: 'teees-7.jpg', status: false, size: 0 },
+    { name: 'teees-8.jpg', status: false, size: 0 }
+  ]
+}
+====================================
+{ msg: 'STREAM::WRITE::PIPE::ERROR::8', err: null }
+{ msg: 'STREAM::WRITE::PIPE::DONE::8' }
+{
+  msg: 'STREAM::WRITE::PIPE::CLOSED::8',
+  downloaded_pages: 4,
+  lost_pages: 4,
+  urls: 8,
+  total: true,
+  all_download_task: true
+}
+HERE
+====================================
+[
+  { name: 'teees-1.jpg', status: true, size: 95432 },
+  { name: 'teees-2.jpg', status: true, size: 81667 },
+  { name: 'teees-3.jpg', status: true, size: 94901 },
+  { name: 'teees-4.jpg', status: true, size: 81035 },
+  { name: 'teees-5.jpg', status: false, size: 0 },
+  { name: 'teees-6.jpg', status: false, size: 0 },
+  { name: 'teees-7.jpg', status: false, size: 0 },
+  { name: 'teees-8.jpg', status: false, size: 0 }
+]
+====================================

@@ -33,6 +33,7 @@
     "bluebird": "^3.7.2",
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.6",
+    "cookie-session": "^2.0.0",
     "dom-to-image": "^2.6.0",
     "dotenv": "^10.0.0",
     "dotenv-parse-variables": "^2.0.0",

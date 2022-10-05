@@ -37,4 +37,5 @@ app.use(
 const routes = require('./routes/app.routes');
 app.use('/', routes);
 
-app.listen(3000, console.log("Main Server: 3000"));
+let PORT = process.env.PORT || 3000;
+app.listen(PORT, console.log(`Main Server: ${PORT}`));

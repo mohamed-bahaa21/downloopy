@@ -358,11 +358,11 @@
 
         <%- include('./partials/steps.ejs') %>
 
-        <% if(result=="success" ) { %>
-            <h1 class="succeeded">Download <br> Succeeded</h1>
-        <% } else { %>
-            <h1 class="failed">Download <br> Failed</h1>
-        <% } %>
+            <% if(result=="success" ) { %>
+                <h1 class="succeeded">Download <br> Succeeded</h1>
+                <% } else { %>
+                    <h1 class="failed">Download <br> Failed</h1>
+                    <% } %>
 
     </div>
 
@@ -415,3 +415,11 @@
                             <input type="text" name="URI_END" id="URI_END">
                         </div>
                         -->
+
+<ol style="height: 1em; overflow-y: scroll;">
+    <% urls.forEach(url=> { %>
+        <li>
+            <%=url%>
+        </li>
+        <% }) %>
+</ol>

@@ -84,12 +84,34 @@
                             <tr>
                                 <td colspan="100%">
                                     <div class="pagination">
-                                        <button class="overlay__btn overlay__btn--colors"
+
+                                        <style>
+                                            #download-btn {
+                                                transition: display 2s;
+                                            }
+                                            #download-loader {
+                                                transition: display 2s;
+                                            }
+                                        </style>
+
+                                        <button id="download-btn" class="overlay__btn overlay__btn--colors"
+                                            type="submit"
                                             style="width: fit-content; padding: 0.75em; font-size: 0.8em; font-weight: 700;">
-                                            <a href="/" style="color: white;">
-                                                <span>Download Files</span>
-                                            </a>
+                                            <span>Download Files</span>
+
+                                            <img id="download-loader"
+                                                style="display: none; margin-left: 0.4rem; width: 2.8em; display: none;"
+                                                src="imgs/loader-white.png" alt="">
                                         </button>
+                                        <script>
+                                            // alert('ak')
+                                            let download_btn = document.getElementById('download-btn');
+                                            let download_loader = document.getElementById('download-loader');
+
+                                            download_btn.addEventListener('click', () => {
+                                                download_loader.style.display = 'block';
+                                            })
+                                        </script>
                                         <!-- <div class="page active">1</div>
                                         <div class="page">2</div>
                                         <div class="page">3</div>

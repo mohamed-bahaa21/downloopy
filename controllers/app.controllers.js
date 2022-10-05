@@ -22,6 +22,11 @@ getLanding = (req, res, next) => {
 // =======================================================
 // download all files
 downloadPost = (req, res, next) => {
+
+    // Just for demo purposes
+    res.redirect(`/result?result=success`);
+
+    /*
     require('../services/file-console-log')
 
     const FOLDER_DIR = "data/imgs/";
@@ -76,6 +81,7 @@ downloadPost = (req, res, next) => {
     //     link: `${URI_START}{page_number}${URI_END}`
     // }
     // addNewSampleToFile(newSample);
+    */
 };
 
 // =======================================================

@@ -151,11 +151,11 @@ getResult = (req, res, next) => {
     // Test Adding samplees to result class
     let ResultTable = require('./ResultTable');
     let result_table = new ResultTable();
-    result_table.addChild('lecture-1', true, 945020)
-    result_table.addChild('lecture-2', true, 15020)
-    result_table.addChild('lecture-3', true, 24020)
-    result_table.addChild('lecture-4', false, 0)
-    result_table.addChild('lecture-5', true, 7520)
+    result_table.addChild('lecture-note-1', true, 945020)
+    result_table.addChild('lecture-note-2', true, 15020)
+    result_table.addChild('lecture-note-3', true, 24020)
+    result_table.addChild('lecture-note-4', false, 0)
+    result_table.addChild('lecture-note-5', true, 7520)
 
     // res.send(result_table)
 
